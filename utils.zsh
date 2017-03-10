@@ -3,43 +3,43 @@ set -e
 set -u
 set -o pipefail
 
-green () {
+function green {
     local color='\033[0;32m'
     local reset='\033[0m'
     echo -ne "${color}$@${reset}"
 }
 
-bold_green () {
+function bold_green {
     local color='\033[1;32m'
     local reset='\033[0m'
     echo -ne "${color}$@${reset}"
 }
 
-yellow () {
+function yellow {
     local color='\033[0;33m'
     local reset='\033[0m'
     echo -ne "${color}$@${reset}"
 }
 
-bold_yellow () {
+function bold_yellow {
     local color='\033[1;33m'
     local reset='\033[0m'
     echo -ne "${color}$@${reset}"
 }
 
-red () {
+function red {
     local color='\033[0;31m'
     local reset='\033[0m'
     echo -ne "${color}$@${reset}"
 }
 
-bold_red () {
+function bold_red {
     local color='\033[1;31m'
     local reset='\033[0m'
     echo -ne "${color}$@${reset}"
 }
 
-warn () {
+function warn {
     set +u
     if [[ -z "${PREFIX}" ]]; then
         PREFIX="warning"
@@ -48,7 +48,7 @@ warn () {
     echo -e "$(bold_yellow \[${PREFIX}\]) $(yellow $@)"
 }
 
-err () {
+function err {
     set +u
     if [[ -z "${PREFIX}" ]]; then
         PREFIX="err"
@@ -57,7 +57,7 @@ err () {
     echo -e "$(bold_red \[${PREFIX}\]) $(red $@)"
 }
 
-ok () {
+function ok {
     set +u
     if [[ -z "${PREFIX}" ]]; then
         PREFIX="ok"
@@ -66,12 +66,12 @@ ok () {
     echo -e "$(bold_green \[${PREFIX}\]) $(green $@)"
 }
 
-hard_err () {
+function hard_err {
     err "$@"
     exit 1
 }
 
-safely_link () {
+function safely_link {
     local file
     local linkname
 
@@ -90,7 +90,7 @@ safely_link () {
     fi
 }
 
-safely_unlink () {
+function safely_unlink {
     local linkname
 
     if [[ $# < 1 ]]; then
