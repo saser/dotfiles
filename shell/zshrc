@@ -1,0 +1,16 @@
+# Load zplug, so we can use it for plugins.
+source ${ZPLUG_HOME}/init.zsh
+
+# List of zsh plugins, managed by zplug.
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+if ! zplug check --verbose; then
+    echo -n "Install? [y/N] "
+    if read -q; then
+        zplug install
+    fi
+fi
+zplug clean --force
+
+zplug load
