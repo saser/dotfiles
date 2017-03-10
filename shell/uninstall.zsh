@@ -4,4 +4,4 @@ source ../utils.zsh
 
 PREFIX="Shell"
 
-safely_link zshenv ${HOME}/.zshenv
+safely_unlink ${HOME}/.zshenv
