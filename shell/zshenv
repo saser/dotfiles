@@ -1,0 +1,4 @@
+# Environment variables.
+
+# I use neovim as my main editor.
+export EDITOR=nvim
