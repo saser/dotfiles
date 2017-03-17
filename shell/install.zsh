@@ -1,9 +1,9 @@
 #!/usr/bin/zsh
 
-source ../utils.zsh
+source ${DOTS_HOME}/utils.zsh
 
 PREFIX="Shell"
 
-safely_link zshenv ${HOME}/.zshenv
-safely_link zshrc ${HOME}/.zshrc
-safely_link zplug ${HOME}/.zplug
+safely_link ${DOTS_HOME}/shell/zshenv ${HOME}/.zshenv
+safely_link ${DOTS_HOME}/shell/zshrc ${HOME}/.zshrc
+safely_link ${DOTS_HOME}/shell/zplug ${HOME}/.zplug

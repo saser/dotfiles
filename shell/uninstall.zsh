@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-source ../utils.zsh
+source ${DOTS_HOME}/utils.zsh
 
 PREFIX="Shell"
 
