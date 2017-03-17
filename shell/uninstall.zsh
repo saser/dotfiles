@@ -2,7 +2,7 @@
 
 source ${DOTS_HOME}/utils.zsh
 
-PREFIX="Shell"
+PREFIX="zsh + shell"
 
 safely_unlink ${HOME}/.zshenv
 safely_unlink ${HOME}/.zshrc
