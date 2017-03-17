@@ -17,3 +17,6 @@ PREFIX="All"
 
 ${DOTS_HOME}/shell/uninstall.zsh
 ok "Uninstalled shell configuration."
+
+${DOTS_HOME}/tmux/uninstall.zsh
+ok "Uninstalled tmux configuration."

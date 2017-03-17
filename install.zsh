@@ -15,5 +15,10 @@ source ${DOTS_HOME}/utils.zsh
 
 PREFIX="All"
 
+# Install shell configuration.
 ${DOTS_HOME}/shell/install.zsh
 ok "Installed shell configuration."
+
+# Install tmux configuration.
+${DOTS_HOME}/tmux/install.zsh
+ok "Installed tmux configuration."
