@@ -1,0 +1,21 @@
+function prompt_saser_setup {
+    prompt_opts=()
+    # `cr` causes output that does not end with a newline to end with a '%' sign
+    prompt_opts+=(cr)
+    # `percent` causes '%' to be treated specially in prompt expansion. Or
+    # something.
+    prompt_opts+=(percent)
+    # `subst` causes the prompt to be affected by parameter expansion, command
+    # substitution, and arithmetic expansion (according to the `zsh` manual).
+    prompt_opts+=(subst)
+
+    # Code points for the arrows:
+    # ⇒ : U+21D2
+    # → : U+2192
+
+    PROMPT='%F{green}%m%f %F{white}⇒%f %F{magenta}%n%f %F{white}→%f %F{yellow}%~%f%(?..%F{red}%B [⚠ %?%b] )
+%F{white}↳%f '
+    RPROMPT=''
+}
+
+prompt_saser_setup "$@"
