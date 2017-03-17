@@ -22,3 +22,8 @@ ok "Installed shell configuration."
 # Install tmux configuration.
 ${DOTS_HOME}/tmux/install.zsh
 ok "Installed tmux configuration."
+
+# Install neovim configuration.
+# NOTE: also installs the plugins.
+${DOTS_HOME}/neovim/install.zsh
+ok "Installed neovim configuration."

@@ -15,8 +15,15 @@ source ${DOTS_HOME}/utils.zsh
 
 PREFIX="All"
 
+# Uninstall shell configuration.
 ${DOTS_HOME}/shell/uninstall.zsh
 ok "Uninstalled shell configuration."
 
+# Uninstall tmux configuration.
 ${DOTS_HOME}/tmux/uninstall.zsh
 ok "Uninstalled tmux configuration."
+
+# Uninstall neovim configuration.
+# NOTE: does _not_ uninstall the plugins.
+${DOTS_HOME}/neovim/uninstall.zsh
+ok "Uninstalled neovim configuration."
