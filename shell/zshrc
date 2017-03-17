@@ -2,7 +2,8 @@
 source ${ZPLUG_HOME}/init.zsh
 
 # List of zsh plugins, managed by zplug.
-zplug "zsh-users/zsh-history-substring-search"
+
+# Syntax for getting syntax highlighting in the terminal prompt.
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check --verbose; then
