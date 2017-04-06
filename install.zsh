@@ -3,6 +3,8 @@ set -e
 set -u
 set -o pipefail
 
+STOW_TARGET="${HOME}"
+
 INSTALL_EXPORTS="${HOME}/dotfiles/install_exports.zsh"
 if [[ ! -e "${INSTALL_EXPORTS}" ]]; then
     echo "Required file \`install_exports.zsh\` was not found at its expected location \`${HOME}/dotfiles/install_exports.zsh\`."
@@ -25,5 +27,5 @@ ok "Installed tmux configuration."
 
 # Install neovim configuration.
 # NOTE: also installs the plugins.
-${DOTS_HOME}/neovim/install.zsh
+stow --target ${STOW_TARGET} neovim
 ok "Installed neovim configuration."
