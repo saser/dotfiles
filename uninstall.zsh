@@ -18,7 +18,7 @@ source ${DOTS_HOME}/utils.zsh
 PREFIX="All"
 
 # Uninstall shell configuration.
-${DOTS_HOME}/shell/uninstall.zsh
+stow --target ${STOW_TARGET} --delete shell
 ok "Uninstalled shell configuration."
 
 # Uninstall tmux configuration.

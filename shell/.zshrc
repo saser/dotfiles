@@ -18,7 +18,7 @@ zplug clean --force
 zplug load
 
 # Load my own custom prompt.
-fpath=(${DOTS_HOME}/shell/prompt ${fpath})
+fpath=(${HOME}/.prompt ${fpath})
 autoload -Uz promptinit
 promptinit
 prompt saser

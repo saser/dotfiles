@@ -18,7 +18,7 @@ source ${DOTS_HOME}/utils.zsh
 PREFIX="All"
 
 # Install shell configuration.
-${DOTS_HOME}/shell/install.zsh
+stow --target ${STOW_TARGET} shell
 ok "Installed shell configuration."
 
 # Install tmux configuration.
