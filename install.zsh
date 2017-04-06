@@ -22,7 +22,7 @@ stow --target ${STOW_TARGET} shell
 ok "Installed shell configuration."
 
 # Install tmux configuration.
-${DOTS_HOME}/tmux/install.zsh
+stow --target ${STOW_TARGET} tmux
 ok "Installed tmux configuration."
 
 # Install neovim configuration.

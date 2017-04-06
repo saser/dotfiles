@@ -22,7 +22,7 @@ stow --target ${STOW_TARGET} --delete shell
 ok "Uninstalled shell configuration."
 
 # Uninstall tmux configuration.
-${DOTS_HOME}/tmux/uninstall.zsh
+stow --target ${STOW_TARGET} --delete tmux
 ok "Uninstalled tmux configuration."
 
 # Uninstall neovim configuration.
