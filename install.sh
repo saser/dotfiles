@@ -36,5 +36,5 @@ stow --target "${STOW_TARGET}" tmux
 stow --target "${STOW_TARGET}" neovim
 
 # Install my scripts.
-# They will be available in my PATH, see `./shell/.zshenv`.
+# They will be available in my PATH, see `./shell/.zprofile`.
 stow --target "${STOW_TARGET}" scripts
