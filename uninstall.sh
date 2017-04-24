@@ -13,3 +13,6 @@ stow --target "${STOW_TARGET}" --delete tmux
 
 # Uninstall neovim configuration.
 stow --target "${STOW_TARGET}" --delete neovim
+
+# Uninstall my scripts.
+stow --target "${STOW_TARGET}" --delete scripts

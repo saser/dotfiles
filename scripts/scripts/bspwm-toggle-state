@@ -1,0 +1,53 @@
+#!/bin/sh
+set -e
+set -u
+set -o pipefail
+
+# Usage:
+#     bspwm-toggle-state <state>
+#
+# Description:
+#     For the focused node, toggle between its current state and <state>.
+#
+# Example:
+#     Current situation: the focused window has state `tiled`.
+#
+#     $ bspwm-toggle-state fullscreen # The focused window is now fullscreen.
+#     $ bspwm-toggle-state fullscreen # The focused window is tiled again.
+#
+# Dependencies:
+#     * jq (https://stedolan.github.io/jq/)
+
+if [ $# -le 0 ]; then
+    echo "Usage:"
+    echo "    bspwm-toggle-state <state>"
+    exit 1
+fi
+
+# The state we want to toggle between.
+toggleState=$1
+
+# Get our current state, by getting the JSON representation for the current node
+# and using `jq` to filter it. The `--raw-output` flag to `jq` makes its output
+# be printed without double quotes, terminal color codes, etc.
+currentState=$( \
+    bspc query --tree --node focused \
+    | jq --raw-output '.client.state' \
+)
+
+# If we already are in the state we want to toggle, we reset back to our last
+# state.
+if [ "$toggleState" = "$currentState" ]; then
+    # Our next state will be our last state, so get the last state in a similar
+    # way as getting the current state.
+    lastState=$( \
+        bspc query --tree --node focused \
+        | jq --raw-output '.client.lastState' \
+    )
+    nextState=$lastState
+else
+    # Our next state is the state we want to toggle.
+    nextState=$toggleState
+fi
+
+bspc node --state "$nextState"
