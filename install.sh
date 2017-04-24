@@ -8,9 +8,12 @@ set -o pipefail
 # symbolic link named `~/.config` pointing into this repository. This is bad,
 # since some applications I use put their default configuration in `~/.config`
 # and I do not want their configuration to show up in this repository.
-if [ -e "${HOME}/.config" ]; then
-    if [ ! -d "${HOME}/.config" ]; then
-        echo "`${HOME}/.config` exists but is not a directory -- this seems wrong!"
+# Coincidentally (not really), this path is the same as default value for
+# XDG_CONFIG_HOME, hence why I use that as variable name here.
+XDG_CONFIG_HOME="${HOME}/.config"
+if [ -e "${XDG_CONFIG_HOME}" ]; then
+    if [ ! -d "${XDG_CONFIG_HOME}" ]; then
+        echo "\`${XDG_CONFIG_HOME}\` exists but is not a directory -- this seems wrong!"
 	echo "Not installing."
 	exit 1
     fi
@@ -19,15 +22,15 @@ if [ -e "${HOME}/.config" ]; then
 fi
 # If we get to this point, we know that `~/.config` does not exist, so create
 # it.
-mkdir -p ${HOME}/.config
+mkdir -p "${XDG_CONFIG_HOME}"
 
 STOW_TARGET="${HOME}"
 
 # Install shell configuration.
-stow --target ${STOW_TARGET} shell
+stow --target "${STOW_TARGET}" shell
 
 # Install tmux configuration.
-stow --target ${STOW_TARGET} tmux
+stow --target "${STOW_TARGET}" tmux
 
 # Install neovim configuration.
-stow --target ${STOW_TARGET} neovim
+stow --target "${STOW_TARGET}" neovim

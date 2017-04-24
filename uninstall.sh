@@ -6,10 +6,10 @@ set -o pipefail
 STOW_TARGET="${HOME}"
 
 # Uninstall shell configuration.
-stow --target ${STOW_TARGET} --delete shell
+stow --target "${STOW_TARGET}" --delete shell
 
 # Uninstall tmux configuration.
-stow --target ${STOW_TARGET} --delete tmux
+stow --target "${STOW_TARGET}" --delete tmux
 
 # Uninstall neovim configuration.
-stow --target ${STOW_TARGET} --delete neovim
+stow --target "${STOW_TARGET}" --delete neovim
