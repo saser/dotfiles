@@ -1,0 +1,43 @@
+# First of all, the dependencies for this dotfiles repo, including Ruby to run
+# the `package-sync.rb` script.
+git
+stow
+ruby
+
+# Drivers and other system utilities.
+xf86-video-intel # (Hardware-dependent) Video driver for Intel graphics.
+iw # Wifi stuff.
+wpa_supplicant # Wifi stuff.
+dialog # Needed for wifi-menu.
+intel-ucode # Microcode updates. Not sure exactly why I need them, but they are good.
+
+# Basic programs, such as shell.
+zsh
+tmux
+
+# File system utilities. Used to make interacting with the file system a bit
+# easier.
+ranger # Really good file manager for the terminal.
+the_silver_searcher # Superfast regex search.
+
+# Editor and associated packages.
+neovim
+
+# Terminal-related programs, such as terminal emulator.
+rxvt-unicode # My terminal emulator of choice. Works well enough.
+xorg-xrdb # Used for terminal colorschemes.
+
+# Xorg and related packages.
+xorg-server
+xorg-xinit # Provides `startx`, to actually start my window manager.
+
+# Window manager and related packages.
+bspwm # My window manager of choice.
+sxhkd # Really nice program for specifying system-wide hotkeys. Also required
+      # with bspwm, since bspwm itself do not have any key-binding functionality.
+
+# Desktop applications, e.g., browser, PDF viewer, etc.
+chromium # Like Google Chrome, but a little less Google.
+ttf-dejavu # Fonts that look nice enough.
+zathura # PDF viewer.
+zathura-pdf-poppler # Actually support PDF in zathura.
