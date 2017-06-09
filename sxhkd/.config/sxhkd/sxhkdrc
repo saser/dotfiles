@@ -1,5 +1,25 @@
+### Window manager-related keybindings.
+
+# Cleanly quit bspwm and X.
+super + shift + q
+    bspc quit
+
+### Spawning programs
+
+# Spawn a terminal.
 super + Return
     urxvt
 
-super + shift + q
-    bspc quit
+# Spawn web browser.
+super + w
+    chromium
+
+### Window-related bindings.
+
+# Close the focused window (not forcefully kill it).
+super + q
+    bspc node focused --close
+
+# Focus windows in the different directions, with vim-like bindings.
+super + {h,j,k,l}
+    bspc node --focus {west,south,north,east}
