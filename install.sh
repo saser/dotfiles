@@ -35,6 +35,9 @@ stow --target "${STOW_TARGET}" tmux
 # Install neovim configuration.
 stow --target "${STOW_TARGET}" neovim
 
+# Install X-related things, such as `.xinitrc`.
+stow --target "${STOW_TARGET}" xorg
+
 # Install my scripts.
 # They will be available in my PATH, see `./shell/.zprofile`.
 stow --target "${STOW_TARGET}" scripts

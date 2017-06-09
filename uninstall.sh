@@ -14,5 +14,8 @@ stow --target "${STOW_TARGET}" --delete tmux
 # Uninstall neovim configuration.
 stow --target "${STOW_TARGET}" --delete neovim
 
+# Uninstall X-related things, such as `.xinitrc`.
+stow --target "${STOW_TARGET}" --delete xorg
+
 # Uninstall my scripts.
 stow --target "${STOW_TARGET}" --delete scripts
