@@ -41,6 +41,9 @@ stow --target "${STOW_TARGET}" xorg
 # Install sxhkd configuration.
 stow --target "${STOW_TARGET}" sxhkd
 
+# Install urxvt configuration.
+stow --target "${STOW_TARGET}" urxvt
+
 # Install my scripts.
 # They will be available in my PATH, see `./shell/.zprofile`.
 stow --target "${STOW_TARGET}" scripts

@@ -42,3 +42,8 @@ chromium # Like Google Chrome, but a little less Google.
 ttf-dejavu # Fonts that look nice enough.
 zathura # PDF viewer.
 zathura-pdf-poppler # Actually support PDF in zathura.
+
+# Make things look pretty!
+adobe-source-code-pro-fonts
+adobe-source-sans-pro-fonts
+adobe-source-serif-pro-fonts
