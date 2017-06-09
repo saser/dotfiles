@@ -48,6 +48,7 @@ sxhkd # Really nice program for specifying system-wide hotkeys. Also required
 rofi # Used mostly as an application launcher.
 
 # Desktop applications, e.g., browser, PDF viewer, etc.
+feh # Image viewer, and can also be used to set background image.
 chromium # Like Google Chrome, but a little less Google.
 ttf-dejavu # Fonts that look nice enough.
 zathura # PDF viewer.
