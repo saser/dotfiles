@@ -36,6 +36,7 @@ xorg-xinit # Provides `startx`, to actually start my window manager.
 bspwm # My window manager of choice.
 sxhkd # Really nice program for specifying system-wide hotkeys. Also required
       # with bspwm, since bspwm itself do not have any key-binding functionality.
+rofi # Used mostly as an application launcher.
 
 # Desktop applications, e.g., browser, PDF viewer, etc.
 chromium # Like Google Chrome, but a little less Google.
