@@ -1,3 +1,9 @@
+### sxhkd-related keybindings.
+
+# Reload sxhkdrc.
+super + s; r
+    pkill -x -USR1 sxhkd
+
 ### Window manager-related keybindings.
 
 # Cleanly quit bspwm and X.
@@ -13,6 +19,16 @@ super + Return
 # Spawn web browser.
 super + w
     chromium
+
+### Desktop-related bindings.
+
+# Focused desktop 1 through 5, respectively.
+super + {1-5}
+    bspc desktop --focus focused:^{1-5}
+
+# Cycle through the desktops for the given monitor.
+super + {comma,period}
+    bspc desktop --focus $(bspc query --desktops --monitor focused --desktop {prev,next})
 
 ### Window-related bindings.
 
