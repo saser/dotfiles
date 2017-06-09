@@ -43,3 +43,13 @@ super + q
 # Focus windows in the different directions, with vim-like bindings.
 super + {h,j,k,l}
     bspc node --focus {west,south,north,east}
+
+### Media keybindings.
+
+# Toggle muting of all sound.
+XF86AudioMute
+    pamixer --toggle-mute
+
+# Decrease and increase all volume.
+XF86Audio{Lower,Raise}Volume
+    pamixer --{decrease,increase} 10
