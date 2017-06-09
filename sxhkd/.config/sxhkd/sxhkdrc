@@ -63,3 +63,9 @@ XF86AudioPlay
 # case).
 XF86Audio{Prev,Next}
     playerctl {previous,next}
+
+### Miscellaneous keybindings.
+
+# Lock the screen.
+super + BackSpace
+    slock
