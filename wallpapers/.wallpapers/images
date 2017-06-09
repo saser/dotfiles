@@ -1,0 +1,11 @@
+# This file contains the URL:s for the wallpapers that I use, as well as the
+# filename I want them to have. The syntax is very simple:
+#
+#     <filename>: <image URL>
+#
+# Lines starting with a # are considered comments, and ignored.
+#
+# The URL:s will be fetched using cURL, using the appropriate options for
+# following redirects etc.
+
+summer-night-beach.jpg: http://unsplash.com/photos/wwBk0aCa7Gs/download

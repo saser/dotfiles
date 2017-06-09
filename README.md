@@ -15,13 +15,17 @@ In order to **install** these dotfiles, the following must be installed:
 *   [git](git-scm): for cloning this repository, the repositories of third-party plugins, etc.
 *   [GNU Stow](gnu-stow): for creating (and removing) symbolic links to the files contained within these repositories.
 
+Both are available in the official repositories:
+
+    $ sudo pacman -S git stow
+
 When the above are installed, issuing the following commands will fetch everything -- clone this and third-party repositories, download plugins, etc -- and put symbolic links in the correct places.
 
     $ git clone --recursive https://github.com/Saser/dotfiles
     $ cd dotfiles
     $ ./install.sh
 
-Additionally, in order to use the supplied `package-sync.rb` script to install (and uninstall) packages such that only those specified by `synced-packages` and `synced-groups` are left on the system, Ruby needs to be installed first. Why Ruby, you might ask. Answer: I did not want to bother with learning more advanced string manipulation in `sh` scripting, so Ruby it is.
+Additionally, in order to use the supplied `package-sync.rb` script, as well as the `download-images.rb` script (located in `wallpapers/.wallpapers`), Ruby needs to be installed first. Why Ruby, you might ask. Answer: I did not want to bother with learning more advanced string manipulation in `sh` scripting, so Ruby it is.
 
     $ sudo pacman -S ruby
 
