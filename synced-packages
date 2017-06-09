@@ -5,7 +5,6 @@ stow
 ruby
 
 # Drivers and other system utilities.
-xf86-video-intel # (Hardware-dependent) Video driver for Intel graphics.
 iw # Wifi stuff.
 wpa_supplicant # Wifi stuff.
 dialog # Needed for wifi-menu.
@@ -29,8 +28,17 @@ rxvt-unicode # My terminal emulator of choice. Works well enough.
 xorg-xrdb # Used for terminal colorschemes.
 
 # Xorg and related packages.
+xf86-video-intel # (Hardware-dependent) Video driver for Intel graphics.
 xorg-server
 xorg-xinit # Provides `startx`, to actually start my window manager.
+
+# Sound-related packages.
+pulseaudio # Audio server, that makes handling sound much easier.
+pamixer # Command-line utility to control PulseAudio.
+pulseaudio-alsa # Some kind of bindings between PulseAudio and ALSA. Probably
+                # needed in order to use PulseAudio together with `alsamixer`.
+alsa-utils # Contains `alsamixer`, which is a nice ncurses front-end for
+           # controlling PulseAudio (even though it is designed for ALSA).
 
 # Window manager and related packages.
 bspwm # My window manager of choice.
