@@ -17,6 +17,9 @@ stow --target "${STOW_TARGET}" --delete neovim
 # Uninstall X-related things, such as `.xinitrc`.
 stow --target "${STOW_TARGET}" --delete xorg
 
+# Uninstall bspwm configuration.
+stow --target "${STOW_TARGET}" --delete bspwm
+
 # Uninstall sxhkd configuration.
 stow --target "${STOW_TARGET}" --delete sxhkd
 

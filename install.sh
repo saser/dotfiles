@@ -38,6 +38,9 @@ stow --target "${STOW_TARGET}" neovim
 # Install X-related things, such as `.xinitrc`.
 stow --target "${STOW_TARGET}" xorg
 
+# Install bspwm configuration.
+stow --target "${STOW_TARGET}" bspwm
+
 # Install sxhkd configuration.
 stow --target "${STOW_TARGET}" sxhkd
 
