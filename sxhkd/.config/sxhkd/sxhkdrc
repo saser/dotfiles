@@ -69,3 +69,10 @@ XF86Audio{Prev,Next}
 # Lock the screen.
 super + BackSpace
     slock
+
+# Decrease and increase screen brightness.
+# * '-A' is for 'Add';
+# * '-U' is for 'sUbtract';
+# * '-p' enforces that the value is a percentage.
+XF86MonBrightness{Down,Up}
+    light -{U,A} -p 10
