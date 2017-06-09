@@ -8,5 +8,10 @@ xrdb -merge "${HOME}/.config/urxvt/settings"
 BASE16_COLORSCHEME=base16-materia
 xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/${BASE16_COLORSCHEME}.Xresources"
 
-sxhkd &
+# Make sure the ~/.logs folder exists, so that we can log sxhkd command output to it.
+LOGS_DIR="${HOME}/.logs"
+if [ ! -e "${LOGS_DIR}" ]; then
+    mkdir -p "${LOGS_DIR}/.logs"
+fi
+sxhkd -r "${LOGS_DIR}/sxhkd.log" &
 exec bspwm
