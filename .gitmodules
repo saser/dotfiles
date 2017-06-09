@@ -1,3 +1,6 @@
 [submodule "shell/zplug"]
 	path = shell/.zplug
 	url = https://github.com/zplug/zplug
+[submodule "urxvt/.config/urxvt/colors/base16"]
+	path = urxvt/.config/urxvt/colors/base16
+	url = git@github.com:chriskempson/base16-xresources
