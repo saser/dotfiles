@@ -1,0 +1,5 @@
+super + Return
+    urxvt
+
+super + shift + q
+    bspc quit

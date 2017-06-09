@@ -17,5 +17,8 @@ stow --target "${STOW_TARGET}" --delete neovim
 # Uninstall X-related things, such as `.xinitrc`.
 stow --target "${STOW_TARGET}" --delete xorg
 
+# Uninstall sxhkd configuration.
+stow --target "${STOW_TARGET}" --delete sxhkd
+
 # Uninstall my scripts.
 stow --target "${STOW_TARGET}" --delete scripts
