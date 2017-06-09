@@ -53,3 +53,13 @@ XF86AudioMute
 # Decrease and increase all volume.
 XF86Audio{Lower,Raise}Volume
     pamixer --{decrease,increase} 10
+
+# Toggle playing/pausing from the current media player (which in my case is
+# mostly Spotify).
+XF86AudioPlay
+    playerctl play-pause
+
+# Skip between tracks in the current media player (again, mostly Spotify in my
+# case).
+XF86Audio{Prev,Next}
+    playerctl {previous,next}

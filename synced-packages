@@ -51,6 +51,9 @@ chromium # Like Google Chrome, but a little less Google.
 ttf-dejavu # Fonts that look nice enough.
 zathura # PDF viewer.
 zathura-pdf-poppler # Actually support PDF in zathura.
+playerctl # Not really a desktop application, but it allows for control of
+	  # desktop applications such as Spotify: play/pause, next/previous
+	  # song, etc.
 
 # Make things look pretty!
 adobe-source-code-pro-fonts
