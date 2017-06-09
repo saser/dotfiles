@@ -14,6 +14,7 @@ intel-ucode # Microcode updates. Not sure exactly why I need them, but they are 
 # Basic programs, such as shell.
 zsh
 tmux
+openssh
 
 # File system utilities. Used to make interacting with the file system a bit
 # easier.
