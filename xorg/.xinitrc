@@ -5,8 +5,8 @@
 xrdb -merge "${HOME}/.config/urxvt/settings"
 
 # Load Xresources colorscheme. Affects e.g. urxvt colors.
-BASE16_COLORSCHEME=base16-materia
-xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/${BASE16_COLORSCHEME}.Xresources"
+BASE16_COLORSCHEME=materia-256
+xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
 
 # Sets the background image.
 WALLPAPER="summer-night-beach.jpg"

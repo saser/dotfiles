@@ -22,3 +22,7 @@ fpath=(${HOME}/.prompt ${fpath})
 autoload -Uz promptinit
 promptinit
 prompt saser
+
+# Set colortheme using base16-shell.
+BASE16_COLORSCHEME=materia
+source "${HOME}/.shellcolors/base16/scripts/base16-${BASE16_COLORSCHEME}.sh"
