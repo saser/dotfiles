@@ -24,6 +24,11 @@ super + w
 super + space
     rofi -show run
 
+### Montiro-related bindings.
+
+super + shift + {comma,period}
+    bspc monitor --focus {prev,next}
+
 ### Desktop-related bindings.
 
 # Focused desktop 1 through 5, respectively.
