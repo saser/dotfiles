@@ -19,6 +19,7 @@ openssh
 # easier.
 ranger # Really good file manager for the terminal.
 the_silver_searcher # Superfast regex search.
+fzf # Nice fuzzy file finder.
 unzip # For easy unpacking of .zip files.
 
 # Editor and associated packages.
