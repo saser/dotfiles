@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+# git aliases.
+alias g='git'
+alias gs='g s' # git status
+alias gd='g d' # git diff
+alias gl='g l' # one-line log
+alias gco='g co' # git checkout
+
+# tmux aliases
+alias t='tmux'
+alias ta='t attach'
+alias tat='ta -t' # attach to session name
+alias tl='t list-sessions'

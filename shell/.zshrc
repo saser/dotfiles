@@ -26,6 +26,9 @@ zplug load
 # Load all my keybindings.
 source ${HOME}/.zsh-keybindings
 
+# Load all my aliases.
+source ${HOME}/.aliases
+
 # Load my own custom prompt.
 fpath=(${HOME}/.prompt ${fpath})
 autoload -Uz promptinit
