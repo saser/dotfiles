@@ -33,12 +33,3 @@ If no output is shown on screen, everything has (probably) went well.
 
 [git-scm]: https://git-scm.com/
 [gnu-stow]: https://www.gnu.org/software/stow/
-
-## Programs and applications
-I use the following programs and applications on my system(s).
-
-*   [zsh](zsh): a nice shell, with lots of fancy plugins and features.
-*   [neovim](neovim): a fork of Vim, with a focus on modern features.
-
-[zsh]: https://www.zsh.org/
-[neovim]: https://neovim.io/
