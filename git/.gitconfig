@@ -9,3 +9,4 @@
 	c = commit
 	co = checkout
 	cob = checkout -b
+	ane = commit --amend --no-edit
