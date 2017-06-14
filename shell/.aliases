@@ -13,6 +13,7 @@ alias gd='g d' # git diff
 alias gdc='g dc' # git diff --cached
 alias gc='g c' # git commit
 alias gco='g co' # git checkout
+alias gcob='g cob' # git checkout -b
 
 # tmux aliases.
 alias t='tmux'

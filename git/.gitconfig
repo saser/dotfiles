@@ -8,3 +8,4 @@
 	dc = diff --cached
 	c = commit
 	co = checkout
+	cob = checkout -b
