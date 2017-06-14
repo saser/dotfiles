@@ -1,14 +1,20 @@
 #!/usr/bin/env zsh
 
+# Basic shell navigation aliases.
+alias ..='cd ..'
+alias ls='ls -l --all --human-readable --classify --group-directories-first --color=auto'
+
 # git aliases.
 alias g='git'
+alias ga='g add'
 alias gs='g s' # git status
 alias gd='g d' # git diff
 alias gl='g l' # one-line log
 alias gco='g co' # git checkout
 
-# tmux aliases
+# tmux aliases.
 alias t='tmux'
+alias tn='t new -s'
 alias ta='t attach'
 alias tat='ta -t' # attach to session name
 alias tl='t list-sessions'
