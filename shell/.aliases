@@ -8,8 +8,10 @@ alias ls='ls -l --all --human-readable --classify --group-directories-first --co
 alias g='git'
 alias ga='g add'
 alias gs='g s' # git status
-alias gd='g d' # git diff
 alias gl='g l' # one-line log
+alias gd='g d' # git diff
+alias gdc='g dc' # git diff --cached
+alias gc='g c' # git commit
 alias gco='g co' # git checkout
 
 # tmux aliases.
