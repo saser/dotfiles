@@ -29,6 +29,9 @@ STOW_TARGET="${HOME}"
 # Install shell configuration.
 stow --target "${STOW_TARGET}" shell
 
+# Install git configuration.
+stow --target "${STOW_TARGET}" git
+
 # Install tmux configuration.
 stow --target "${STOW_TARGET}" tmux
 

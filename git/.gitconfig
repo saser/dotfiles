@@ -1,0 +1,8 @@
+[user]
+	email = saser@live.se
+	name = Christian Persson
+[alias]
+	s = status
+	l = --oneline --decorate --graph --all
+	d = diff
+	co = checkout

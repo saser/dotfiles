@@ -8,6 +8,9 @@ STOW_TARGET="${HOME}"
 # Uninstall shell configuration.
 stow --target "${STOW_TARGET}" --delete shell
 
+# Uninstall git configuration.
+stow --target "${STOW_TARGET}" --delete git
+
 # Uninstall tmux configuration.
 stow --target "${STOW_TARGET}" --delete tmux
 
