@@ -15,6 +15,7 @@ alias gc='g c' # git commit
 alias gco='g co' # git checkout
 alias gcob='g cob' # git checkout -b
 alias gane='g ane' # git commit --amend --no-edit
+alias gf='g f' # git fetch
 
 # tmux aliases.
 alias t='tmux'
