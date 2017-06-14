@@ -17,6 +17,9 @@ zplug clean --force
 
 zplug load
 
+# Load all my keybindings.
+source ${HOME}/.config/zsh/keybindings/keybindings.zsh
+
 # Load my own custom prompt.
 fpath=(${HOME}/.prompt ${fpath})
 autoload -Uz promptinit
