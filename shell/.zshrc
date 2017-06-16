@@ -23,18 +23,7 @@ zplug clean --force
 
 zplug load
 
-# Load all my keybindings.
-source ${HOME}/.zsh-keybindings
-
-# Load all my aliases.
-source ${HOME}/.aliases
-
-# Load my own custom prompt.
-fpath=(${HOME}/.prompt ${fpath})
-autoload -Uz promptinit
-promptinit
-prompt saser
-
-# Set colortheme using base16-shell.
-BASE16_COLORSCHEME=materia
-source "${HOME}/.shellcolors/base16/scripts/base16-${BASE16_COLORSCHEME}.sh"
+# Source any extra configuration provided by other parts of my dotfiles.
+for extra in ${HOME}/.zsh-extras/*.zsh; do
+    source ${extra}
+done
