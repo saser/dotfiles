@@ -8,6 +8,12 @@ STOW_TARGET="${HOME}"
 # Uninstall shell configuration.
 stow --target "${STOW_TARGET}" --delete shell
 
+# Uninstall ssh configuration.
+for service in ssh/.config/systemd/user/*.service; do
+    systemctl --user disable $(basename ${service})
+done
+stow --target "${STOW_TARGET}" --delete ssh
+
 # Uninstall git configuration.
 stow --target "${STOW_TARGET}" --delete git
 

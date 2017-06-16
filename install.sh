@@ -3,31 +3,41 @@ set -e
 set -u
 set -o pipefail
 
-# Since some of my stuff is installed to `~/.config`, I want to make sure that
-# directory exists before stowing -- if it does not, Stow _might_ create a
-# symbolic link named `~/.config` pointing into this repository. This is bad,
-# since some applications I use put their default configuration in `~/.config`
-# and I do not want their configuration to show up in this repository.
-# Coincidentally (not really), this path is the same as default value for
-# XDG_CONFIG_HOME, hence why I use that as variable name here.
+# Some of my stuff is installed to folders that I do not want to ever by
+# symlinks, such as `~/.config` and `~/.ssh`. Therefore, this script makes sure
+# they exist and are "real" folders before installing anything into them.
+
+DIRS_TO_CREATE=()
+DIRS_TO_CREATE+=("${HOME}/.ssh")
+
 XDG_CONFIG_HOME="${HOME}/.config"
-if [ -e "${XDG_CONFIG_HOME}" ]; then
-    if [ ! -d "${XDG_CONFIG_HOME}" ]; then
-        echo "\`${XDG_CONFIG_HOME}\` exists but is not a directory -- this seems wrong!"
-	echo "Not installing."
-	exit 1
+DIRS_TO_CREATE+=("${XDG_CONFIG_HOME}")
+for dir in ${DIRS_TO_CREATE[@]}; do
+    if [ -e "${dir}" ]; then
+        if [ ! -d "${dir}" ]; then
+            echo "\`${dir}\` exists but is not a directory -- this seems wrong!"
+            echo "Not installing."
+            exit 1
+        fi
+        # Otherwise, `${dir}` exists and is a directory -- we do not need to do
+        # anything.
     fi
-    # Otherwise, `~/.config` exists and is a directory -- we do not need to do
-    # anything.
-fi
-# If we get to this point, we know that `~/.config` does not exist, so create
-# it.
-mkdir -p "${XDG_CONFIG_HOME}"
+    # If we get to this point, we know that `${dir}` does not exist, so create
+    # it.
+    mkdir --parents "${dir}"
+done
 
 STOW_TARGET="${HOME}"
 
 # Install shell configuration.
 stow --target "${STOW_TARGET}" shell
+
+# Install ssh configuration.
+stow --target "${STOW_TARGET}" ssh
+# Enable services.
+for service in ssh/.config/systemd/user/*.service; do
+    systemctl --user enable $(basename ${service})
+done
 
 # Install git configuration.
 stow --target "${STOW_TARGET}" git
