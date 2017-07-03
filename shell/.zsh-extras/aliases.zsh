@@ -24,3 +24,6 @@ alias tn='t new -s'
 alias ta='t attach'
 alias tat='ta -t' # attach to session name
 alias tl='t list-sessions'
+
+# docker aliases.
+alias docker-ip="docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
