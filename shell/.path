@@ -4,5 +4,8 @@ NEW_PATH="$PATH"
 
 # Make my scripts available.
 NEW_PATH="${NEW_PATH}:${HOME}/scripts"
+# Also make temporary scripts, that I do not include in my dotfiles, available
+# in the PATH.
+NEW_PATH="${NEW_PATH}:${HOME}/scripts/tmp"
 
 export PATH="$NEW_PATH"
