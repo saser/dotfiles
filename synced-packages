@@ -22,6 +22,9 @@ the_silver_searcher # Superfast regex search.
 fzf # Nice fuzzy file finder.
 unzip # For easy unpacking of .zip files.
 
+# Assorted utilities.
+diff-so-fancy # Nicer looking diffs for git.
+
 # Editor and associated packages.
 neovim
 
