@@ -3,7 +3,7 @@ set -e
 set -u
 set -o pipefail
 
-# Some of my stuff is installed to folders that I do not want to ever by
+# Some of my stuff is installed to folders that I do not want to ever be
 # symlinks, such as `~/.config` and `~/.ssh`. Therefore, this script makes sure
 # they exist and are "real" folders before installing anything into them.
 
