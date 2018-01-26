@@ -1,5 +1,7 @@
 #!/bin/sh
 
+bspc subscribe all | keyboard-pilot ${HOME}/.keyboard_pilot.json &
+
 # Set up 5 desktops for each monitor, and be (at least fairly) sure that the
 # names are unique.
 for monitor in $(bspc query --monitors); do

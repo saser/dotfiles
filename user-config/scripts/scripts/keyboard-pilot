@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+import signal
+import subprocess
+import sys
+
+should_reload = False
+
+def signal_handler(signum, frame):
+    print('got signal', signum)
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("config_file", help="path to the configuration file")
+args = parser.parse_args()
+
+with open(args.config_file) as config_file:
+    config = json.load(config_file)
+
+signal.signal(signal.SIGUSR1, signal_handler)
+
+for line in sys.stdin:
+    # Strip the newline
+    line = line.strip()
+    pieces = line.split(' ')
+    if pieces[0] == "node_focus":
+        node_id = pieces[3]
+        process = subprocess.run(["bspc", "query", "--tree", "--node", node_id], stdout=subprocess.PIPE)
+        node_tree = json.loads(process.stdout.strip())
+        class_name = node_tree["client"]["className"]
+        if class_name != "" and class_name in config:
+            layout = config[class_name]
+            print(layout)
+            subprocess.run(["setxkbmap", "-layout", layout])
+        else:
+            default_layout = config['default']
+            print(default_layout)
+            subprocess.run(["setxkbmap", "-layout", default_layout])
