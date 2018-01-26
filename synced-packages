@@ -36,6 +36,7 @@ xorg-xrdb # Used for terminal colorschemes.
 xf86-video-intel # (Hardware-dependent) Video driver for Intel graphics.
 xorg-server
 xorg-xinit # Provides `startx`, to actually start my window manager.
+xorg-xbacklight # Controls screen brightness.
 slock # For locking the screen.
 
 # Sound-related packages.
