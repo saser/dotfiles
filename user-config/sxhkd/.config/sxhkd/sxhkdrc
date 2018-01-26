@@ -76,6 +76,9 @@ XF86Audio{Prev,Next}
 
 ### Miscellaneous keybindings.
 
+super + shift + 4
+    sleep 0.1s; scrot --select --quality 100 --exec 'mv $f ~/screenshots/'
+
 # Lock the screen.
 super + BackSpace
     slock

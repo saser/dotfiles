@@ -25,6 +25,7 @@ unzip # For easy unpacking of .zip files.
 # Assorted utilities.
 diff-so-fancy # Nicer looking diffs for git.
 jq # Pretty-printing and filtering of JSON. Used for my `bspwm-toggle-state` script.
+scrot # For taking screenshots.
 
 # Editor and associated packages.
 neovim
