@@ -24,7 +24,7 @@ super + w
 super + space
     rofi -show run
 
-### Montiro-related bindings.
+### Monitor-related bindings.
 
 super + shift + {comma,period}
     bspc monitor --focus {prev,next}
@@ -48,6 +48,11 @@ super + q
 # Focus windows in the different directions, with vim-like bindings.
 super + {h,j,k,l}
     bspc node --focus {west,south,north,east}
+
+# Toggle the state of the focused window. I use this mostly to temporarily make
+# windows fullscreen.
+super + {f,t}
+    bspwm-toggle-state {fullscreen,tiled}
 
 ### Media keybindings.
 
