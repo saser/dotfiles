@@ -23,7 +23,9 @@ When the above are installed, issuing the following commands will fetch everythi
 
     $ git clone --recursive https://github.com/Saser/dotfiles
     $ cd dotfiles
+    $ cd user-config
     $ ./install.sh
+    $ cd ..
 
 Additionally, in order to use the supplied `package-sync.rb` script, as well as the `download-images.rb` script (located in `wallpapers/.wallpapers`), Ruby needs to be installed first. Why Ruby, you might ask. Answer: I did not want to bother with learning more advanced string manipulation in `sh` scripting, so Ruby it is.
 

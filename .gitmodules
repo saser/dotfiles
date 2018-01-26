@@ -1,12 +1,12 @@
 [submodule "shell/zplug"]
-	path = shell/.zplug
+	path = user-config/shell/.zplug
 	url = https://github.com/zplug/zplug
 [submodule "urxvt/.config/urxvt/colors/base16"]
-	path = urxvt/.config/urxvt/colors/base16
+	path = user-config/urxvt/.config/urxvt/colors/base16
 	url = https://github.com/chriskempson/base16-xresources
 [submodule "shell/.shellcolors/base16"]
-	path = shell/.zsh-extras/shellcolors/base16
+	path = user-config/shell/.zsh-extras/shellcolors/base16
 	url = https://github.com/chriskempson/base16-shell
 [submodule "neovim/.config/nvim/bundle/vim-plug"]
-	path = neovim/.config/nvim/bundle/vim-plug
+	path = user-config/neovim/.config/nvim/bundle/vim-plug
 	url = https://github.com/junegunn/vim-plug
