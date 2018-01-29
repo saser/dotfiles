@@ -32,9 +32,7 @@ for line in sys.stdin:
         class_name = node_tree["client"]["className"]
         if class_name != "" and class_name in config:
             layout = config[class_name]
-            print(layout)
             subprocess.run(["setxkbmap", "-layout", layout])
         else:
             default_layout = config['default']
-            print(default_layout)
             subprocess.run(["setxkbmap", "-layout", default_layout])
