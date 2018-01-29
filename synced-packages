@@ -7,6 +7,7 @@ ruby
 # Drivers and other system utilities.
 iw # Wifi stuff.
 wpa_supplicant # Wifi stuff.
+wpa_actiond # For automatic switching between networks with `netctl-auto`.
 dialog # Needed for wifi-menu.
 intel-ucode # Microcode updates. Not sure exactly why I need them, but they are good.
 

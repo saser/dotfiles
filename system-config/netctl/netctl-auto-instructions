@@ -1,0 +1,5 @@
+Make sure that the package `wpa_actiond` is installed. Then run
+
+    # systemctl enable netctl-auto@wlp3s0.service
+
+Replace `wlp3s0` if your wifi interface has another name.
