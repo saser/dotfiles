@@ -9,6 +9,7 @@
 	d = diff
 	dc = diff --cached
 	c = commit
+	amend = commit --amend
 	cm = commit -m
 	co = checkout
 	cob = checkout -b
