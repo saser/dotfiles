@@ -6,6 +6,9 @@
 " contained within this repository as a git submodule.
 runtime bundle/vim-plug/plug.vim
 
+" Load my custom functionality settings.
+runtime settings.vim
+
 " Delegate to another script that will define and load the plugins.
 runtime plugins.vim
 
