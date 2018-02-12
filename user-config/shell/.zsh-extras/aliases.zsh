@@ -41,3 +41,7 @@ alias docker-ip="docker inspect --format='{{range .NetworkSettings.Networks}}{{.
 # clipboard is rarely used.  (Taken/rephrased from xsel(1).)
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+
+# Miscellaneous, actually kind of useless, aliases.
+alias bacchus='echo -n "\u2030" | pbcopy'
+alias trademark='echo -n "\u2122" | pbcopy'
