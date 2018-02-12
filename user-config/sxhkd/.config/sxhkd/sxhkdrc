@@ -1,7 +1,7 @@
 ### sxhkd-related keybindings.
 
 # Reload sxhkdrc.
-super + s; r
+super + r
     pkill -x -USR1 sxhkd
 
 ### Window manager-related keybindings.
@@ -48,6 +48,14 @@ super + q
 # Focus windows in the different directions, with vim-like bindings.
 super + {h,j,k,l}
     bspc node --focus {west,south,north,east}
+
+# Swap a window with an adjacent window.
+super + shift + {h,j,k,l}
+    bspc node --swap {west,south,north,east}
+
+# Move a window to an adjacent desktop.
+super + shift + @{comma,period}
+    bspc node --to-desktop {prev,next}
 
 # Toggle the state of the focused window. I use this mostly to temporarily make
 # windows fullscreen.
