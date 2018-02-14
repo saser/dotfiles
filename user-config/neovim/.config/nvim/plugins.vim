@@ -13,6 +13,10 @@ Plug 'tpope/vim-surround'
 " Do more intelligent editing with delimiters.
 Plug 'Raimondi/delimitMate'
 
+" Adds a lot of extra functionality for moving around buffers, by providing
+" handy mappings and motions.
+Plug 'easymotion/vim-easymotion'
+
 " --- LANGUAGE SPECIFIC PLUGINS ---
 
 " A good plugin for editing LaTeX, featuring continuous compilation and other
