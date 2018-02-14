@@ -5,8 +5,18 @@ call plug#begin()
 " Just basic, sensible vim settings.
 Plug 'tpope/vim-sensible'
 
+" --- EDITOR PLUGINS ---
+
+" Includes commands and keymaps for surrounding stuff with delimiters.
+Plug 'tpope/vim-surround'
+
+" Do more intelligent editing with delimiters.
+Plug 'Raimondi/delimitMate'
+
 " --- LANGUAGE SPECIFIC PLUGINS ---
 
+" A good plugin for editing LaTeX, featuring continuous compilation and other
+" stuff.
 Plug 'lervag/vimtex'
 
 " Finalize vim-plug, causing the plugins to actually be loaded and managed by
