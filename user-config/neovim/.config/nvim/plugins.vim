@@ -24,6 +24,13 @@ Plug 'Raimondi/delimitMate'
 " handy mappings and motions.
 Plug 'easymotion/vim-easymotion'
 
+" Detects and provides fixes for unneeded whitespace.
+Plug 'ntpeters/vim-better-whitespace'
+
+" Better pasting functionality, that tries its best to adjust the indentation of
+" the pasted content to the surrounding context/code.
+Plug 'sickill/vim-pasta'
+
 " --- FILE SYSTEM AND VERSION CONTROL PLUGINS ---
 
 " Really, really good Git integration for vim.
