@@ -53,6 +53,12 @@ Plug 'tpope/vim-fugitive'
 " stuff.
 Plug 'lervag/vimtex'
 
+" --- VISUAL PLUGINS ---
+
+" I mostly use the base16 colorschemes, so I naturally want to use it for vim as
+" well.
+Plug 'chriskempson/base16-vim'
+
 " Finalize vim-plug, causing the plugins to actually be loaded and managed by
 " vim-plug.
 call plug#end()

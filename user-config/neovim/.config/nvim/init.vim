@@ -18,3 +18,6 @@ runtime settings.vim
 " Load keymaps that are plugin-agnostic, i.e. that can be used without any
 " plugins installed whatsoever.
 runtime keymaps.vim
+
+" Load visual settings.
+runtime visuals.vim
