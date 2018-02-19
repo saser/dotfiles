@@ -24,6 +24,11 @@ Plug 'Raimondi/delimitMate'
 " handy mappings and motions.
 Plug 'easymotion/vim-easymotion'
 
+" --- FILE SYSTEM AND VERSION CONTROL PLUGINS ---
+
+" Really, really good Git integration for vim.
+Plug 'tpope/vim-fugitive'
+
 " --- LANGUAGE SPECIFIC PLUGINS ---
 
 " A good plugin for editing LaTeX, featuring continuous compilation and other
