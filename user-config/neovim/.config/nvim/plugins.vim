@@ -33,6 +33,17 @@ Plug 'sickill/vim-pasta'
 
 " --- FILE SYSTEM AND VERSION CONTROL PLUGINS ---
 
+" A good vim plugin for the `fzf` fuzzy finder that I usually keep installed on
+" my system anyway.
+" NOTE: the `fzf.vim` plugin depends on the basic vim integration included with
+" the `fzf` distribution itself. Thus we need to install the `fzf` binary
+" itself, along with its vim integration, in a path where vim can find it. As
+" stated above, I usually install `fzf` on my system anyway, so this results in
+" two of that binary. It seems that the binary installed using Plug does not
+" interfere with the system installation, however. Fingers crossed this keeps on
+" working.
+Plug 'junegunn/fzf', { 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
+
 " Really, really good Git integration for vim.
 Plug 'tpope/vim-fugitive'
 
