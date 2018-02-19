@@ -10,6 +10,13 @@ Plug 'tpope/vim-sensible'
 " Includes commands and keymaps for surrounding stuff with delimiters.
 Plug 'tpope/vim-surround'
 
+" Repeat plugin actions. I use it mostly for the actions provided by
+" `vim-surround` above.
+Plug 'tpope/vim-repeat'
+
+" Plugin providing mappings for handling comments in code.
+Plug 'tpope/vim-commentary'
+
 " Do more intelligent editing with delimiters.
 Plug 'Raimondi/delimitMate'
 
