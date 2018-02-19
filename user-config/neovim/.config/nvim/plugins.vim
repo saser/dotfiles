@@ -62,6 +62,10 @@ Plug 'lervag/vimtex'
 " well.
 Plug 'chriskempson/base16-vim'
 
+" A really nice statusline, along with its themes (for integrating with the
+" `base16-vim` colorschemes that I use.
+Plug 'vim-airline/vim-airline-themes' | Plug 'vim-airline/vim-airline'
+
 " Finalize vim-plug, causing the plugins to actually be loaded and managed by
 " vim-plug.
 call plug#end()
