@@ -3,6 +3,7 @@
 " :source this file in vim to restore the snapshot
 " or execute: vim -S snapshot.vim
 
+silent! let g:plugs['base16-vim'].commit = '97f2feb'
 silent! let g:plugs['delimitMate'].commit = '728b57a'
 silent! let g:plugs['fzf'].commit = '3f868fd'
 silent! let g:plugs['fzf.vim'].commit = '17d24ae'
