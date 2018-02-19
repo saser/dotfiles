@@ -47,6 +47,9 @@ Plug 'junegunn/fzf', { 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 " Really, really good Git integration for vim.
 Plug 'tpope/vim-fugitive'
 
+" NERDTree is a very nice file system tree explorer.
+Plug 'scrooloose/NERDTree'
+
 " --- LANGUAGE SPECIFIC PLUGINS ---
 
 " A good plugin for editing LaTeX, featuring continuous compilation and other
