@@ -6,11 +6,14 @@
 " contained within this repository as a git submodule.
 runtime bundle/vim-plug/plug.vim
 
-" Load my custom functionality settings.
-runtime settings.vim
-
 " Delegate to another script that will define and load the plugins.
 runtime plugins.vim
+
+" Load any extra configuration for plugins, such as plugin-specific keymaps.
+runtime! extra/*.vim
+
+" Load my custom functionality settings.
+runtime settings.vim
 
 " Load keymaps that are plugin-agnostic, i.e. that can be used without any
 " plugins installed whatsoever.
