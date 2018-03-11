@@ -4,6 +4,9 @@
 alias ..='cd ..'
 alias ls='ls -l --all --human-readable --classify --group-directories-first --color=auto'
 
+# Convenient alias for grepping through stuff.
+alias G='| grep'
+
 # `git` aliases.
 alias g='git'
 alias ga='g add'
