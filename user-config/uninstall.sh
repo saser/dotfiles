@@ -34,6 +34,9 @@ stow --target "${STOW_TARGET}" --delete wallpapers
 # Uninstall bspwm configuration.
 stow --target "${STOW_TARGET}" --delete bspwm
 
+# Uninstall polybar configuration.
+stow --target "${STOW_TARGET}" --delete polybar
+
 # Uninstall sxhkd configuration.
 stow --target "${STOW_TARGET}" --delete sxhkd
 

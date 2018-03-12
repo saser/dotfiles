@@ -59,6 +59,9 @@ stow --target "${STOW_TARGET}" wallpapers
 # Install bspwm configuration.
 stow --target "${STOW_TARGET}" bspwm
 
+# Install polybar configuration.
+stow --target "${STOW_TARGET}" polybar
+
 # Install sxhkd configuration.
 stow --target "${STOW_TARGET}" sxhkd
 
