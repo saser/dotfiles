@@ -9,4 +9,4 @@ while pgrep --euid ${UID} --exact polybar >/dev/null; do
 done
 
 # Launch the bar.
-polybar top
+polybar top &
