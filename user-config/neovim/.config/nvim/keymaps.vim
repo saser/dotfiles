@@ -15,10 +15,13 @@ map <silent> Y y$
 
 " Window navigation. Allows for quick navigation between buffers, without
 " having to press <C-w> all the time.
-noremap <silent> <C-h> <C-w><C-h>
-noremap <silent> <C-j> <C-w><C-j>
-noremap <silent> <C-k> <C-w><C-k>
-noremap <silent> <C-l> <C-w><C-l>
+noremap <silent> <C-h> <C-w>h
+noremap <silent> <C-j> <C-w>j
+noremap <silent> <C-k> <C-w>k
+noremap <silent> <C-l> <C-w>l
+
+" Open a new using <C-t>, like you do in browsers.
+map <silent> <C-t> :tabnew<CR>
 
 " Map <C-c> to clear the highlighting of searches and perform a diffupdate.
 " This was yanked from Tim Pope's 'vim-sensible' plugin (more specifically,
