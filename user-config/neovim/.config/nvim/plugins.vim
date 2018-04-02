@@ -47,6 +47,10 @@ Plug 'junegunn/fzf', { 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 " Really, really good Git integration for vim.
 Plug 'tpope/vim-fugitive'
 
+" Shows a gutter of changed hunks, and alos provides commands for staging and
+" unstaging hunks.
+Plug 'airblade/vim-gitgutter'
+
 " NERDTree is a very nice file system tree explorer.
 Plug 'scrooloose/NERDTree'
 
