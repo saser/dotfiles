@@ -27,9 +27,13 @@ Plug 'easymotion/vim-easymotion'
 " Detects and provides fixes for unneeded whitespace.
 Plug 'ntpeters/vim-better-whitespace'
 
-" Better pasting functionality, that tries its best to adjust the indentation of
-" the pasted content to the surrounding context/code.
+" Better pasting functionality, that tries its best to adjust the indentation
+" of the pasted content to the surrounding context/code.
 Plug 'sickill/vim-pasta'
+
+" Aligning things around stuff. Useful for things like Haskell (where you
+" often want to align things around '=' or '->'), or tables in LaTeX.
+Plug 'junegunn/vim-easy-align'
 
 " --- FILE SYSTEM AND VERSION CONTROL PLUGINS ---
 
