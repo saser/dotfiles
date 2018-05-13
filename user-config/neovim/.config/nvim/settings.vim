@@ -16,3 +16,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
+" Enable mouse interaction by default.
+set mouse+=a
