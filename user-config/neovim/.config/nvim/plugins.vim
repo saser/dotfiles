@@ -64,6 +64,10 @@ Plug 'scrooloose/NERDTree'
 " stuff.
 Plug 'lervag/vimtex'
 
+" A plugin that provides syntax highlighting for LLVM assembly language, that
+" I will use temporarily for my compiler construction course.
+" Plug 'Superbil/llvm.vim'
+
 " --- VISUAL PLUGINS ---
 
 " I mostly use the base16 colorschemes, so I naturally want to use it for vim as
