@@ -36,3 +36,13 @@ map <silent> <C-t> :tabnew<CR>
 if maparg('<C-c>', 'n') ==# ''
   nnoremap <silent> <C-c> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR>
 endif
+
+" Change the behaviour of the indentation-affecting keymaps `<` and `>`. This
+" change causes the indented selection to be selected again after indentation
+" (which is what the `gv` achieves), allow for more interactive indentation.
+vnoremap < <gv
+vnoremap > >gv
+" Also allow Shift-Tab and Tab to be used in the same way as `<` and `>`,
+" respectively, which can feel more natural sometimes.
+vmap <S-Tab> <
+vmap <Tab> >
