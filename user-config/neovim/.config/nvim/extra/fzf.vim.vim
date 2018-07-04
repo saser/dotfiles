@@ -20,3 +20,11 @@ nmap <C-f> :Ag
 " launch the :Helptags command from fzf.vim, that is way better than the
 " ordinary :help command.
 nmap <F1> :Helptags<CR>
+
+" Replace the original `q:` and `q/` mappings, that opens a window with
+" command and search history, respectively. This will use fzf for the same
+" functionality instead.
+nmap q: :History:<CR>
+vmap q: :History:<CR>
+nmap q/ :History/<CR>
+vmap q/ :History/<CR>
