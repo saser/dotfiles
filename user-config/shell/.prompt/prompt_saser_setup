@@ -1,7 +1,7 @@
 function prompt_saser_setup {
     prompt_opts=()
-    # `cr` causes output that does not end with a newline to end with a '%' sign
-    prompt_opts+=(cr)
+    # `cr` together with `sp` causes output that does not end with a newline to end with a '%' sign
+    prompt_opts+=(cr sp)
     # `percent` causes '%' to be treated specially in prompt expansion. Or
     # something.
     prompt_opts+=(percent)
