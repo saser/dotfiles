@@ -64,6 +64,10 @@ Plug 'scrooloose/NERDTree'
 " stuff.
 Plug 'lervag/vimtex'
 
+" Plugin for the Rust programming language. Provides a few nice features such
+" as auto-formatting files on save, etc.
+Plug 'rust-lang/rust.vim'
+
 " --- VISUAL PLUGINS ---
 
 " I mostly use the base16 colorschemes, so I naturally want to use it for vim as
