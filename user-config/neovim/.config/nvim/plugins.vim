@@ -62,7 +62,7 @@ Plug 'scrooloose/NERDTree'
 
 " Syntax checker plugin for vim. Does not do any actual syntax checking
 " itself, but uses external tools.
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 " A good plugin for editing LaTeX, featuring continuous compilation and other
 " stuff.
