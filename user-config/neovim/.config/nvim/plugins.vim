@@ -64,6 +64,9 @@ Plug 'scrooloose/NERDTree'
 " itself, but uses external tools.
 Plug 'w0rp/ale'
 
+" Completion engine, to actually provide some completion.
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " A good plugin for editing LaTeX, featuring continuous compilation and other
 " stuff.
 Plug 'lervag/vimtex'
