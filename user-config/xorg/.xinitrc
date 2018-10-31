@@ -9,7 +9,7 @@ BASE16_COLORSCHEME=materia-256
 xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
 
 # Sets the background image.
-WALLPAPER="forest.jpg"
+WALLPAPER="mojito-cup.jpg"
 feh --bg-fill --no-fehbg "${HOME}/.wallpapers/${WALLPAPER}"
 
 # Make sure the ~/.logs folder exists, so that we can log sxhkd command output to it.
