@@ -19,3 +19,10 @@ set expandtab
 
 " Enable mouse interaction by default.
 set mouse+=a
+
+" Set some smart search behaviour.
+" The combination of `ignorecase` and `smartcase` means that case-insensitive
+" search is performed, unless at least one upper-case character is included in
+" the search pattern.
+set ignorecase
+set smartcase
