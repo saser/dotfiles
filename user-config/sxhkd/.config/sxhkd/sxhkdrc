@@ -57,6 +57,16 @@ super + shift + {h,j,k,l}
 super + shift + @{comma,period}
     bspc node --to-desktop {prev,next}
 
+# Select in which direction the next window should be created.
+# The single quotes around  `~{west,south,north,east}` are necessary, since
+# without them, zsh tries to interpret it as the home folder for a user named
+# {west,south,north,east} (or something like that). The tilde (~) causes the
+# preselection to be canceled if the same preselection direction is issued
+# again, e.g. pressing `super + alt + h; super + alt + h` would first select the
+# west direction, and then cancel it.
+super + alt + {h,j,k,l}
+    bspc node --presel-dir '~{west,south,north,east}'
+
 # Toggle the state of the focused window. I use this mostly to temporarily make
 # windows fullscreen.
 super + {f,t}
