@@ -1,0 +1,32 @@
+#!/usr/bin/zsh
+
+# A script to record screencasts, including the microphone.
+# Currently, the script is very opinionated and does not allow for much customization
+# when invoking, but that could be changed in the future with better argument handling.
+
+if [[ "$1" = "stop" ]]; then
+    pkill ffmpeg
+elif [[ "$1" = "start" ]]; then
+    if [[ "$2" = "" ]]; then
+        echo "Must specify an output filename" >&2
+        exit 1
+    fi
+    ffmpeg \
+        -f x11grab \
+            -video_size 2560x1600 \
+            -framerate 30 \
+            -i "$DISPLAY" \
+        -f pulse \
+            -i default \
+        -c:v libx264 \
+        -preset ultrafast \
+        -c:a aac \
+        -y \
+        "$2" \
+        >"record_$2.log" \
+        2>"record_$2.err" \
+    &
+else
+    echo "Usage: record [start <filename> | stop]" >&2
+    exit 1
+fi
