@@ -10,3 +10,6 @@
 [submodule "neovim/.config/nvim/bundle/vim-plug"]
 	path = user-config/neovim/.config/nvim/bundle/vim-plug
 	url = https://github.com/junegunn/vim-plug
+[submodule "user-config/urxvt/.config/urxvt/colors/solarized"]
+	path = user-config/urxvt/.config/urxvt/colors/solarized
+	url = git@github.com:solarized/xresources

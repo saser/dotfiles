@@ -5,8 +5,11 @@
 xrdb -merge "${HOME}/.config/urxvt/settings"
 
 # Load Xresources colorscheme. Affects e.g. urxvt colors.
-BASE16_COLORSCHEME=materia-256
-xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
+# I used to use a Base16 theme, but right now I decided to use the popular
+# Solarized theme.
+# BASE16_COLORSCHEME=materia-256
+# xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
+xrdb -merge "${HOME}/.config/urxvt/colors/solarized/Xresources.light"
 
 # Sets the background image.
 WALLPAPER="mojito-cup.jpg"

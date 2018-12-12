@@ -81,6 +81,9 @@ Plug 'rust-lang/rust.vim'
 " well.
 Plug 'chriskempson/base16-vim'
 
+" Sometimes I like to use the Solarized colorschemes as well.
+Plug 'altercation/vim-colors-solarized'
+
 " A really nice statusline, along with its themes (for integrating with the
 " `base16-vim` colorschemes that I use.
 Plug 'vim-airline/vim-airline-themes' | Plug 'vim-airline/vim-airline'
