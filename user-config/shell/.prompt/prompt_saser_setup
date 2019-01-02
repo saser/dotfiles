@@ -14,7 +14,7 @@ function prompt_saser_setup {
     # → : U+2192
 
     PROMPT='%F{green}%m%f %F{default}=>%f %F{magenta}%n%f %F{default}->%f %F{yellow}%~%f%(?..%F{red}%B [! %?]%b )
-%F{white})%f '
+%F{default})%f '
     RPROMPT=''
 }
 
