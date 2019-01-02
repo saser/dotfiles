@@ -1,8 +1,8 @@
 [colors]
-background = ${xrdb:color18:#222}
-background-alt = ${xrdb:color19:#333}
-foreground = ${xrdb:color20:#444}
-underline = ${xrdb:color14:#f44}
+background = ${xrdb:background:#222}
+background-alt = ${xrdb:fadeColor:#333}
+foreground = ${xrdb:foreground:#444}
+underline = ${xrdb:color4:#f44}
 
 [bar/top]
 width = 100%
