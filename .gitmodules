@@ -12,10 +12,10 @@
 	url = https://github.com/junegunn/vim-plug
 [submodule "user-config/urxvt/.config/urxvt/colors/solarized"]
 	path = user-config/urxvt/.config/urxvt/colors/solarized
-	url = git@github.com:solarized/xresources
+	url = https://github.com/solarized/xresources
 [submodule "user-config/tmux/.tmux/plugins/tpm"]
 	path = user-config/tmux/.tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
 [submodule "user-config/tmux/.tmux/plugins/tmux-colors-solarized"]
 	path = user-config/tmux/.tmux/plugins/tmux-colors-solarized
-	url = git@github.com:seebi/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized
