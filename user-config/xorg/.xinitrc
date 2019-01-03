@@ -12,7 +12,7 @@ xrdb -merge "${HOME}/.config/urxvt/settings"
 xrdb -merge "${HOME}/.config/urxvt/colors/solarized/Xresources.light"
 
 # Sets the background image.
-WALLPAPER="mojito-cup.jpg"
+WALLPAPER="milky-way.jpg"
 feh --bg-fill --no-fehbg "${HOME}/.wallpapers/${WALLPAPER}"
 
 # Make sure the ~/.logs folder exists, so that we can log sxhkd command output to it.
