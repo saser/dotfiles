@@ -9,7 +9,7 @@ xrdb -merge "${HOME}/.config/urxvt/settings"
 # Solarized theme.
 # BASE16_COLORSCHEME=materia-256
 # xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
-xrdb -merge "${HOME}/.config/urxvt/colors/solarized/Xresources.light"
+xrdb -merge "${HOME}/.config/urxvt/colors/solarized/Xresources.dark"
 
 # Sets the background image.
 WALLPAPER="milky-way.jpg"

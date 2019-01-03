@@ -2,7 +2,7 @@
 " and does not add any certain functionality.
 
 " I usually use dark terminals, but right now I am using a light terminal.
-set background=light
+set background=dark
 
 " The base16 set of colorschemes has some quirkiness around 256 color
 " terminals that I have never understood. What I know is that I _do_ use the
