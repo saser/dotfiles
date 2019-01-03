@@ -70,7 +70,7 @@ super + alt + {h,j,k,l}
 # Toggle the state of the focused window. I use this mostly to temporarily make
 # windows fullscreen.
 super + {f,t}
-    bspwm-toggle-state {fullscreen,tiled}
+    bspc node --state '~{fullscreen,tiled}'
 
 ### Media keybindings.
 
