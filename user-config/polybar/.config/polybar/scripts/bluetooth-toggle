@@ -1,0 +1,14 @@
+#!/usr/bin/zsh
+set -e
+set -u
+set -o pipefail
+
+command=""
+
+if $HOME/.config/polybar/scripts/bluetooth-phones-connected; then
+    command="disconnect"
+else
+    command="connect"
+fi
+
+echo "$command $BLUETOOTH_PHONES_MAC" | bluetoothctl
