@@ -1,5 +1,5 @@
 ! Use my favorite monospace font, Source Code Pro.
-URxvt.font: xft:Source\ Code\ Pro:size=16
+URxvt.font: xft:Source\ Code\ Pro:size=11
 
 ! Disable the scrollbar, since I mostly use tmux anyway, and the default
 ! scrollbar is really ugly.

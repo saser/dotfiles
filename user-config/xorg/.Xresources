@@ -1,0 +1,4 @@
+! Use a higher DPI, since my display is mostly a high-DPI display. The default
+! setting is 96, so 144 is 96 * 1.5. This makes most applications work well with
+! a default zoom level.
+Xft.dpi: 144
