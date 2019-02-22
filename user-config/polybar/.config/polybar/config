@@ -31,6 +31,9 @@ interval = 1
 date = %Y-%m-%d
 time = %H:%M
 
+date-alt = ${module/date.date}
+time-alt = %H:%M:%S
+
 label = %date% | %time%
 
 format-underline = ${colors.underline}
