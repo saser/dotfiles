@@ -54,8 +54,11 @@ super + shift + {h,j,k,l}
     bspc node --swap {west,south,north,east}
 
 # Move a window to an adjacent desktop.
-super + shift + @{comma,period}
-    bspc node --to-desktop {prev,next}
+super + m; {comma,period}
+    bspc-move-node {prev,next}
+
+super + m; {1-5}
+    bspc-move-node "focused:^{1-5}"
 
 # Select in which direction the next window should be created.
 # The single quotes around  `~{west,south,north,east}` are necessary, since

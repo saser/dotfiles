@@ -1,0 +1,6 @@
+#!/usr/bin/zsh
+set -euo pipefail
+
+DESKTOP="$1"
+bspc node --to-desktop "$DESKTOP"
+bspc desktop --focus "$DESKTOP"
