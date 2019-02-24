@@ -23,6 +23,13 @@ let g:ale_fixers = {
 " Run fixers on each save of a file. Since I mostly use fixers for
 " autoformatting, such as `rustfmt`, this is harmless.
 let g:ale_fix_on_save = 1
+" ... except when I am in a fugitive buffer. Since a lot of fixers run on the
+" event of a file being saved to disk, and fugitive buffers do not really have
+" any underlying files, the fixers often fail and completely mess up e.g. the
+" diff between the working directory and the index. In these buffers, a fixer
+" can be run manually with `:ALEFix` (unless they require to be run on a file
+" on disk, as some linters/fixers do).
+autocmd BufEnter fugitive://* let b:ale_fix_on_save = 0
 
 " By default, Ale runs `rls` with the `nightly` toolchain. However, this
 " causes the `rls` integration to not work when editing a project using the
