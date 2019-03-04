@@ -35,6 +35,10 @@ Plug 'sickill/vim-pasta'
 " often want to align things around '=' or '->'), or tables in LaTeX.
 Plug 'junegunn/vim-easy-align'
 
+" I often find myself wanting to swap things around, which this plugin
+" provides mappings for.
+Plug 'tommcdo/vim-exchange'
+
 " --- FILE SYSTEM AND VERSION CONTROL PLUGINS ---
 
 " A good vim plugin for the `fzf` fuzzy finder that I usually keep installed on
