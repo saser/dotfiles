@@ -10,9 +10,9 @@ ${HOME}/.config/polybar/launch.sh
 # names are unique.
 for monitor in $(bspc query --monitors); do
     bspc monitor "${monitor}" --reset-desktops \
-	    "${monitor}_1" \
-	    "${monitor}_2" \
-	    "${monitor}_3" \
-	    "${monitor}_4" \
-	    "${monitor}_5"
+        "${monitor}_1" \
+        "${monitor}_2" \
+        "${monitor}_3" \
+        "${monitor}_4" \
+        "${monitor}_5"
 done
