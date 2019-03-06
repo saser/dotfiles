@@ -1,7 +1,11 @@
 #!/bin/sh
 
 # Start my simple "Keyboard Pilot" script.
-bspc subscribe all | keyboard-pilot --config-file ${HOME}/.keyboard_pilot.json &
+bspc subscribe all | \
+    keyboard-pilot \
+        --config-file ${HOME}/.keyboard_pilot.json \
+        1>${HOME}/.logs/keyboard_pilot.log \
+        2>${HOME}/.logs/keyboard_pilot.err &
 
 # Start my status bar.
 ${HOME}/.config/polybar/launch.sh
