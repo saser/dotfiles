@@ -1,0 +1,10 @@
+(("cl-lib" . "deb92588d9d83d46c4698936ea31c5f58d244f04")
+ ("epkgs" . "4deec8c8e605f85ee862302345e680bce6dde756")
+ ("evil" . "297b8f323754d967beeaed28080311f5afbe25c8")
+ ("gnu-elpa-mirror" . "44a241d6785258829cf9a283af30ef4f5a3e5a6c")
+ ("goto-chg" . "1829a13026c597e358f716d2c7793202458120b5")
+ ("melpa" . "57c307eecfc0fccfdc525ce6ff63a69ff3b78874")
+ ("straight.el" . "744b580bf3803f0c75e6706a04f7489e154c5c89")
+ ("undo-tree" . "d54ef13e3c69655e39f977b8bf75399a6d2b5e42")
+ ("use-package" . "59547d9e2a9e2f0a5e21134a0735fffff5371838"))
+:saturn

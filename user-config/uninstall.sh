@@ -20,6 +20,9 @@ stow --target "${STOW_TARGET}" --delete git
 # Uninstall tmux configuration.
 stow --target "${STOW_TARGET}" --delete tmux
 
+# Uninstall emacs configuration.
+stow --target "${STOW_TARGET}" --delete emacs
+
 # Uninstall neovim configuration.
 stow --target "${STOW_TARGET}" --delete neovim
 

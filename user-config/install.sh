@@ -45,6 +45,9 @@ stow --target "${STOW_TARGET}" git
 # Install tmux configuration.
 stow --target "${STOW_TARGET}" tmux
 
+# Install emacs configuration.
+stow --target "${STOW_TARGET}" emacs
+
 # Install neovim configuration.
 stow --target "${STOW_TARGET}" neovim
 

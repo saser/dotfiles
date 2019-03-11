@@ -19,3 +19,6 @@
 [submodule "user-config/tmux/.tmux/plugins/tmux-colors-solarized"]
 	path = user-config/tmux/.tmux/plugins/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
+[submodule "user-config/emacs/.emacs.d/straight/repos/straight.el"]
+	path = user-config/emacs/.emacs.d/straight/repos/straight.el
+	url = https://github.com/raxod502/straight.el
