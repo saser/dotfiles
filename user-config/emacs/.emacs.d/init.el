@@ -1,14 +1,11 @@
+(defun config-load (file)
+  (load (expand-file-name file user-emacs-directory)))
+
 ; Load the `straight.el` package manager.
-(load (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+(config-load "straight/repos/straight.el/bootstrap.el")
 
-; `use-package` is a package itself. It provides a nicer way to define
-; packages, handle their installation (using the `:straight` keyword), and
-; define settings and keybindings related to those packages.
-(straight-use-package 'use-package)
+; Load packages and their settings.
+(config-load "packages.el")
 
-; `evil` provides Vim emulation for Emacs. Many keybindings from Vim exist in
-; `evil` as well.
-(use-package evil
-  :straight t
-  :config
-  (evil-mode 1))
+; Load visual settings.
+(config-load "visual.el")
