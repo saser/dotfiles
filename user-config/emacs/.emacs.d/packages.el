@@ -1,6 +1,6 @@
-; `use-package` is a package itself. It provides a nicer way to define
-; packages, handle their installation (using the `:straight` keyword), and
-; define settings and keybindings related to those packages.
+; `use-package` is a package itself. It provides a nicer way to define packages,
+; handle their installation (using the `:straight` keyword), and define settings
+; and keybindings related to those packages.
 (straight-use-package 'use-package)
 
 ;;; Editing packages
