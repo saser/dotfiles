@@ -15,7 +15,10 @@
 
 ;;; Language packages/modes
 
-; Haskell mode. Provides a few nice features such as type-on-hover and a way
-; to easily launch a REPL.
-(use-package haskell-mode
-  :straight t)
+; Intero is a fully-fledged Haskell development environment, with many nice
+; features such as "type of selection", a REPL, and specifically, integration
+; with `stack`.
+(use-package intero
+  :straight t
+  ; Intero should be hooked into `haskell-mode`, in order to activate.
+  :hook (haskell-mode . intero-mode))
