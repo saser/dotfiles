@@ -3,7 +3,8 @@
 ; `mouse-wheel-mode` should be called with either no argument, or `nil` as
 ; argument, in order to be enables (see `C-h v mouse-wheel-mode`).
 (xterm-mouse-mode 1)
-(mouse-wheel-mode)
+(require 'mwheel)
+(mouse-wheel-mode 1)
 
 ; Do vim-like scrolling, meaning that a single line is scrolled at a time.
 ; Emacs' default scrolling scrolls about half a page each time the point moves
