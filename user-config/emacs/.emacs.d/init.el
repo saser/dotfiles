@@ -7,5 +7,8 @@
 ; Load packages and their settings.
 (config-load "packages.el")
 
+; Load general functionality settings.
+(config-load "settings.el")
+
 ; Load visual settings.
 (config-load "visual.el")
