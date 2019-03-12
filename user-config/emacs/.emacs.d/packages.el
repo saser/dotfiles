@@ -10,6 +10,7 @@
 (use-package evil
   :straight t
   :config
+  ; `evil-mode` needs to be enabled after `evil` is loaded.
   (evil-mode 1))
 
 ;;; Language packages/modes
