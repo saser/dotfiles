@@ -13,6 +13,15 @@
   ; `evil-mode` needs to be enabled after `evil` is loaded.
   (evil-mode 1))
 
+;;; Visual packages
+
+; I mainly use the Solarized (https://ethanschoonover.com/solarized/) color
+; scheme, so I want to use that in Emacs as well.
+(use-package color-theme-solarized
+  :straight t
+  :config
+  (load-theme 'solarized t))
+
 ;;; Language packages/modes
 
 ; Intero is a fully-fledged Haskell development environment, with many nice
