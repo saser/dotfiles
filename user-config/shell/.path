@@ -10,5 +10,7 @@ NEW_PATH="${NEW_PATH}:${HOME}/scripts/tmp"
 # SEMI-TEMPORARY: include non-system packages installed with `stow` to the
 # `~/build` directory.
 NEW_PATH="${NEW_PATH}:${HOME}/build/bin"
+# Make binaries installed with `pip` available.
+NEW_PATH="${NEW_PATH}:${HOME}/.local/bin"
 
 export PATH="$NEW_PATH"
