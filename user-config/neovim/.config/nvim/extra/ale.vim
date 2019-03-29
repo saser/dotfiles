@@ -5,6 +5,7 @@
 " Installation:
 " * `rls`: `cargo component add rls`
 let g:ale_linters = {
+\   'python': ['mypy'],
 \   'rust': ['rls'],
 \}
 
@@ -17,6 +18,7 @@ let g:ale_linters = {
 "              using `rustfmt` with ALE, instead of with `rust.vim`, resolves
 "              this.
 let g:ale_fixers = {
+\   'python': ['black', 'isort'],
 \   'rust': ['rustfmt'],
 \}
 
