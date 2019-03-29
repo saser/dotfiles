@@ -71,6 +71,9 @@ stow --target "${STOW_TARGET}" sxhkd
 # Install urxvt configuration.
 stow --target "${STOW_TARGET}" urxvt
 
+# Install Jupyter configuration.
+stow --target "${STOW_TARGET}" jupyter
+
 # Install my scripts.
 # They will be available in my PATH, see `./shell/.zprofile`.
 stow --target "${STOW_TARGET}" scripts

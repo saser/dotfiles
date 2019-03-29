@@ -46,5 +46,8 @@ stow --target "${STOW_TARGET}" --delete sxhkd
 # Uninstall urxvt configuration.
 stow --target "${STOW_TARGET}" --delete urxvt
 
+# Install Jupyter configuration.
+stow --target "${STOW_TARGET}" --delete jupyter
+
 # Uninstall my scripts.
 stow --target "${STOW_TARGET}" --delete scripts
