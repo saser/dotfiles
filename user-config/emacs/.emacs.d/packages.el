@@ -85,6 +85,19 @@
     (evil-visual-restore))
   )
 
+; A port of the wonderful `vim-easymotion' plugin for Vim. For the time being, I
+; have forked the original repo, since it does not have the same default
+; behaviour as `vim-easymotion'.
+(use-package evil-easymotion
+  :straight (evil-easymotion :type git
+                             :host github
+                             :repo "PythonNut/evil-easymotion"
+                             :fork (:host github
+                                    :repo "Saser/evil-easymotion"
+                                    :branch "page-scope-for-word-motions"))
+  :config
+  (evilem-default-keybindings "SPC SPC"))
+
 ;;; Visual packages
 
 ; I mainly use the Solarized (https://ethanschoonover.com/solarized/) color
