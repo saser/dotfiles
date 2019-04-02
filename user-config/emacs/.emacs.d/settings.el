@@ -15,3 +15,6 @@
 ; Keep a scroll margin of 1 line. This means that there will always be at least
 ; one line between the point and the top/bottom of the window.
 (setq scroll-margin 1)
+
+;; Do not use tabs for indentation.
+(setq-default indent-tabs-mode nil)
