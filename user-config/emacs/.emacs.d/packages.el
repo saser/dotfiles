@@ -51,6 +51,13 @@
   (setq evil-ex-search-vim-style-regexp t)
 
   ;;; `evil'-specific keybinds.
+  ; Make `<escape>' quit out from most minibuffer situations.
+  (dolist (map
+	   '(minibuffer-local-map
+	     minibuffer-local-ns-map
+	     minibuffer-completion-map
+	     minibuffer-must-match-map))
+    (general-define-key :keymaps map "<escape>" 'keyboard-escape-quit))
   ; Provide shorthands for the `:w' and `:q' commands.
   (general-mmap "W" 'evil-write)
   (general-mmap "Q" 'evil-quit)
