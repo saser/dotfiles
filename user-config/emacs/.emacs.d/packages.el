@@ -96,6 +96,10 @@
                                     :repo "Saser/evil-easymotion"
                                     :branch "page-scope-for-word-motions"))
   :config
+  ;; This will set up keybindings that are similar to most other keybindings, by
+  ;; using `SPC' as leader. I chose to have two `SPC', which I reserve for
+  ;; something that is essential and very common, which I expect motions like
+  ;; the ones provided by `evil-easymotion' to be.
   (evilem-default-keybindings "SPC SPC"))
 
 ;;; Visual packages
