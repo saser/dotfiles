@@ -120,3 +120,18 @@
   :straight t
   ;; Intero should be hooked into `haskell-mode', in order to activate.
   :hook (haskell-mode . intero-mode))
+
+;;; Git packages
+
+;; Magit is deep integration with git in the editor, much like `fugitive' is for
+;; Vim. Only, I expect Magit to be even better (which is no low expectation,
+;; seeing as I believe `fugitive' to be one of the best Vim plugins there are.)
+(use-package magit
+  :straight t
+  :general
+  (leader-def "g s" 'magit-status))
+
+;; `evil-magit' brings sane `evil' bindings to Magit modes.
+(use-package evil-magit
+  :straight t
+  :after magit)
