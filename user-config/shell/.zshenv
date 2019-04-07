@@ -4,7 +4,7 @@
 export ZPLUG_HOME="${HOME}/.zplug"
 
 # I use neovim as my main editor.
-export EDITOR=nvim
+export EDITOR=emacs
 
 # Source environment variables whose values are secret and should not be stored
 # in the git repository. An example file can be found at the path of the file
