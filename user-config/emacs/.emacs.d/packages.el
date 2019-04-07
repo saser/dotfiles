@@ -135,6 +135,10 @@
   ;; Intero should be hooked into `haskell-mode', in order to activate.
   :hook (haskell-mode . intero-mode))
 
+;; Support for the YAML language.
+(use-package yaml-mode
+  :straight t)
+
 ;;; Git packages
 
 ;; Magit is deep integration with git in the editor, much like `fugitive' is for
