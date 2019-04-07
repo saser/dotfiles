@@ -22,3 +22,6 @@
 [submodule "user-config/emacs/.emacs.d/straight/repos/straight.el"]
 	path = user-config/emacs/.emacs.d/straight/repos/straight.el
 	url = https://github.com/raxod502/straight.el
+[submodule "user-config/alacritty/.config/alacritty/colors/base16"]
+	path = user-config/alacritty/.config/alacritty/colors/base16
+	url = https://github.com/aaron-williamson/base16-alacritty
