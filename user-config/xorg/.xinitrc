@@ -7,12 +7,9 @@ xrdb -merge "${HOME}/.Xresources"
 # really do have that property.
 xrdb -merge "${HOME}/.config/urxvt/settings"
 
-# Load Xresources colorscheme. Affects e.g. urxvt colors.
-# I used to use a Base16 theme, but right now I decided to use the popular
-# Solarized theme.
-# BASE16_COLORSCHEME=materia-256
-# xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
-xrdb -merge "${HOME}/.config/urxvt/colors/solarized/Xresources.dark"
+# Load Xresources colorscheme. Affects e.g. polybar colors.
+BASE16_COLORSCHEME=materia-256
+xrdb -merge "${HOME}/.xcolors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
 
 # Sets the background image.
 WALLPAPER="milky-way.jpg"
