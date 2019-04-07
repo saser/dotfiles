@@ -68,8 +68,8 @@ stow --target "${STOW_TARGET}" polybar
 # Install sxhkd configuration.
 stow --target "${STOW_TARGET}" sxhkd
 
-# Install urxvt configuration.
-stow --target "${STOW_TARGET}" urxvt
+# Install alacritty configuration.
+stow --target "${STOW_TARGET}" alacritty
 
 # Install my scripts.
 # They will be available in my PATH, see `./shell/.zprofile`.

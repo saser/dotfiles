@@ -43,8 +43,8 @@ stow --target "${STOW_TARGET}" --delete polybar
 # Uninstall sxhkd configuration.
 stow --target "${STOW_TARGET}" --delete sxhkd
 
-# Uninstall urxvt configuration.
-stow --target "${STOW_TARGET}" --delete urxvt
+# Uninstall alacritty configuration.
+stow --target "${STOW_TARGET}" --delete alacritty
 
 # Uninstall my scripts.
 stow --target "${STOW_TARGET}" --delete scripts
