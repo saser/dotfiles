@@ -110,9 +110,20 @@
 ;; I mainly use the Solarized (https://ethanschoonover.com/solarized/) color
 ;; scheme, so I want to use that in Emacs as well.
 (use-package color-theme-solarized
+  :straight t)
+
+;; Currently, I am using a set of base16 themes for different applications, and
+;; thus also in Emacs.
+(use-package base16-theme
   :straight t
+  ;; The README for base16-emacs specifies that this should most likely be set.
+  :demand
+  :init
+  ;; This setting is required since I use the 256 color variation of `materia',
+  ;; or something like that.
+  (setq base16-theme-256-color-source 'base16-shell)
   :config
-  (load-theme 'solarized t))
+  (load-theme 'base16-materia t))
 
 ;;; Language packages/modes
 
