@@ -1,38 +1,5 @@
-# BASE16_COLORSCHEME=materia
-# source "${HOME}/.zsh-extras/shellcolors/base16/scripts/base16-${BASE16_COLORSCHEME}.sh"
+# Source base16 colors for the shell.
+source "${HOME}/.zsh-extras/colors/base16-shell/scripts/base16-${BASE16_THEME}.sh"
 
-# Colorscheme for fzf. This is the "Alternate Solarized" theme, taken from the fzf wiki (which can
-# be found at https://github.com/junegunn/fzf/wiki/Color-schemes).
-_gen_fzf_default_opts() {
-  local base03="234"
-  local base02="235"
-  local base01="240"
-  local base00="241"
-  local base0="244"
-  local base1="245"
-  local base2="254"
-  local base3="230"
-  local yellow="136"
-  local orange="166"
-  local red="160"
-  local magenta="125"
-  local violet="61"
-  local blue="33"
-  local cyan="37"
-  local green="64"
-
-  # Comment and uncomment below for the light theme.
-
-  # Solarized Dark color scheme for fzf
-  export FZF_DEFAULT_OPTS="
-    --color fg:-1,bg:-1,hl:$blue,fg+:$base2,bg+:$base02,hl+:$blue
-    --color info:$yellow,prompt:$yellow,pointer:$base3,marker:$base3,spinner:$yellow
-  "
-
-  # # Solarized Light color scheme for fzf
-  # export FZF_DEFAULT_OPTS="
-  #   --color fg:-1,bg:-1,hl:$blue,fg+:$base02,bg+:$base2,hl+:$blue
-  #   --color info:$yellow,prompt:$yellow,pointer:$base03,marker:$base03,spinner:$yellow
-  # "
-}
-_gen_fzf_default_opts
+# Source base16 colors for fzf.
+source "${HOME}/.zsh-extras/colors/base16-fzf/bash/base16-${BASE16_THEME}.config"
