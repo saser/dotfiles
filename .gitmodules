@@ -25,3 +25,6 @@
 [submodule "user-config/alacritty/.config/alacritty/colors/base16"]
 	path = user-config/alacritty/.config/alacritty/colors/base16
 	url = https://github.com/aaron-williamson/base16-alacritty
+[submodule "user-config/shell/.zsh-extras/colors/base16-fzf"]
+	path = user-config/shell/.zsh-extras/colors/base16-fzf
+	url = https://github.com/nicodebo/base16-fzf
