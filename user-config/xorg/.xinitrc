@@ -2,8 +2,7 @@
 xrdb -merge "${HOME}/.Xresources"
 
 # Load Xresources colorscheme. Affects e.g. polybar colors.
-BASE16_COLORSCHEME=materia-256
-xrdb -merge "${HOME}/.xcolors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
+xrdb -merge "${HOME}/.xcolors/base16/xresources/base16-${BASE16_THEME}.Xresources"
 
 # Sets the background image.
 WALLPAPER="milky-way.jpg"
