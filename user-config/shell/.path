@@ -3,12 +3,12 @@
 NEW_PATH="$PATH"
 
 # Make my scripts available.
-NEW_PATH="${NEW_PATH}:${HOME}/scripts"
+NEW_PATH="${HOME}/scripts:${NEW_PATH}"
 # Also make temporary scripts, that I do not include in my dotfiles, available
 # in the PATH.
-NEW_PATH="${NEW_PATH}:${HOME}/scripts/tmp"
+NEW_PATH="${HOME}/scripts/tmp:${NEW_PATH}"
 # SEMI-TEMPORARY: include non-system packages installed with `stow` to the
 # `~/build` directory.
-NEW_PATH="${NEW_PATH}:${HOME}/build/bin"
+NEW_PATH="${HOME}/build/bin:${NEW_PATH}"
 
 export PATH="$NEW_PATH"
