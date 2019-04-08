@@ -137,7 +137,8 @@
   ;; or something like that.
   (setq base16-theme-256-color-source 'base16-shell)
   :config
-  (load-theme 'base16-materia t))
+  (let ((base16-theme (getenv "BASE16_THEME")))
+    (load-theme (intern (concat "base16-" base16-theme)) t)))
 
 ;;; Language packages/modes
 
