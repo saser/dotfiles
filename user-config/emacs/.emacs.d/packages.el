@@ -103,7 +103,21 @@
   ;; using `SPC' as leader. I chose to have two `SPC', which I reserve for
   ;; something that is essential and very common, which I expect motions like
   ;; the ones provided by `evil-easymotion' to be.
-  (evilem-default-keybindings "SPC SPC"))
+  (evilem-default-keybindings "SPC SPC")
+  ;; Use all lower-case letters, as well as the semicolon and apostrophe
+  ;; characters, for jumping. This is a large extension compared to the default
+  ;; settings, since they use only the home row.
+  (setq avy-keys (nconc (number-sequence ?a ?z)
+                        '(?\; ?')))
+  ;; The default faces for the `avy' package, which this package uses
+  ;; underneath, are completely unreadable. I modify them here to be more
+  ;; readable. I really dislike configuring settings for a package that is only
+  ;; a dependency, but this seems to be the best way to do it.
+  (custom-set-faces
+   '(avy-lead-face   ((t (:background "black" :foreground "red"))))
+   '(avy-lead-face-0 ((t (:background "black" :foreground "red"))))
+   '(avy-lead-face-2 ((t (:background "black" :foreground "red"))))
+  ))
 
 ;;; Visual packages
 
