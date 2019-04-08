@@ -167,3 +167,33 @@
 (use-package evil-magit
   :straight t
   :after magit)
+
+;;; File system packages
+
+;; NeoTree is a file tree package, like `nerdtree' in Vim.
+(use-package neotree
+  :straight t
+  :commands 'neotree-make-executor
+  :general
+  (leader-def "f TAB" 'neotree)
+  (general-nmap :keymaps 'neotree-mode-map
+    "RET" (neotree-make-executor :file-fn 'neo-open-file :dir-fn 'neo-open-dir)
+    "o"   (neotree-make-executor :file-fn 'neo-open-file :dir-fn 'neo-open-dir)
+    "SPC" (neotree-make-executor :dir-fn 'neo-open-dir)
+
+    "p"   'neotree-select-up-node
+    "C-j" 'neotree-select-next-sibling-node
+    "C-k" 'neotree-select-previous-sibling-node
+
+    "R"   'neotree-refresh
+    "H"   'neotree-hidden-file-toggle
+
+    "-"   (neotree-make-executor :file-fn 'neo-open-file-horizontal-split)
+    "|"   (neotree-make-executor :file-fn 'neo-open-file-vertical-split)
+
+    "TAB" 'neotree-stretch-toggle
+
+    "c"   'neotree-create-node
+    "y"   'neotree-copy-node
+    "d"   'neotree-delete-node
+    "r"   'neotree-rename-node))
