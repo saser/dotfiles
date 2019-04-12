@@ -1,4 +1,5 @@
 straight/repos/
+straight/modified/
 straight/build*
 !straight/repos/straight.el
 auto-save-list/
