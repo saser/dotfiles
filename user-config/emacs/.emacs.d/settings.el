@@ -18,3 +18,6 @@
 
 ;; Do not use tabs for indentation.
 (setq-default indent-tabs-mode nil)
+
+;; Show line numbers.
+(global-display-line-numbers-mode 1)
