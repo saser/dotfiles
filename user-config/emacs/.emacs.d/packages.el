@@ -137,7 +137,8 @@
   (setq base16-theme-256-color-source 'base16-shell)
   :config
   (let ((base16-theme (getenv "BASE16_THEME")))
-    (load-theme (intern (concat "base16-" base16-theme)) t)))
+    (load-theme (intern (concat "base16-" base16-theme)) t))
+  )
 
 ;;; Language packages/modes
 
@@ -146,7 +147,8 @@
 ;; with `stack'.
 (use-package intero
   ;; Intero should be hooked into `haskell-mode', in order to activate.
-  :hook (haskell-mode . intero-mode))
+  :hook (haskell-mode . intero-mode)
+  )
 
 ;; Support for the YAML language.
 (use-package yaml-mode)
@@ -158,11 +160,13 @@
 ;; seeing as I believe `fugitive' to be one of the best Vim plugins there are.)
 (use-package magit
   :general
-  (leader-def "g s" 'magit-status))
+  (leader-def "g s" 'magit-status)
+  )
 
 ;; `evil-magit' brings sane `evil' bindings to Magit modes.
 (use-package evil-magit
-  :after magit)
+  :after magit
+  )
 
 ;;; File system packages
 
@@ -191,4 +195,5 @@
     "c"   'neotree-create-node
     "y"   'neotree-copy-node
     "d"   'neotree-delete-node
-    "r"   'neotree-rename-node))
+    "r"   'neotree-rename-node)
+  )
