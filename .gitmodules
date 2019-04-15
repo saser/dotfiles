@@ -28,3 +28,6 @@
 [submodule "base16-fzf"]
 	path = user-config/shell/.zsh-extras/colors/base16-fzf
 	url = https://github.com/nicodebo/base16-fzf
+[submodule "base16-tmux"]
+	path = user-config/tmux/.tmux/plugins/base16-tmux
+	url = https://github.com/mattdavis90/base16-tmux
