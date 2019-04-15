@@ -179,6 +179,11 @@
 ;; NeoTree is a file tree package, like `nerdtree' in Vim.
 (use-package neotree
   :commands 'neotree-make-executor
+  :config
+  ;; I do not want to display line numbers in the neotree window.
+  (add-hook 'neo-after-create-hook
+            (lambda (&rest _)
+              (display-line-numbers-mode -1)))
   :general
   (leader-def "f TAB" 'neotree)
   (general-nmap :keymaps 'neotree-mode-map
