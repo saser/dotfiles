@@ -138,6 +138,12 @@
   :config
   (let ((base16-theme (getenv "BASE16_THEME")))
     (load-theme (intern (concat "base16-" base16-theme)) t))
+  ;; The default face for current line highlighting in the line number column is
+  ;; way too intrusive in my opinion, so the face is customized to use the same
+  ;; background color as the other numbers, but with a little more prominent
+  ;; foreground color.
+  :custom-face
+  (line-number-current-line ((t (:inherit line-number :inverse-video nil :foreground "white"))))
   )
 
 ;;; Language packages/modes
