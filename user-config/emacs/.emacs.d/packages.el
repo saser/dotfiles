@@ -3,13 +3,16 @@
 ;; and keybindings related to those packages.
 (straight-use-package 'use-package)
 
+;; Always use `straight' for packages, so I don't have to specify `:straight t'
+;; everywhere.
+(setq straight-use-package-by-default t)
+
 ;;; Keybindings
 
 ;; `general' provides convenient functions for defining keybinds. It also has
 ;; deep integration with `evil', with pre-existing functions for defining
 ;; keybinds for different `evil' states.
 (use-package general
-  :straight t
   :config
   ;;; `general' setup.
   ;; Set up special definers for evil mode.
@@ -37,8 +40,6 @@
 ;; `evil' provides Vim emulation for Emacs. Many keybindings from Vim exist in
 ;; `evil' as well, but many that I like do not. Thus, I add them here.
 (use-package evil
-  :straight t
-
   :init
   ;; Have `Y' yank to the end of the line, like `y$' does in vim. This has to be
   ;; set before `evil-mode' is enabled, for some reason.
@@ -123,13 +124,11 @@
 
 ;; I mainly use the Solarized (https://ethanschoonover.com/solarized/) color
 ;; scheme, so I want to use that in Emacs as well.
-(use-package color-theme-solarized
-  :straight t)
+(use-package color-theme-solarized)
 
 ;; Currently, I am using a set of base16 themes for different applications, and
 ;; thus also in Emacs.
 (use-package base16-theme
-  :straight t
   ;; The README for base16-emacs specifies that this should most likely be set.
   :demand
   :init
@@ -146,13 +145,11 @@
 ;; features such as "type of selection", a REPL, and specifically, integration
 ;; with `stack'.
 (use-package intero
-  :straight t
   ;; Intero should be hooked into `haskell-mode', in order to activate.
   :hook (haskell-mode . intero-mode))
 
 ;; Support for the YAML language.
-(use-package yaml-mode
-  :straight t)
+(use-package yaml-mode)
 
 ;;; Git packages
 
@@ -160,20 +157,17 @@
 ;; Vim. Only, I expect Magit to be even better (which is no low expectation,
 ;; seeing as I believe `fugitive' to be one of the best Vim plugins there are.)
 (use-package magit
-  :straight t
   :general
   (leader-def "g s" 'magit-status))
 
 ;; `evil-magit' brings sane `evil' bindings to Magit modes.
 (use-package evil-magit
-  :straight t
   :after magit)
 
 ;;; File system packages
 
 ;; NeoTree is a file tree package, like `nerdtree' in Vim.
 (use-package neotree
-  :straight t
   :commands 'neotree-make-executor
   :general
   (leader-def "f TAB" 'neotree)
