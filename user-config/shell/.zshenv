@@ -13,7 +13,7 @@ export EDITOR=emacs
 # There are places where I cannot use this environment variable directly. As far
 # as I know currently, they are:
 #   * Alacritty: colorscheme specified directly in main configuration file.
-export BASE16_THEME=materia
+export BASE16_THEME=monokai
 export BASE16_256=true
 
 # Source environment variables whose values are secret and should not be stored
