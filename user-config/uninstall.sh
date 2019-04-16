@@ -45,6 +45,8 @@ stow --target "${STOW_TARGET}" --delete sxhkd
 
 # Uninstall alacritty configuration.
 stow --target "${STOW_TARGET}" --delete alacritty
+# Remove the compiled terminfo files.
+rm -rf "${HOME}"/.terminfo/**/*
 
 # Uninstall my scripts.
 stow --target "${STOW_TARGET}" --delete scripts

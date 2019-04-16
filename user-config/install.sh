@@ -70,6 +70,10 @@ stow --target "${STOW_TARGET}" sxhkd
 
 # Install alacritty configuration.
 stow --target "${STOW_TARGET}" alacritty
+# Compile the terminfo files.
+for terminfo in alacritty/.terminfo/*.terminfo; do
+    tic -x "$terminfo"
+done
 
 # Install my scripts.
 # They will be available in my PATH, see `./shell/.zprofile`.
