@@ -161,6 +161,13 @@
   ;; Gray out all text when typing characters. This is the default behaviour in
   ;; the Vim plugin, and I enjoy it.
   (setq avy-background t)
+  ;; Emacs' idea of a word motion is different from Vim's idea, resulting in
+  ;; many more candidates when performing beginning-/end-of-word motions. Many
+  ;; candidates mean that it is more difficult to actually see what key sequence
+  ;; I need to press in order to jump where I want to, and the buffer contents
+  ;; might move as well. Therefore, the following setting will only display one
+  ;; lead character at a time, sacrificing speed for convenience and consistency.
+  (setq avy-style 'at)
   ;; The default faces for the `avy' package, which this package uses
   ;; underneath, are completely unreadable. I modify them here to be more
   ;; readable. I really dislike configuring settings for a package that is only
