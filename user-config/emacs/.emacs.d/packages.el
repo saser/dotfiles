@@ -7,6 +7,34 @@
 ;; everywhere.
 (setq straight-use-package-by-default t)
 
+;;; Visual packages
+;;; I put these first since it seems that they need to be be defined before any
+;;; packages that might use their colors.
+
+;; I mainly use the Solarized (https://ethanschoonover.com/solarized/) color
+;; scheme, so I want to use that in Emacs as well.
+(use-package color-theme-solarized)
+
+;; Currently, I am using a set of base16 themes for different applications, and
+;; thus also in Emacs.
+(use-package base16-theme
+  ;; The README for base16-emacs specifies that this should most likely be set.
+  :demand
+  :init
+  ;; This setting is required since I use the 256 color variation of `materia',
+  ;; or something like that.
+  (setq base16-theme-256-color-source 'colors)
+  :config
+  (let ((base16-theme (getenv "BASE16_THEME")))
+    (load-theme (intern (concat "base16-" base16-theme)) t))
+  ;; The default face for current line highlighting in the line number column is
+  ;; way too intrusive in my opinion, so the face is customized to use the same
+  ;; background color as the other numbers, but with a little more prominent
+  ;; foreground color.
+  :custom-face
+  (line-number-current-line ((t (:inherit line-number :inverse-video nil :foreground "white"))))
+  )
+
 ;;; Keybindings
 
 ;; `general' provides convenient functions for defining keybinds. It also has
@@ -118,32 +146,6 @@
   (avy-lead-face ((t (:background "black" :foreground "red"))))
   (avy-lead-face-0 ((t (:background "black" :foreground "red"))))
   (avy-lead-face-2 ((t (:background "black" :foreground "red"))))
-  )
-
-;;; Visual packages
-
-;; I mainly use the Solarized (https://ethanschoonover.com/solarized/) color
-;; scheme, so I want to use that in Emacs as well.
-(use-package color-theme-solarized)
-
-;; Currently, I am using a set of base16 themes for different applications, and
-;; thus also in Emacs.
-(use-package base16-theme
-  ;; The README for base16-emacs specifies that this should most likely be set.
-  :demand
-  :init
-  ;; This setting is required since I use the 256 color variation of `materia',
-  ;; or something like that.
-  (setq base16-theme-256-color-source 'colors)
-  :config
-  (let ((base16-theme (getenv "BASE16_THEME")))
-    (load-theme (intern (concat "base16-" base16-theme)) t))
-  ;; The default face for current line highlighting in the line number column is
-  ;; way too intrusive in my opinion, so the face is customized to use the same
-  ;; background color as the other numbers, but with a little more prominent
-  ;; foreground color.
-  :custom-face
-  (line-number-current-line ((t (:inherit line-number :inverse-video nil :foreground "white"))))
   )
 
 ;;; Language packages/modes
