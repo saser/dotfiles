@@ -158,14 +158,15 @@
   ;; settings, since they use only the home row.
   (setq avy-keys (nconc (number-sequence ?a ?z)
                         '(?\; ?')))
-  :custom-face
   ;; The default faces for the `avy' package, which this package uses
   ;; underneath, are completely unreadable. I modify them here to be more
   ;; readable. I really dislike configuring settings for a package that is only
   ;; a dependency, but this seems to be the best way to do it.
-  (avy-lead-face ((t (:background "black" :foreground "red"))))
-  (avy-lead-face-0 ((t (:background "black" :foreground "red"))))
-  (avy-lead-face-2 ((t (:background "black" :foreground "red"))))
+  (custom-set-faces
+   `(avy-lead-face   ((t (:background ,(base16-get :base00) :foreground ,(base16-get :base08)))))
+   `(avy-lead-face-0 ((t (:background ,(base16-get :base00) :foreground ,(base16-get :base08)))))
+   `(avy-lead-face-2 ((t (:background ,(base16-get :base00) :foreground ,(base16-get :base08)))))
+   )
   )
 
 ;;; Language packages/modes
