@@ -128,6 +128,13 @@
     (call-interactively 'evil-shift-right)
     (evil-normal-state)
     (evil-visual-restore))
+  ;; The default properties for this face relies on the "red" and "black" color
+  ;; strings, as far as I can tell. I set it up to use the same properties of
+  ;; the `error' face, but specify that it should not be bold and that it should
+  ;; be italic.
+  (custom-set-faces
+   `(evil-ex-info ((t (:inherit error :slant italic :bold nil))))
+   )
   )
 
 ;; A port of the wonderful `vim-easymotion' plugin for Vim. For the time being, I
