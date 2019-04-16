@@ -158,6 +158,9 @@
   ;; settings, since they use only the home row.
   (setq avy-keys (nconc (number-sequence ?a ?z)
                         '(?\; ?')))
+  ;; Gray out all text when typing characters. This is the default behaviour in
+  ;; the Vim plugin, and I enjoy it.
+  (setq avy-background t)
   ;; The default faces for the `avy' package, which this package uses
   ;; underneath, are completely unreadable. I modify them here to be more
   ;; readable. I really dislike configuring settings for a package that is only
