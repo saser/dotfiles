@@ -21,18 +21,31 @@
   ;; The README for base16-emacs specifies that this should most likely be set.
   :demand
   :init
+  (defvar base16-theme
+    (getenv "BASE16_THEME")
+    "A string containing the name of the currently used base16 theme, based on the value of the $BASE16_THEME environment variable.")
   ;; This setting is required since I use the 256 color variation of `materia',
   ;; or something like that.
   (setq base16-theme-256-color-source 'colors)
   :config
-  (let ((base16-theme (getenv "BASE16_THEME")))
-    (load-theme (intern (concat "base16-" base16-theme)) t))
+  ;; Load the theme.
+  (load-theme (intern (concat "base16-" base16-theme)) t)
+  ;; Only after loading the theme has the `base16-<theme>-colors' variable
+  ;; become available and populated. The `base16-colors' variable is just a
+  ;; shorthand for this variable.
+  (defvar base16-colors
+    (symbol-value (intern (concat "base16-" base16-theme "-colors")))
+    "A property list containing the colors of the currently selected theme.")
+  (defun base16-get (color)
+    "Returns a string containing the hex code for the given color. `color' is a keyword."
+    (plist-get base16-colors color))
   ;; The default face for current line highlighting in the line number column is
   ;; way too intrusive in my opinion, so the face is customized to use the same
   ;; background color as the other numbers, but with a little more prominent
   ;; foreground color.
-  :custom-face
-  (line-number-current-line ((t (:inherit line-number :inverse-video nil :foreground "white"))))
+  (custom-set-faces
+   `(line-number-current-line ((t (:inherit line-number :inverse-video nil :foreground ,(base16-get :base05)))))
+   )
   )
 
 ;;; Keybindings
