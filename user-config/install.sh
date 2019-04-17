@@ -44,6 +44,10 @@ stow --target "${STOW_TARGET}" git
 
 # Install tmux configuration.
 stow --target "${STOW_TARGET}" tmux
+# Compile the terminfo files.
+for terminfo in tmux/.terminfo/*.terminfo; do
+    tic -x "$terminfo"
+done
 
 # Install emacs configuration.
 stow --target "${STOW_TARGET}" emacs
