@@ -31,3 +31,6 @@
 [submodule "base16-tmux"]
 	path = user-config/tmux/.tmux/plugins/base16-tmux
 	url = https://github.com/mattdavis90/base16-tmux
+[submodule "base16-zathura"]
+	path = user-config/zathura/.config/zathura/base16-zathura
+	url = https://github.com/nicodebo/base16-zathura
