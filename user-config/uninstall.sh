@@ -10,7 +10,7 @@ stow --target "${STOW_TARGET}" --delete shell
 
 # Uninstall ssh configuration.
 for service in ssh/.config/systemd/user/*.service; do
-    systemctl --user disable $(basename ${service})
+    systemctl --user disable "$(basename "${service}")"
 done
 stow --target "${STOW_TARGET}" --delete ssh
 

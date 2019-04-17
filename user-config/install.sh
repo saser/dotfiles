@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 set -u
 set -o pipefail
@@ -12,7 +12,7 @@ DIRS_TO_CREATE+=("${HOME}/.ssh")
 
 XDG_CONFIG_HOME="${HOME}/.config"
 DIRS_TO_CREATE+=("${XDG_CONFIG_HOME}")
-for dir in ${DIRS_TO_CREATE[@]}; do
+for dir in "${DIRS_TO_CREATE[@]}"; do
     if [ -e "${dir}" ]; then
         if [ ! -d "${dir}" ]; then
             echo "\`${dir}\` exists but is not a directory -- this seems wrong!"
@@ -36,7 +36,7 @@ stow --target "${STOW_TARGET}" shell
 stow --target "${STOW_TARGET}" ssh
 # Enable services.
 for service in ssh/.config/systemd/user/*.service; do
-    systemctl --user enable $(basename ${service})
+    systemctl --user enable "$(basename "${service}")"
 done
 
 # Install git configuration.
