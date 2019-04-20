@@ -183,6 +183,16 @@
 
 ;;; Language packages/modes
 
+;; Flycheck is an on-the-fly syntax checker. It supersedes the builtin Flymake,
+;; which has only very limited support for languages. Flycheck can also be used
+;; by `lsp-ui' in order to display diagnostics provided by a language server.
+(use-package flycheck
+  :hook
+  ;; Enable `flycheck-mode' for specific major modes.
+  ((go-mode)
+   . flycheck-mode)
+  )
+
 ;; Intero is a fully-fledged Haskell development environment, with many nice
 ;; features such as "type of selection", a REPL, and specifically, integration
 ;; with `stack'.
@@ -193,6 +203,28 @@
 
 ;; Support for the YAML language.
 (use-package yaml-mode)
+
+;; Support for the Go programming language.
+(use-package go-mode)
+
+;; Support for language servers.
+(use-package lsp-mode
+  :init
+  ;; Prefer using Flycheck if it is available (in conjunction with `lsp-ui').
+  (setq lsp-prefer-flymake nil)
+  ;; Always run a code formatter (if available) before saving the buffer.
+  (add-hook 'before-save-hook #'lsp-format-buffer)
+  ;; Languages to enable LSP integration for.
+  ;; ---
+  ;; Go: requires `gopls'. It can be installed using
+  ;;     go get -u golang.org/x/tools/cmd/gopls
+  (add-hook 'go-mode-hook #'lsp)
+  )
+
+;; Integration of LSP into the UI. Can do stuff directly in the buffer like
+;; display diagnostics (provided by Flycheck), display available code actions,
+;; etc.
+(use-package lsp-ui)
 
 ;;; Git packages
 
