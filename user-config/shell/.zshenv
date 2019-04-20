@@ -3,6 +3,10 @@
 # Needed to make sure zplug works.
 export ZPLUG_HOME="${HOME}/.zplug"
 
+# Set a GOPATH. With Go modules, it is not needed to put own Go code there, but
+# the `go` command will install other packages there.
+export GOPATH="${HOME}/code/go"
+
 # I use Emacs as my main editor.
 export EDITOR=emacs
 
