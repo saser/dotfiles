@@ -205,7 +205,15 @@
 (use-package yaml-mode)
 
 ;; Support for the Go programming language.
-(use-package go-mode)
+(use-package go-mode
+  :init
+  ;; The default value, `godoc-and-godef' is broken since `godoc' does not
+  ;; include any command-line interface anymore. Thus we use an external tool
+  ;; called `gogetdoc', which works much better according to the author(s) of
+  ;; `go-mode'. `gogetdoc' can be installed using:
+  ;;     go get -u github.com/zmb3/gogetdoc
+  (setq godoc-at-point-function 'godoc-gogetdoc)
+  )
 
 ;; Support for language servers.
 (use-package lsp-mode
