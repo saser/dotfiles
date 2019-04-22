@@ -21,3 +21,10 @@
 
 ;; Show line numbers.
 (global-display-line-numbers-mode 1)
+
+;; Set up backup files. They should be stored in the folder
+;; "~/.emacs.d/backups", and should be created by copying.
+(let ((emacs-d (file-name-as-directory user-emacs-directory)))
+  (setq
+   backup-directory-alist  `(("."  .  ,(concat  emacs-d  "backups")))
+   backup-by-copying       t))

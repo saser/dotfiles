@@ -5,3 +5,4 @@ straight/build*
 auto-save-list/
 .lsp-session*
 transient/
+backups/
