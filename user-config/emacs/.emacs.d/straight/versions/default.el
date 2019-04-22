@@ -2,6 +2,7 @@
  ("base16-emacs" . "4f9b69fdc4586497197a2bb47eb2fc068b42af97")
  ("cl-lib" . "deb92588d9d83d46c4698936ea31c5f58d244f04")
  ("color-theme" . "3a2f6b615f5e2401e30d93a3e0adc210bbb4b7aa")
+ ("company-lsp" . "afef816b1411c63c30cab09f957fbbcea0617742")
  ("company-mode" . "3eda0ba23921d43b733f7975e56d490a34b9f30b")
  ("dash.el" . "15498602f42c19c1b8d7f8768f6b998dfd5b3a22")
  ("emacs-async" . "81dc034572e963550c5403a2b3c28047e46b4029")
@@ -36,5 +37,6 @@
  ("undo-tree" . "d54ef13e3c69655e39f977b8bf75399a6d2b5e42")
  ("use-package" . "0ee88b5cac41acf974c4bedb8859931ead8bfc79")
  ("with-editor" . "38df9bfc2227bcb7ac4899c83a03756d5f171450")
- ("yaml-mode" . "40067a10ac1360f0b9533f0bbbb2eea128e2574d"))
+ ("yaml-mode" . "40067a10ac1360f0b9533f0bbbb2eea128e2574d")
+ ("yasnippet" . "189f7375b68c7fbbc9b6ccbca64bd22e336f5a04"))
 :saturn

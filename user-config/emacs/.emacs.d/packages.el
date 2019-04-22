@@ -215,6 +215,16 @@
   (setq godoc-at-point-function 'godoc-gogetdoc)
   )
 
+;; `company' is a completion framework for Emacs, and `company-lsp' is a backend
+;; for `company' that integrates with `lsp-mode', allowing completions to be
+;; sourced from the LSP server.
+(use-package company-lsp)
+
+;; `yasnippet' is a snippet framework. I mostly use it for its integration with
+;; `company' and `company-lsp', which allows completions to be expanded into
+;; snippets.
+(use-package yasnippet)
+
 ;; Support for language servers.
 (use-package lsp-mode
   :init
