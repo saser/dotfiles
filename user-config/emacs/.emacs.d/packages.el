@@ -201,6 +201,31 @@
   :hook (haskell-mode . intero-mode)
   )
 
+;; AUCTeX is a (La)TeX editing package that provides many niceties for editing
+;; LaTeX, such as "open current file in PDF viewer", forward/inverse search, etc.
+(use-package tex
+  :straight auctex
+  :init
+  ;; Add a hook that runs `latexmk' on each save. I use this to approximate the
+  ;; "compile on save" functionality that the `vim-tex' plugin for Vim provides.
+  (add-hook 'LaTeX-mode-hook
+            (lambda ()
+              (add-hook 'after-save-hook (lambda () (TeX-command "LatexMk" 'TeX-master-file)))))
+  :config
+  ;; This overrides all the default view programs, but since I only ever use
+  ;; PDF, it is sufficient.
+  (setq TeX-view-program-selection '((output-pdf "Zathura")))
+  )
+
+;; Add integration to use `latexmk' in AUCTeX. Using `latexmk' is much nicer
+;; than e.g. compiling more than once to get references right.
+(use-package auctex-latexmk
+  :init
+  (setq auctex-latexmk-inherit-TeX-PDF-mode t)
+  :config
+  (auctex-latexmk-setup)
+  )
+
 ;; Support for the YAML language.
 (use-package yaml-mode)
 

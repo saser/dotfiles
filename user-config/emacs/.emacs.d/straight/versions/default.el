@@ -1,4 +1,6 @@
-(("avy" . "4d52b5cb7e1c565ca8dfe9c47b54330fd1a395bc")
+(("auctex" . "d81f1a0a5b18ecc7668bb9d6469e3d882510a3d7")
+ ("auctex-latexmk" . "4d353522650d7685acbf1d38f7dbc504f734bd84")
+ ("avy" . "4d52b5cb7e1c565ca8dfe9c47b54330fd1a395bc")
  ("base16-emacs" . "4f9b69fdc4586497197a2bb47eb2fc068b42af97")
  ("cl-lib" . "deb92588d9d83d46c4698936ea31c5f58d244f04")
  ("color-theme" . "3a2f6b615f5e2401e30d93a3e0adc210bbb4b7aa")
