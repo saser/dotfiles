@@ -11,6 +11,6 @@ NEW_PATH="${HOME}/scripts/tmp:${NEW_PATH}"
 # `~/build` directory.
 NEW_PATH="${HOME}/build/bin:${NEW_PATH}"
 # Make Go binaries available.
-NEW_PATH="${GOPATH}/bin:$PATH"
+NEW_PATH="${GOPATH}/bin:$NEW_PATH"
 
 export PATH="$NEW_PATH"
