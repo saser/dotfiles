@@ -39,6 +39,7 @@
  ("undo-tree" . "d54ef13e3c69655e39f977b8bf75399a6d2b5e42")
  ("use-package" . "0ee88b5cac41acf974c4bedb8859931ead8bfc79")
  ("with-editor" . "23919ec26250c548a367436986b7526d6e97a6e1")
+ ("xclip" . "e4321136f10635344c7bb38bbae3fac2e6cb255d")
  ("yaml-mode" . "40067a10ac1360f0b9533f0bbbb2eea128e2574d")
  ("yasnippet" . "f056a4def80fa07132d9dd929ddedfb9d0fabd28"))
 :saturn

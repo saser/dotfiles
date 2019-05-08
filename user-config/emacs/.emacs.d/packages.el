@@ -318,3 +318,13 @@
     "d"   'neotree-delete-node
     "r"   'neotree-rename-node)
   )
+
+;;; Miscellaneous packages
+
+;; The `xclip' package allows Emacs to access the X clipboard, even when running
+;; in the terminal. This mimics how I had the yanking in Vim work, and it is
+;; very convenient.
+(use-package xclip
+  :config
+  (xclip-mode 1)
+  )
