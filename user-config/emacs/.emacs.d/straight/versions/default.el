@@ -42,4 +42,4 @@
  ("xclip" . "e4321136f10635344c7bb38bbae3fac2e6cb255d")
  ("yaml-mode" . "40067a10ac1360f0b9533f0bbbb2eea128e2574d")
  ("yasnippet" . "e45e3de357fbd4289fcfa3dd26aaa7be357fb0b8"))
-:saturn
+:neptune
