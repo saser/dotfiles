@@ -183,6 +183,16 @@
    )
   )
 
+;; `smartparens' is apparently a good parentheses/delimiter pairing plugin.  I
+;; use it mostly for automatically inserting pairing parentheses, quotes, etc,
+;; but there is a lot more functionality included in the package.
+(use-package smartparens
+  :init
+  (require 'smartparens-config)
+  :config
+  (smartparens-global-strict-mode 1)
+  )
+
 ;;; Language packages/modes
 
 ;; Flycheck is an on-the-fly syntax checker. It supersedes the builtin Flymake,

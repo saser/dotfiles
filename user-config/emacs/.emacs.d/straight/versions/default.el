@@ -32,6 +32,7 @@
  ("pkg-info.el" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
  ("s.el" . "03410e6a7a2b11e47e1fea3b7d9899c7df26435e")
  ("seq" . "095fb15a3baa082079799dd36b6caccdb062cb90")
+ ("smartparens" . "046440700f292c90c4a992f959c8d6725aa9a3bc")
  ("spinner" . "2daa167bec1c7566d662d48613a94453536b524a")
  ("straight.el" . "570afe61cac4357e154e705d69975cc7485b9a14")
  ("transient" . "cac657a03ea2a8a6e0b6b35e3e34beb06f896e02")
