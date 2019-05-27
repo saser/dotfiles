@@ -193,6 +193,11 @@
   (smartparens-global-strict-mode 1)
   )
 
+;; Add `evil' bindings for `smartparens'.
+(use-package evil-smartparens
+  :init
+  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
+
 ;;; Language packages/modes
 
 ;; Flycheck is an on-the-fly syntax checker. It supersedes the builtin Flymake,
