@@ -135,6 +135,12 @@
    )
   )
 
+;; A port of the amazing `vim-surround' plugin for Vim.
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1)
+  )
+
 ;; A port of the wonderful `vim-easymotion' plugin for Vim. For the time being, I
 ;; have forked the original repo, since it does not have the same default
 ;; behaviour as `vim-easymotion'.
