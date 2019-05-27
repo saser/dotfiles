@@ -11,10 +11,6 @@
 ;;; I put these first since it seems that they need to be be defined before any
 ;;; packages that might use their colors.
 
-;; I mainly use the Solarized (https://ethanschoonover.com/solarized/) color
-;; scheme, so I want to use that in Emacs as well.
-(use-package color-theme-solarized)
-
 ;; Currently, I am using a set of base16 themes for different applications, and
 ;; thus also in Emacs.
 (use-package base16-theme
