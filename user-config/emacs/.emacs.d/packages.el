@@ -190,7 +190,7 @@
   :init
   (require 'smartparens-config)
   :config
-  (smartparens-global-strict-mode 1)
+  (smartparens-global-mode t)
   )
 
 ;; Add `evil' bindings for `smartparens'.
