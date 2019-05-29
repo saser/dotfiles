@@ -196,7 +196,8 @@
 ;; Add `evil' bindings for `smartparens'.
 (use-package evil-smartparens
   :init
-  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
+  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+  )
 
 ;;; Language packages/modes
 
