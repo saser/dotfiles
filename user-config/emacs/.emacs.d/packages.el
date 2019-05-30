@@ -73,6 +73,9 @@
   (leader-def
     "b b" 'switch-to-buffer
     "b k" 'kill-buffer)
+  ;; Search-related keybinds.
+  (leader-def
+    "s DEL" 'evil-ex-nohighlight)
   ;; Also set up `<F1>' to be an escape-hatch `help-command', in case I am in
   ;; some major mode where `SPC h' does not work.
   (general-define-key "<F1>" 'help-command)
