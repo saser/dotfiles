@@ -314,6 +314,9 @@
 ;; `evil-magit' brings sane `evil' bindings to Magit modes.
 (use-package evil-magit
   :after magit
+  :init
+  ;; Behave as expected for horizontal movement keys (h, l) in Magit buffers.
+  (setq evil-magit-want-horizontal-movement t)
   )
 
 ;;; File system packages
