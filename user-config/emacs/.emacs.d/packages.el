@@ -157,11 +157,12 @@
   ;; something that is essential and very common, which I expect motions like
   ;; the ones provided by `evil-easymotion' to be.
   (evilem-default-keybindings "SPC SPC")
-  ;; Use all lower-case letters, as well as the semicolon and apostrophe
-  ;; characters, for jumping. This is a large extension compared to the default
+  ;; Use the home row as first choice, then the upper row, then the lower row of
+  ;; the keyboard. This is a large extension compared to the default
   ;; settings, since they use only the home row.
-  (setq avy-keys (nconc (number-sequence ?a ?z)
-                        '(?\; ?')))
+  (setq avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l ?\;
+                   ?q ?w ?e ?r ?t ?y ?u ?i ?o ?p
+                   ?z ?x ?c ?v ?b ?n ?m ?\,))
   ;; Gray out all text when typing characters. This is the default behaviour in
   ;; the Vim plugin, and I enjoy it.
   (setq avy-background t)
