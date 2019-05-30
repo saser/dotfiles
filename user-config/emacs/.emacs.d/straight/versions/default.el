@@ -8,6 +8,7 @@
  ("dash.el" . "77f3bf40c9c85386a50f2dab3dc950513f6f88bd")
  ("emacs-async" . "bd68cc1ab1ac6af890e250bdaa12ffb1cb9649be")
  ("emacs-neotree" . "5e1271655170f4cdc6849258e383c548a4e6e3d0")
+ ("emacs-which-key" . "ba03e7e5bcbe3f7d95be2cfddd71454151bb98c8")
  ("epkgs" . "9ef18280f0c0567cee0c30dd566d9dbd477ca953")
  ("epl" . "78ab7a85c08222cd15582a298a364774e3282ce6")
  ("evil" . "297b8f323754d967beeaed28080311f5afbe25c8")
