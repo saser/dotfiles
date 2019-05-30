@@ -1,18 +1,8 @@
 # Load general Xresources settings.
 xrdb -merge "${HOME}/.Xresources"
 
-# Load urxvt settings.
-# It is kind of ugly to do it here, but it seems to be the most convenient to
-# put it here, since this file is sourced when X is starting, and no other files
-# really do have that property.
-xrdb -merge "${HOME}/.config/urxvt/settings"
-
-# Load Xresources colorscheme. Affects e.g. urxvt colors.
-# I used to use a Base16 theme, but right now I decided to use the popular
-# Solarized theme.
-# BASE16_COLORSCHEME=materia-256
-# xrdb -merge "${HOME}/.config/urxvt/colors/base16/xresources/base16-${BASE16_COLORSCHEME}.Xresources"
-xrdb -merge "${HOME}/.config/urxvt/colors/solarized/Xresources.dark"
+# Load Xresources colorscheme. Affects e.g. polybar colors.
+xrdb -merge "${HOME}/.xcolors/base16/xresources/base16-${BASE16_THEME}.Xresources"
 
 # Sets the background image.
 WALLPAPER="milky-way.jpg"

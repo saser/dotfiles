@@ -3,8 +3,22 @@
 # Needed to make sure zplug works.
 export ZPLUG_HOME="${HOME}/.zplug"
 
-# I use neovim as my main editor.
-export EDITOR=nvim
+# Set a GOPATH. With Go modules, it is not needed to put own Go code there, but
+# the `go` command will install other packages there.
+export GOPATH="${HOME}/code/go"
+
+# I use Emacs as my main editor.
+export EDITOR=emacs
+
+# Set the base16 theme I am currently using. This will be used throughout
+# several parts of my configuration, such as for Xresources, my editor, and
+# assorted applications that support theming.
+#
+# There are places where I cannot use this environment variable directly. As far
+# as I know currently, they are:
+#   * Alacritty: colorscheme specified directly in main configuration file.
+export BASE16_THEME=monokai
+export BASE16_256=true
 
 # Source environment variables whose values are secret and should not be stored
 # in the git repository. An example file can be found at the path of the file

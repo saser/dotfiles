@@ -10,7 +10,7 @@ stow --target "${STOW_TARGET}" --delete shell
 
 # Uninstall ssh configuration.
 for service in ssh/.config/systemd/user/*.service; do
-    systemctl --user disable $(basename ${service})
+    systemctl --user disable "$(basename "${service}")"
 done
 stow --target "${STOW_TARGET}" --delete ssh
 
@@ -43,8 +43,10 @@ stow --target "${STOW_TARGET}" --delete polybar
 # Uninstall sxhkd configuration.
 stow --target "${STOW_TARGET}" --delete sxhkd
 
-# Uninstall urxvt configuration.
-stow --target "${STOW_TARGET}" --delete urxvt
+# Uninstall alacritty configuration.
+stow --target "${STOW_TARGET}" --delete alacritty
+# Remove the compiled terminfo files.
+rm -rf "${HOME}"/.terminfo/**/*
 
 # Install Jupyter configuration.
 stow --target "${STOW_TARGET}" --delete jupyter

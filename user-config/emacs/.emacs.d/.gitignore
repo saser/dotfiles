@@ -1,5 +1,10 @@
 straight/repos/
+straight/modified/
 straight/build*
 !straight/repos/straight.el
 auto-save-list/
 .lsp-session*
+transient/
+backups/
+elpa/
+tramp

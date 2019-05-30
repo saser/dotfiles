@@ -14,7 +14,7 @@ super + shift + q
 
 # Spawn a terminal.
 super + Return
-    urxvt
+    alacritty
 
 # Spawn web browser.
 super + w

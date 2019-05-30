@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 set -u
 set -o pipefail
@@ -12,7 +12,7 @@ DIRS_TO_CREATE+=("${HOME}/.ssh")
 
 XDG_CONFIG_HOME="${HOME}/.config"
 DIRS_TO_CREATE+=("${XDG_CONFIG_HOME}")
-for dir in ${DIRS_TO_CREATE[@]}; do
+for dir in "${DIRS_TO_CREATE[@]}"; do
     if [ -e "${dir}" ]; then
         if [ ! -d "${dir}" ]; then
             echo "\`${dir}\` exists but is not a directory -- this seems wrong!"
@@ -36,7 +36,7 @@ stow --target "${STOW_TARGET}" shell
 stow --target "${STOW_TARGET}" ssh
 # Enable services.
 for service in ssh/.config/systemd/user/*.service; do
-    systemctl --user enable $(basename ${service})
+    systemctl --user enable "$(basename "${service}")"
 done
 
 # Install git configuration.
@@ -44,6 +44,10 @@ stow --target "${STOW_TARGET}" git
 
 # Install tmux configuration.
 stow --target "${STOW_TARGET}" tmux
+# Compile the terminfo files.
+for terminfo in tmux/.terminfo/*.terminfo; do
+    tic -x "$terminfo"
+done
 
 # Install emacs configuration.
 stow --target "${STOW_TARGET}" emacs
@@ -68,8 +72,12 @@ stow --target "${STOW_TARGET}" polybar
 # Install sxhkd configuration.
 stow --target "${STOW_TARGET}" sxhkd
 
-# Install urxvt configuration.
-stow --target "${STOW_TARGET}" urxvt
+# Install alacritty configuration.
+stow --target "${STOW_TARGET}" alacritty
+# Compile the terminfo files.
+for terminfo in alacritty/.terminfo/*.terminfo; do
+    tic -x "$terminfo"
+done
 
 # Install Jupyter configuration.
 stow --target "${STOW_TARGET}" jupyter

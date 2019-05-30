@@ -9,11 +9,11 @@ set background=dark
 " 256 variations for my terminal colorschemes, and thus I follow the
 " recommendations given in the README of the vim plugin for base16
 " (`chriskempson/base16-vim`).
-" let base16colorspace=256
-" colorscheme base16-materia
+let base16colorspace=256
+colorscheme base16-materia
 
 " However, right now I am using the Solarized light theme.
-colorscheme solarized
+" colorscheme solarized
 
 " Enable line numbers.
 set number

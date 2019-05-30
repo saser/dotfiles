@@ -1,0 +1,15 @@
+#!/usr/bin/zsh
+set -euo pipefail
+
+ALACRITTY_DIR="${HOME}/.config/alacritty"
+
+base16="${BASE16_THEME}"
+if [[ "${BASE16_256}" = "true" ]]; then
+    base16="${base16}-256"
+fi
+COLORS="${ALACRITTY_DIR}/colors/base16/colors/base16-${base16}.yml"
+CONFIG="${ALACRITTY_DIR}/config.yml"
+
+cat "${COLORS}" "${CONFIG}" >"${ALACRITTY_DIR}/alacritty.yml"
+
+exec /usr/bin/alacritty
