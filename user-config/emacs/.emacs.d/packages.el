@@ -69,6 +69,10 @@
   ;;; `general' keybinds.
   ;; Set up `SPC h' to be the new `help-command' binding.
   (leader-def "h" 'help-command)
+  ;;; Buffer-related keybinds.
+  (leader-def
+    "b b" 'switch-to-buffer
+    "b k" 'kill-buffer)
   ;; Also set up `<F1>' to be an escape-hatch `help-command', in case I am in
   ;; some major mode where `SPC h' does not work.
   (general-define-key "<F1>" 'help-command)
@@ -199,6 +203,12 @@
   :init
   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
   )
+
+;; `which-key' is a package that displays keybindings in a pop-up window. It is
+;; very useful for seeing which keybinds are available and active.
+(use-package which-key
+  :config
+  (which-key-mode t))
 
 ;;; Language packages/modes
 
