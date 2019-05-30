@@ -200,6 +200,12 @@
   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
   )
 
+;; `which-key' is a package that displays keybindings in a pop-up window. It is
+;; very useful for seeing which keybinds are available and active.
+(use-package which-key
+  :config
+  (which-key-mode t))
+
 ;;; Language packages/modes
 
 ;; Flycheck is an on-the-fly syntax checker. It supersedes the builtin Flymake,
