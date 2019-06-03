@@ -2,6 +2,7 @@
  ("auctex-latexmk" . "4d353522650d7685acbf1d38f7dbc504f734bd84")
  ("avy" . "f91ae613a86187c8ca75e86f22e3f5ac9958399c")
  ("base16-emacs" . "ffd4e35582792c1503704317a23386a80239358e")
+ ("blacken" . "1874018ae242176d0780cdcd0109e8f9a123a914")
  ("cl-lib" . "deb92588d9d83d46c4698936ea31c5f58d244f04")
  ("company-lsp" . "cd1a41583f2d71baef44604a14ea71f49b280bf0")
  ("company-mode" . "ad6ff0eecca99dc5ac8b6a8a6174df7d2ad88ae7")

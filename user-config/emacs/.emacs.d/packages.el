@@ -261,6 +261,13 @@
 ;; Support for the YAML language.
 (use-package yaml-mode)
 
+;; `blacken' is a package that can run the Python `black' formatter on buffers,
+;; and when saving. Requires that the `black' formatter is installed.
+(use-package blacken
+  :hook
+  (python-mode . blacken-mode)
+  )
+
 ;; Support for the Go programming language.
 (use-package go-mode
   :init
