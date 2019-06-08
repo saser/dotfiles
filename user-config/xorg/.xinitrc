@@ -1,19 +1,7 @@
-# Load general Xresources settings.
-xrdb -merge "${HOME}/.Xresources"
+#!/bin/bash
 
-# Load Xresources colorscheme. Affects e.g. polybar colors.
-xrdb -merge "${HOME}/.xcolors/base16/xresources/base16-${BASE16_THEME}.Xresources"
+# Load configuration that would be loaded by any display manager.
+source "$HOME/.xprofile"
 
-# Sets the background image.
-WALLPAPER="milky-way.jpg"
-feh --bg-fill --no-fehbg "${HOME}/.wallpapers/${WALLPAPER}"
-
-# Make sure the ~/.logs folder exists, so that we can log sxhkd command output to it.
-LOGS_DIR="${HOME}/.logs"
-if [ ! -e "${LOGS_DIR}" ]; then
-    mkdir -p "${LOGS_DIR}/.logs"
-fi
-sxhkd -r "${LOGS_DIR}/sxhkd.log" &
-
-# Finally, start the window manager.
+# Start bspwm, my window manager.
 exec bspwm
