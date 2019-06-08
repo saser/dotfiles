@@ -29,6 +29,9 @@ done
 
 STOW_TARGET="${HOME}"
 
+# Install general configuration to be source on login.
+stow --target "${STOW_TARGET}" login
+
 # Install shell configuration.
 stow --target "${STOW_TARGET}" shell
 

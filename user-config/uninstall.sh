@@ -5,6 +5,9 @@ set -o pipefail
 
 STOW_TARGET="${HOME}"
 
+# Uninstall general configuration to be source on login.
+stow --target "${STOW_TARGET}" --delete login
+
 # Uninstall shell configuration.
 stow --target "${STOW_TARGET}" --delete shell
 
