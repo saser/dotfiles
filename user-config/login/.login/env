@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Environment variables to be available regardless of login method.
+
+### Set up $PATH.
+NEW_PATH="$PATH"
+
+# Make my scripts available.
+NEW_PATH="${HOME}/scripts:${NEW_PATH}"
+# Also make temporary scripts, that I do not include in my dotfiles, available
+# in the PATH.
+NEW_PATH="${HOME}/scripts/tmp:${NEW_PATH}"
+# SEMI-TEMPORARY: include non-system packages installed with `stow` to the
+# `~/build` directory.
+NEW_PATH="${HOME}/build/bin:${NEW_PATH}"
+# Make Go binaries available.
+NEW_PATH="${GOPATH}/bin:$NEW_PATH"
+
+# Finally set the real $PATH variable.
+export PATH="$NEW_PATH"
+
+### Set up color scheme.
+
+# Set the base16 theme I am currently using. This will be used throughout
+# several parts of my configuration, such as for Xresources, my editor, and
+# assorted applications that support theming.
+#
+# There are places where I cannot use this environment variable directly. As far
+# as I know currently, they are:
+#   * Alacritty: colorscheme specified directly in main configuration file.
+export BASE16_THEME=monokai
+export BASE16_256=true
+
+### Load secrets to be stored in the environment.
+source "$HOME/.login/secrets"
+
+### Miscellaneous environment variables.
+
+# Set a GOPATH. With Go modules, it is not needed to put own Go code there, but
+# the `go` command will install other packages there.
+export GOPATH="${HOME}/code/go"
+
+# Make Java applications (such as IntelliJ) behave nicely.
+export _JAVA_AWT_WM_NONREPARENTING=1
