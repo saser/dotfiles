@@ -12,4 +12,4 @@ CONFIG="${ALACRITTY_DIR}/config.yml"
 
 cat "${COLORS}" "${CONFIG}" >"${ALACRITTY_DIR}/alacritty.yml"
 
-exec /usr/bin/alacritty
+exec /usr/bin/alacritty $@
