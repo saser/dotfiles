@@ -201,12 +201,6 @@
   (smartparens-global-mode t)
   )
 
-;; Add `evil' bindings for `smartparens'.
-(use-package evil-smartparens
-  :init
-  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-  )
-
 ;; `which-key' is a package that displays keybindings in a pop-up window. It is
 ;; very useful for seeing which keybinds are available and active.
 (use-package which-key
