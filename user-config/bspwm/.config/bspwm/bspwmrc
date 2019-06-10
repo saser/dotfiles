@@ -10,6 +10,9 @@ bspc subscribe all | \
 # Start my status bar.
 ${HOME}/.config/polybar/launch.sh
 
+# Enable click to focus using `button1`.
+bspc config click_to_focus button1
+
 # Set up 5 desktops for each monitor, and be (at least fairly) sure that the
 # names are unique.
 for monitor in $(bspc query --monitors); do
