@@ -14,7 +14,6 @@
  ("evil" . "297b8f323754d967beeaed28080311f5afbe25c8")
  ("evil-easymotion" . "d2f71facda115fdaa7131350a4bb6e109cf79c0e")
  ("evil-magit" . "e2fec5877994c0c19f0c25fa01f3d22cb0ab38ba")
- ("evil-smartparens" . "026d4a3cfce415a4dfae1457f871b385386e61d3")
  ("evil-surround" . "5ad01dfa86424c4b22cd1dfa375f13bd8c656f43")
  ("f.el" . "8191672377816a1975414cc1f116fd3b94b30bd0")
  ("flycheck" . "47174a12fd84a685f36019632838c73b4813b66d")
