@@ -3,6 +3,12 @@
 # Load all general login configuration.
 source "$HOME/.login/login"
 
+# Source an `.xsessionrc`, if it exists.
+XSESSIONRC="$HOME/.xsessionrc"
+if [[ -e "$XSESSIONRC" ]]; then
+    source "$HOME/.xsessionrc"
+fi
+
 # Load general Xresources settings.
 xrdb -merge "${HOME}/.Xresources"
 
