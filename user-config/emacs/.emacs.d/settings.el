@@ -28,3 +28,7 @@
   (setq
    backup-directory-alist  `(("."  .  ,(concat  emacs-d  "backups")))
    backup-by-copying       t))
+
+;; Write a newline at the end of each file. This is how Vim behaves, and I think
+;; it is fairly sensible.
+(setq require-final-newline t)
