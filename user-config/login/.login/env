@@ -36,6 +36,9 @@ source "$HOME/.login/secrets"
 
 ### Miscellaneous environment variables.
 
+# Set my preferred text editor.
+export EDITOR=emacs
+
 # Set a GOPATH. With Go modules, it is not needed to put own Go code there, but
 # the `go` command will install other packages there.
 export GOPATH="${HOME}/code/go"
