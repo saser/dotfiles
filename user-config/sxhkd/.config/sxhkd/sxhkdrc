@@ -102,7 +102,7 @@ super + shift + 4
 
 # Lock the screen.
 super + BackSpace
-    slock
+    gnome-screensaver-command --lock
 
 # Set screen brightness to 30 %. That is a good level, and it seems the
 # backlight values are not always stored when I shut down the lid of my
