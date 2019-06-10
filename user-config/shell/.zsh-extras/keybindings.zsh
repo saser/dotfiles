@@ -10,4 +10,4 @@ bindkey -M viins '^P' history-substring-search-up
 bindkey -M viins '^N' history-substring-search-down
 
 # Load keybindings provided by the `fzf` package.
-source /usr/share/fzf/key-bindings.zsh
+source $HOME/.fzf/shell/key-bindings.zsh
