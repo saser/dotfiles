@@ -9,6 +9,9 @@ if [[ -e "$XSESSIONRC" ]]; then
     source "$HOME/.xsessionrc"
 fi
 
+# Source a screenlayout, created by `arandr`.
+source "$HOME/.screenlayout/layout.sh"
+
 # Load general Xresources settings.
 xrdb -merge "${HOME}/.Xresources"
 
