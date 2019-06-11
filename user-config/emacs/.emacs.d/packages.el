@@ -76,6 +76,14 @@
   ;; Search-related keybinds.
   (leader-def
     "s DEL" 'evil-ex-nohighlight)
+  ;; Comment-related keybinds.
+  ;; `comment-line' works for both commenting and uncommenting the current line.
+  (leader-def
+    "c c" 'comment-line)
+  ;; "dwim" means "do what I mean". For a region, this means toggling comment/uncomment.
+  (leader-def
+    :states 'visual
+    "c c" 'comment-dwim)
   ;; Also set up `<F1>' to be an escape-hatch `help-command', in case I am in
   ;; some major mode where `SPC h' does not work.
   (general-define-key "<F1>" 'help-command)
