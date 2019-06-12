@@ -20,7 +20,7 @@ border-color = ${colors.background-alt}
 padding = 1
 module-margin = 1
 
-modules-right = bluetooth-phones battery date
+modules-right = network bluetooth-phones battery date
 
 wm-restack = bspwm
 
@@ -66,5 +66,17 @@ exec = $HOME/.config/polybar/scripts/bluetooth-status
 interval = 2
 format-underline = ${colors.underline}
 click-left = $HOME/.config/polybar/scripts/bluetooth-toggle
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+
+label-connected = %essid%
+format-connected = network: <label-connected>
+format-connected-underline = ${xrdb:color2:#0f0}
+
+label-disconnected = disconnected
+format-disconnected = network: <label-disconnected>
+format-disconnected-underline = ${xrdb:color3:#f00}
 
 ; vim:filetype=dosini
