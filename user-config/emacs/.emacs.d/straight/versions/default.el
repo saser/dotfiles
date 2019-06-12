@@ -22,7 +22,7 @@
  ("go-mode.el" . "120fb911f1d8038f828da85eed8aaad977dabd8c")
  ("goto-chg" . "1829a13026c597e358f716d2c7793202458120b5")
  ("haskell-mode" . "5c69e571fa769148c2bc40905915f3a0526b4fe0")
- ("ht.el" . "095fde55294bd20dc7f46d614e1b0504e3830cfa")
+ ("ht.el" . "5650a8cd190badb49d28d21e72a2f55c9380de7b")
  ("intero" . "188211d1238a108ea47ab93216d0ae9c4a426dee")
  ("let-alist" . "33e71829e8814cf5f28b6e4291192aafef61b69e")
  ("lsp-mode" . "5f74695c7197b17303cad885eb45411a4938cb22")
