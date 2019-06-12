@@ -296,6 +296,11 @@
   ;; Go: requires `gopls'. It can be installed using
   ;;     go get -u golang.org/x/tools/cmd/gopls
   (add-hook 'go-mode-hook #'lsp)
+  :config
+  (leader-def
+    :map 'lsp-mode-map
+    "l r" 'lsp-restart-workspace
+    "l d" 'lsp-find-definition)
   )
 
 ;; Integration of LSP into the UI. Can do stuff directly in the buffer like
