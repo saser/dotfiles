@@ -7,7 +7,11 @@ source "$HOME/.login/login"
 xrdb -merge "${HOME}/.Xresources"
 
 # Load Xresources colorscheme. Affects e.g. polybar colors.
-xrdb -merge "${HOME}/.xcolors/base16/xresources/base16-${BASE16_THEME}.Xresources"
+scheme_name="$BASE16_THEME"
+if [[ "$BASE16_256" = "true" ]]; then
+    scheme_name="${scheme_name}-256"
+fi
+xrdb -merge "${HOME}/.xcolors/base16/xresources/base16-${scheme_name}.Xresources"
 
 # Sets the background image.
 WALLPAPER="milky-way.jpg"
