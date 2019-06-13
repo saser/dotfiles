@@ -274,6 +274,9 @@
   (setq godoc-at-point-function 'godoc-gogetdoc)
   )
 
+;; Support for the ProtoBuf interface definition language.
+(use-package protobuf-mode)
+
 ;; `company' is a completion framework for Emacs, and `company-lsp' is a backend
 ;; for `company' that integrates with `lsp-mode', allowing completions to be
 ;; sourced from the LSP server.
