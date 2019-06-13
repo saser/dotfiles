@@ -41,7 +41,7 @@ export EDITOR=emacs
 
 # Set a GOPATH. With Go modules, it is not needed to put own Go code there, but
 # the `go` command will install other packages there.
-export GOPATH="${HOME}/code/go"
+export GOPATH="${HOME}/go"
 
 # Make Java applications (such as IntelliJ) behave nicely.
 export _JAVA_AWT_WM_NONREPARENTING=1
