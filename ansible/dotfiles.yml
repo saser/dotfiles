@@ -1,0 +1,10 @@
+- hosts: [localhost]
+  connection: local
+  vars_files:
+    - vars/dirs.yml
+  tasks:
+    - import_tasks: tasks/prerequisites.yml
+    - import_role:
+        name: wallpaper
+    - import_role:
+        name: xorg

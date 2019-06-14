@@ -1,0 +1,40 @@
+- name: Create wallpapers directory
+  tags:
+    - wallpapers
+    - filesystem
+  file:
+    dest: "{{ wallpapers_dir }}"
+    state: directory
+
+- name: Download wallpapers
+  tags:
+    - wallpapers
+    - fetch
+  loop: "{{ wallpapers }}"
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ wallpapers_dir }}/{{ item.name }}"
+
+- name: Create symbolic link for current wallpaper
+  tags:
+    - wallpaper
+    - filesystem
+  file:
+    src: "{{ wallpapers_dir }}/{{ current_wallpaper_name }}"
+    dest: "{{ current_wallpaper_link }}"
+    state: link
+
+- name: Create mixin directories
+  import_tasks: ../common/tasks/create_mixin_dir.yml
+  vars:
+    mixin: ".xprofile"
+  tags:
+    - .xprofile
+
+- name: Deploy mixin script that sets wallpaper
+  tags:
+    - wallpaper
+    - filesystem
+  template:
+    src: set-wallpaper.bash.j2
+    dest: "{{ mixins_dir }}/.xprofile/set-wallpaper.bash"

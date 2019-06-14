@@ -1,0 +1,7 @@
+- name: Deploy `.xprofile`
+  tags:
+    - xorg
+    - filesystem
+  template:
+    src: .xprofile.j2
+    dest: "{{ home }}/.xprofile"
