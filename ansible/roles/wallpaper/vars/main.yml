@@ -1,0 +1,8 @@
+wallpapers_dir: "{{ ansible_env.HOME }}/wallpapers"
+wallpapers:
+  - { name: "summer-night-beach.jpg", url: "https://unsplash.com/photos/wwBk0aCa7Gs/download?force=true" }
+  - { name: "forest.jpg",             url: "https://unsplash.com/photos/sp-p7uuT0tw/download?force=true" }
+  - { name: "milky-way.jpg",          url: "https://unsplash.com/photos/zepnJQycr4U/download?force=true" }
+  - { name: "wood-panels.jpg",        url: "https://unsplash.com/photos/7JZPXJRu7jU/download?force=true" }
+current_wallpaper_name: milky-way.jpg
+current_wallpaper_link: "{{ config_dir }}/wallpaper"
