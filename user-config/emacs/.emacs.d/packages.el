@@ -89,6 +89,21 @@
   (general-define-key "<F1>" 'help-command)
   )
 
+;; Set up some keybindings for `straight'.
+(leader-def
+  "p p" 'straight-pull-package
+  "p u" '((lambda ()
+            (interactive)
+            (mapc 'straight-pull-package
+                  '("melpa"
+                    "gnu-elpa-mirror"
+                    "emacsmirror")))
+          :which-key "pull recipe repositories")
+  "p a" 'straight-pull-all
+  "p f" 'straight-freeze-versions
+  "p t" 'straight-thaw-versions
+  )
+
 ;; `evil' provides Vim emulation for Emacs. Many keybindings from Vim exist in
 ;; `evil' as well, but many that I like do not. Thus, I add them here.
 (use-package evil
