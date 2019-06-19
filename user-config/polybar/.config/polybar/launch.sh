@@ -8,5 +8,7 @@ while pgrep --euid ${UID} --exact polybar >/dev/null; do
     sleep 1
 done
 
-# Launch the bar.
-polybar top &
+# Launch a bar on each monitor.
+for monitor in $(polybar --list-monitors | tr -d ':' | awk '{ print $1; }'); do
+    MONITOR="$monitor" polybar top &
+done
