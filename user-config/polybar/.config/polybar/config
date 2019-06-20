@@ -53,17 +53,16 @@ full-at = 99
 
 poll-interval = 1
 
-format-charging = <label-charging>
-label-charging = C: %percentage% %
-
-format-discharging = <label-discharging>
-label-discharging = D: %percentage% %
-
-format-full = <label-full>
-label-full = F: %percentage% %
-
+format-charging = battery: <label-charging>
+label-charging = %percentage% % (C)
 format-charging-underline = ${colors.yellow}
+
+format-discharging = battery: <label-discharging>
+label-discharging = %percentage% % (D)
 format-discharging-underline = ${colors.red}
+
+format-full = battery: <label-full>
+label-full = %percentage% % (F)
 format-full-underline = ${colors.green}
 
 [module/phones]
