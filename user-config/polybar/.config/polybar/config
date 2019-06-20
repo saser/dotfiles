@@ -4,6 +4,11 @@ background-alt = ${xrdb:fadeColor:#333}
 foreground = ${xrdb:foreground:#444}
 underline = ${xrdb:color4:#f44}
 
+red = ${xrdb:color1}
+green = ${xrdb:color2}
+blue = ${xrdb:color4}
+yellow = ${xrdb:color3}
+
 [bar/top]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
@@ -21,9 +26,49 @@ border-color = ${colors.background-alt}
 padding = 1
 module-margin = 1
 
-modules-right = network bluetooth-phones battery date
+modules-right = phones network battery date
 
 wm-restack = bspwm
+
+[module/phones]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/bluetooth-status
+interval = 2
+format-underline = ${colors.underline}
+click-left = $HOME/.config/polybar/scripts/bluetooth-toggle
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+
+label-connected = %essid%
+format-connected = network: <label-connected>
+format-connected-underline = ${colors.green}
+
+label-disconnected = disconnected
+format-disconnected = network: <label-disconnected>
+format-disconnected-underline = ${colors.red}
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = ADP1
+full-at = 99
+
+poll-interval = 1
+
+format-charging = battery: <label-charging>
+label-charging = %percentage% % (C)
+format-charging-underline = ${colors.yellow}
+
+format-discharging = battery: <label-discharging>
+label-discharging = %percentage% % (D)
+format-discharging-underline = ${colors.red}
+
+format-full = battery: <label-full>
+label-full = %percentage% % (F)
+format-full-underline = ${colors.green}
 
 [module/date]
 type = internal/date
@@ -38,46 +83,5 @@ time-alt = %H:%M:%S
 label = %date% | %time%
 
 format-underline = ${colors.underline}
-
-[module/battery]
-type = internal/battery
-
-battery = BAT0
-adapter = ADP1
-full-at = 99
-
-poll-interval = 1
-
-format-charging = <label-charging>
-label-charging = C: %percentage% %
-
-format-discharging = <label-discharging>
-label-discharging = D: %percentage% %
-
-format-full = <label-full>
-label-full = F: %percentage% %
-
-format-charging-underline = ${xrdb:color3:#ff0}
-format-discharging-underline = ${xrdb:color1:#ff0}
-format-full-underline = ${xrdb:color2:#0f0}
-
-[module/bluetooth-phones]
-type = custom/script
-exec = $HOME/.config/polybar/scripts/bluetooth-status
-interval = 2
-format-underline = ${colors.underline}
-click-left = $HOME/.config/polybar/scripts/bluetooth-toggle
-
-[module/network]
-type = internal/network
-interface = wlp3s0
-
-label-connected = %essid%
-format-connected = network: <label-connected>
-format-connected-underline = ${xrdb:color2:#0f0}
-
-label-disconnected = disconnected
-format-disconnected = network: <label-disconnected>
-format-disconnected-underline = ${xrdb:color3:#f00}
 
 ; vim:filetype=dosini
