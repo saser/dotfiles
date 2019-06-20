@@ -30,19 +30,24 @@ modules-right = phones network battery date
 
 wm-restack = bspwm
 
-[module/date]
-type = internal/date
-interval = 1
-
-date = %Y-%m-%d
-time = %H:%M
-
-date-alt = ${module/date.date}
-time-alt = %H:%M:%S
-
-label = %date% | %time%
-
+[module/phones]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/bluetooth-status
+interval = 2
 format-underline = ${colors.underline}
+click-left = $HOME/.config/polybar/scripts/bluetooth-toggle
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+
+label-connected = %essid%
+format-connected = network: <label-connected>
+format-connected-underline = ${colors.green}
+
+label-disconnected = disconnected
+format-disconnected = network: <label-disconnected>
+format-disconnected-underline = ${colors.red}
 
 [module/battery]
 type = internal/battery
@@ -65,23 +70,18 @@ format-full = battery: <label-full>
 label-full = %percentage% % (F)
 format-full-underline = ${colors.green}
 
-[module/phones]
-type = custom/script
-exec = $HOME/.config/polybar/scripts/bluetooth-status
-interval = 2
+[module/date]
+type = internal/date
+interval = 1
+
+date = %Y-%m-%d
+time = %H:%M
+
+date-alt = ${module/date.date}
+time-alt = %H:%M:%S
+
+label = %date% | %time%
+
 format-underline = ${colors.underline}
-click-left = $HOME/.config/polybar/scripts/bluetooth-toggle
-
-[module/network]
-type = internal/network
-interface = wlp3s0
-
-label-connected = %essid%
-format-connected = network: <label-connected>
-format-connected-underline = ${colors.green}
-
-label-disconnected = disconnected
-format-disconnected = network: <label-disconnected>
-format-disconnected-underline = ${colors.red}
 
 ; vim:filetype=dosini
