@@ -26,7 +26,7 @@ border-color = ${colors.background-alt}
 padding = 1
 module-margin = 1
 
-modules-right = network phones battery date
+modules-right = phones network battery date
 
 wm-restack = bspwm
 
