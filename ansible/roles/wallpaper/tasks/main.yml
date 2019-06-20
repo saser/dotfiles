@@ -38,3 +38,4 @@
   template:
     src: set-wallpaper.bash.j2
     dest: "{{ mixins_dir }}/.xprofile/set-wallpaper.bash"
+    mode: 0755
