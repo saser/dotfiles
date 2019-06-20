@@ -26,7 +26,7 @@ border-color = ${colors.background-alt}
 padding = 1
 module-margin = 1
 
-modules-right = network bluetooth-phones battery date
+modules-right = network phones battery date
 
 wm-restack = bspwm
 
@@ -66,7 +66,7 @@ format-charging-underline = ${colors.yellow}
 format-discharging-underline = ${colors.red}
 format-full-underline = ${colors.green}
 
-[module/bluetooth-phones]
+[module/phones]
 type = custom/script
 exec = $HOME/.config/polybar/scripts/bluetooth-status
 interval = 2
