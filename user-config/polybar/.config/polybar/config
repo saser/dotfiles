@@ -4,6 +4,11 @@ background-alt = ${xrdb:fadeColor:#333}
 foreground = ${xrdb:foreground:#444}
 underline = ${xrdb:color4:#f44}
 
+red = ${xrdb:color1}
+green = ${xrdb:color2}
+blue = ${xrdb:color4}
+yellow = ${xrdb:color3}
+
 [bar/top]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
@@ -57,9 +62,9 @@ label-discharging = D: %percentage% %
 format-full = <label-full>
 label-full = F: %percentage% %
 
-format-charging-underline = ${xrdb:color3:#ff0}
-format-discharging-underline = ${xrdb:color1:#ff0}
-format-full-underline = ${xrdb:color2:#0f0}
+format-charging-underline = ${colors.yellow}
+format-discharging-underline = ${colors.red}
+format-full-underline = ${colors.green}
 
 [module/bluetooth-phones]
 type = custom/script
@@ -74,10 +79,10 @@ interface = wlp3s0
 
 label-connected = %essid%
 format-connected = network: <label-connected>
-format-connected-underline = ${xrdb:color2:#0f0}
+format-connected-underline = ${colors.green}
 
 label-disconnected = disconnected
 format-disconnected = network: <label-disconnected>
-format-disconnected-underline = ${xrdb:color3:#f00}
+format-disconnected-underline = ${colors.red}
 
 ; vim:filetype=dosini
