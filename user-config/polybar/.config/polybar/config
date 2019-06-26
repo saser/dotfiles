@@ -1,6 +1,6 @@
 [colors]
 background = ${xrdb:background:#222}
-background-alt = ${xrdb:fadeColor:#333}
+background-alt = ${xrdb:color18:#333}
 foreground = ${xrdb:foreground:#444}
 underline = ${xrdb:color4:#f44}
 
