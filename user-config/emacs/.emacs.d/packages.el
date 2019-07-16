@@ -330,7 +330,10 @@
 ;; seeing as I believe `fugitive' to be one of the best Vim plugins there are.)
 (use-package magit
   :general
-  (leader-def "g s" 'magit-status)
+  (leader-def
+    "g s" 'magit-status
+    "g b" 'magit-blame
+    )
   )
 
 ;; `evil-magit' brings sane `evil' bindings to Magit modes.
