@@ -42,8 +42,8 @@ alias docker-ip="docker inspect --format='{{range .NetworkSettings.Networks}}{{.
 # mouse button. The CLIPBOARD clipboard is the one that is usually operated
 # using Ctrl-C and Ctrl-V, and is the one used for these aliases. The SECONDARY
 # clipboard is rarely used.  (Taken/rephrased from xsel(1).)
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
+alias pbcopy='xclip -selection clipboard -in'
+alias pbpaste='xclip -selection clipboard -out'
 
 # Miscellaneous, actually kind of useless, aliases.
 alias bacchus='echo -n "\u2030" | pbcopy'
