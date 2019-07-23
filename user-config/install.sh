@@ -61,11 +61,6 @@ stow --target "${STOW_TARGET}" neovim
 # Install X-related things, such as `.xinitrc`.
 stow --target "${STOW_TARGET}" xorg
 
-# Install the wallpaper script.
-# NOTE: does not actually download the wallpapers. To do that, run the Ruby
-# script `download-images.rb` located in the `wallpapers/.wallpapers` directory.
-stow --target "${STOW_TARGET}" wallpapers
-
 # Install bspwm configuration.
 stow --target "${STOW_TARGET}" bspwm
 

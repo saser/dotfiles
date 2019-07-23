@@ -32,11 +32,6 @@ stow --target "${STOW_TARGET}" --delete neovim
 # Uninstall X-related things, such as `.xinitrc`.
 stow --target "${STOW_TARGET}" --delete xorg
 
-# Uninstall wallpapers.
-# NOTE: does not actually remove the images from the disk. That has to be done
-# manually.
-stow --target "${STOW_TARGET}" --delete wallpapers
-
 # Uninstall bspwm configuration.
 stow --target "${STOW_TARGET}" --delete bspwm
 
