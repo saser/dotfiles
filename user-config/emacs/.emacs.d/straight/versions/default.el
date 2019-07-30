@@ -31,7 +31,7 @@
  ("markdown-mode" . "115f77df9755c6a453f3e5d9623ff885d207ea82")
  ("melpa" . "aecfc82727d408eb3120f76ace1ed7207ff5e5f1")
  ("pkg-info.el" . "76ba7415480687d05a4353b27fea2ae02b8d9d61")
- ("protobuf" . "5bc250b084b88b6ec98046054f5836b6b60132ef")
+ ("protobuf" . "bf0c69e1302fe9568fbe310cc54b37d20a9d16a3")
  ("s.el" . "03410e6a7a2b11e47e1fea3b7d9899c7df26435e")
  ("seq" . "095fb15a3baa082079799dd36b6caccdb062cb90")
  ("smartparens" . "7080e7fba9f478c2e5d4c18a325c3a5d60f6be76")
