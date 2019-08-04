@@ -11,7 +11,7 @@ run:
 	$(PLAYBOOK_CMD) "$(MAIN_PLAYBOOK)"
 
 .PHONY: lint
-lint:
+lint: \
 	ansible-lint \
 	yaml-lint
 
