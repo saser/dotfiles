@@ -21,7 +21,11 @@
   tags:
     - alacritty
     - filesystem
-  command: tic -x {{ item|quote }}
+  vars:
+    terminfo_dir: "{{ home }}/.terminfo"
+  command: tic -x -o {{ terminfo_dir }} {{ item|quote }}
+  args:
+    creates: "{{ terminfo_dir }}/{{ item | basename | first }}/{{ item | basename | splitext | first }}"
   with_fileglob: "*.terminfo"
 
 - name: Create temporary directory for config fragments
