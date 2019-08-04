@@ -24,4 +24,4 @@ YAML_FILES := $(shell git ls-files --exclude-standard --cached --others -- '*.ym
 .PHONY: yaml-lint
 yaml-lint:
 	$(PLAYBOOK_CMD) "$(LINT_PLAYBOOK)"
-	prettier --format yaml --check $(YAML_FILES)
+	prettier --check $(YAML_FILES)
