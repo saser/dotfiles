@@ -1,1 +1,2 @@
 alacritty_dir: "{{ config_dir }}/alacritty"
+fragments_dir: "{{ alacritty_dir }}/fragments"

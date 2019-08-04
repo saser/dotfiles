@@ -28,15 +28,15 @@
     creates: "{{ terminfo_dir }}/{{ item | basename | first }}/{{ item | basename | splitext | first }}"
   with_fileglob: "*.terminfo"
 
-- name: Create temporary directory for config fragments
+- name: Create directory for config fragments
   tags:
     - alacritty
     - filesystem
-  tempfile:
+  file:
+    dest: "{{ fragments_dir }}"
     state: directory
-  register: fragments_dir
 
-- name: Copy config and colorscheme file to temporary directory
+- name: Copy config and colorscheme file to fragments directory
   tags:
     - alacritty
     - filesystem
@@ -44,7 +44,7 @@
     color_basename: "{{ base16_scheme }}{{ '-256' if base16_256 else '' }}"
   copy:
     src: "{{ item }}"
-    dest: "{{ fragments_dir.path }}"
+    dest: "{{ fragments_dir }}"
   loop:
     - config.yml
     - "colors/base16/colors/base16-{{ color_basename }}.yml"
@@ -54,13 +54,5 @@
     - alacritty
     - filesystem
   assemble:
-    src: "{{ fragments_dir.path }}"
+    src: "{{ fragments_dir }}"
     dest: "{{ alacritty_dir }}/alacritty.yml"
-
-- name: Remove temporary directory
-  tags:
-    - alacritty
-    - filesystem
-  file:
-    path: "{{ fragments_dir.path }}"
-    state: absent
