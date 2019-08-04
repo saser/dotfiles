@@ -9,9 +9,6 @@ if [[ -e "$XSESSIONRC" ]]; then
     source "$HOME/.xsessionrc"
 fi
 
-# Source a screenlayout, created by `arandr`.
-source "$HOME/.screenlayout/layout.sh"
-
 # Load general Xresources settings.
 xrdb -merge "${HOME}/.Xresources"
 
@@ -23,7 +20,7 @@ fi
 xrdb -merge "${HOME}/.xcolors/base16/xresources/base16-${scheme_name}.Xresources"
 
 # Sets the background image.
-# feh --bg-fill --no-fehbg "${HOME}/.config/wallpaper"
+feh --bg-fill --no-fehbg "${HOME}/.config/wallpaper"
 
 # Make sure the ~/.logs folder exists, so that we can log sxhkd command output to it.
 LOGS_DIR="${HOME}/.logs"
