@@ -1,0 +1,9 @@
+- name: Install `prettier`
+  tags:
+    - prettier
+    - package
+  become: true
+  pacman:
+    name:
+      - prettier
+    state: present
