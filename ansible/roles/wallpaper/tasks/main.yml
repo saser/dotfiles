@@ -25,11 +25,13 @@
     state: link
 
 - name: Create mixin directories
-  import_tasks: ../common/tasks/create_mixin_dir.yml
+  tags:
+    - wallpaper
+    - filesystem
+    - .xprofile
+  import_tasks: "{{ playbook_dir }}/common/tasks/create_mixin_dir.yml"
   vars:
     mixin: ".xprofile"
-  tags:
-    - .xprofile
 
 - name: Deploy mixin script that sets wallpaper
   tags:
