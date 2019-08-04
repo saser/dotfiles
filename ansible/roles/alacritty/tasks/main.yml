@@ -1,0 +1,62 @@
+- name: Install `alacritty` and `alacritty-terminfo`
+  tags:
+    - alacritty
+    - package
+  become: true
+  pacman:
+    name:
+      - alacritty
+      - alacritty-terminfo
+    state: present
+
+- name: Create config directory
+  tags:
+    - alacritty
+    - filesystem
+  file:
+    dest: "{{ alacritty_dir }}"
+    state: directory
+
+- name: Compile 24-bit color terminfos
+  tags:
+    - alacritty
+    - filesystem
+  command: tic -x {{ item|quote }}
+  with_fileglob: "*.terminfo"
+
+- name: Create temporary directory for config fragments
+  tags:
+    - alacritty
+    - filesystem
+  tempfile:
+    state: directory
+  register: fragments_dir
+
+- name: Copy config and colorscheme file to temporary directory
+  tags:
+    - alacritty
+    - filesystem
+  vars:
+    color_basename: "{{ base16_scheme }}{{ '-256' if base16_256 else '' }}"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ fragments_dir.path }}"
+  loop:
+    - config.yml
+    - "colors/base16/colors/base16-{{ color_basename }}.yml"
+
+- name: Concatenate config and colorscheme file
+  tags:
+    - alacritty
+    - filesystem
+  assemble:
+    src: "{{ fragments_dir.path }}"
+    dest: "{{ alacritty_dir }}/alacritty.yml"
+
+- name: Remove temporary directory
+  tags:
+    - alacritty
+    - filesystem
+  file:
+    path: "{{ fragments_dir.path }}"
+    state: absent

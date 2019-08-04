@@ -23,7 +23,7 @@
 	path = user-config/emacs/.emacs.d/straight/repos/straight.el
 	url = https://github.com/raxod502/straight.el
 [submodule "base16-alacritty"]
-	path = user-config/alacritty/.config/alacritty/colors/base16
+	path = ansible/roles/alacritty/files/colors/base16
 	url = https://github.com/aaron-williamson/base16-alacritty
 [submodule "base16-fzf"]
 	path = user-config/shell/.zsh-extras/colors/base16-fzf
