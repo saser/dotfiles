@@ -12,6 +12,8 @@
     - import_role:
         name: emacs
     - import_role:
+        name: git
+    - import_role:
         name: wallpaper
     - import_role:
         name: xorg
