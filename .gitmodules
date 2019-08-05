@@ -34,3 +34,6 @@
 [submodule "base16-zathura"]
 	path = user-config/zathura/.config/zathura/base16-zathura
 	url = https://github.com/nicodebo/base16-zathura
+[submodule "ansible/tools/prettier"]
+	path = ansible/tools/prettier
+	url = https://github.com/Saser/mk-prettier
