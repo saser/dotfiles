@@ -8,6 +8,8 @@
     - import_role:
         name: alacritty
     - import_role:
+        name: bspwm
+    - import_role:
         name: wallpaper
     - import_role:
         name: xorg
