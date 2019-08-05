@@ -1,14 +1,13 @@
-PLAYBOOK_CMD := ansible-playbook --inventory='localhost,' --ask-become-pass
-
-MAIN_PLAYBOOK := dotfiles.yml
-LINT_PLAYBOOK := lint.yml
+PLAYBOOK := dotfiles.yml
 
 .PHONY: default
 default: run
 
+include tools/prettier/Makefile
+
 .PHONY: run
 run:
-	$(PLAYBOOK_CMD) "$(MAIN_PLAYBOOK)"
+	ansible-playbook --inventory='localhost,' --ask-become-pass '$(PLAYBOOK)'
 
 .PHONY: lint
 lint: \
@@ -17,11 +16,10 @@ lint: \
 
 .PHONY: ansible-lint
 ansible-lint:
-	ansible-lint "$(MAIN_PLAYBOOK)" "$(LINT_PLAYBOOK)"
+	ansible-lint '$(PLAYBOOK)'
 
 YAML_FILES := $(shell git ls-files --exclude-standard --cached --others -- '*.yml')
 
 .PHONY: yaml-lint
-yaml-lint:
-	$(PLAYBOOK_CMD) "$(LINT_PLAYBOOK)"
-	prettier --check $(YAML_FILES)
+yaml-lint: $(PRETTIER)
+	$(PRETTIER) --check $(YAML_FILES)
