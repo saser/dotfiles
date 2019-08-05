@@ -20,7 +20,7 @@
 	path = user-config/tmux/.tmux/plugins/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
 [submodule "straight.el"]
-	path = user-config/emacs/.emacs.d/straight/repos/straight.el
+	path = ansible/roles/emacs/files/.emacs.d/straight/repos/straight.el
 	url = https://github.com/raxod502/straight.el
 [submodule "base16-alacritty"]
 	path = ansible/roles/alacritty/files/colors/base16
