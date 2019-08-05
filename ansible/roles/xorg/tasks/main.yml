@@ -1,3 +1,18 @@
+- name: Install X server and related packages
+  tags:
+    - xorg
+    - package
+  become: true
+  pacman:
+    name:
+      - xclip
+      - xf86-video-intel
+      - xorg-server
+      - xorg-xbacklight
+      - xorg-xinit
+      - xorg-xrdb
+    state: present
+
 - name: Deploy `.xprofile`
   tags:
     - xorg
