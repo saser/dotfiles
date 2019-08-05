@@ -1,0 +1,18 @@
+- name: Install `emacs-nox`
+  tags:
+    - emacs
+    - package
+  become: true
+  pacman:
+    name:
+      - emacs-nox
+    state: present
+
+- name: Create symbolic link to configuration directory
+  tags:
+    - emacs
+    - filesystem
+  file:
+    src: "{{ role_path }}/files/.emacs.d"
+    dest: "{{ home }}/.emacs.d"
+    state: link
