@@ -23,3 +23,7 @@ YAML_FILES := $(shell git ls-files --exclude-standard --cached --others -- '*.ym
 .PHONY: yaml-lint
 yaml-lint: $(PRETTIER)
 	$(PRETTIER) --check $(YAML_FILES)
+
+.PHONY: yaml-format
+yaml-format: $(PRETTIER)
+	$(PRETTIER) --write $(YAML_FILES)
