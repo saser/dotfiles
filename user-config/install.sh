@@ -42,9 +42,6 @@ for service in ssh/.config/systemd/user/*.service; do
     systemctl --user enable "$(basename "${service}")"
 done
 
-# Install git configuration.
-stow --target "${STOW_TARGET}" git
-
 # Install tmux configuration.
 stow --target "${STOW_TARGET}" tmux
 # Compile the terminfo files.
@@ -52,30 +49,17 @@ for terminfo in tmux/.terminfo/*.terminfo; do
     tic -x "$terminfo"
 done
 
-# Install emacs configuration.
-stow --target "${STOW_TARGET}" emacs
-
 # Install neovim configuration.
 stow --target "${STOW_TARGET}" neovim
 
 # Install X-related things, such as `.xinitrc`.
 stow --target "${STOW_TARGET}" xorg
 
-# Install bspwm configuration.
-stow --target "${STOW_TARGET}" bspwm
-
 # Install polybar configuration.
 stow --target "${STOW_TARGET}" polybar
 
 # Install sxhkd configuration.
 stow --target "${STOW_TARGET}" sxhkd
-
-# Install alacritty configuration.
-stow --target "${STOW_TARGET}" alacritty
-# Compile the terminfo files.
-for terminfo in alacritty/.terminfo/*.terminfo; do
-    tic -x "$terminfo"
-done
 
 # Install my scripts.
 # They will be available in my PATH, see `./shell/.zprofile`.
