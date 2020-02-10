@@ -11,11 +11,7 @@ font:
   # the normal font.
   normal:
     family: Iosevka
-
-  # It seems that Alacritty uses very large fonts be defaults (not sure why, I'm
-  # gessing something relating to the DPI but I am not sure), so the specified
-  # size here is fairly small.
-  size: 7.0
+  size: 12.0
 
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
