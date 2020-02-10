@@ -295,6 +295,9 @@
 ;; Support for Protocol Buffer syntax.
 (use-package protobuf-mode)
 
+;; Support for Bazel files (WORKSPACE, BUILD.bazel, etc).
+(use-package bazel-mode)
+
 ;; `company' is a completion framework for Emacs, and `company-lsp' is a backend
 ;; for `company' that integrates with `lsp-mode', allowing completions to be
 ;; sourced from the LSP server.
