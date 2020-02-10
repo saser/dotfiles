@@ -48,3 +48,4 @@ alias pbpaste='xclip -selection clipboard -out'
 # Miscellaneous, actually kind of useless, aliases.
 alias bacchus='echo -n "\u2030" | pbcopy'
 alias trademark='echo -n "\u2122" | pbcopy'
+alias shruggie='echo "¯\_(ツ)_/¯" | pbcopy'
