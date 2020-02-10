@@ -16,5 +16,13 @@ wallpapers:
       name: "wood-panels.jpg",
       url: "https://unsplash.com/photos/7JZPXJRu7jU/download?force=true",
     }
-current_wallpaper_name: milky-way.jpg
+  - {
+      name: "ice-lake.jpg",
+      url: "https://unsplash.com/photos/GYIxdUFEkX8/download?force=true",
+    }
+  - {
+      name: "corall-reef.jpg",
+      url: "https://unsplash.com/photos/hEB3n_fIXq4/download?force=true",
+    }
+current_wallpaper_name: corall-reef.jpg
 current_wallpaper_link: "{{ config_dir }}/wallpaper"
