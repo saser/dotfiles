@@ -13,6 +13,9 @@ NEW_PATH="${HOME}/scripts/tmp:${NEW_PATH}"
 # SEMI-TEMPORARY: include non-system packages installed with `stow` to the
 # `~/build` directory.
 NEW_PATH="${HOME}/build/bin:${NEW_PATH}"
+# Set a GOPATH. With Go modules, it is not needed to put own Go code there, but
+# the `go` command will install other packages there.
+export GOPATH="${HOME}/code/go"
 # Make Go binaries available.
 NEW_PATH="${GOPATH}/bin:$NEW_PATH"
 
@@ -38,10 +41,6 @@ source "$HOME/.login/secrets"
 
 # Set my preferred text editor.
 export EDITOR=emacs
-
-# Set a GOPATH. With Go modules, it is not needed to put own Go code there, but
-# the `go` command will install other packages there.
-export GOPATH="${HOME}/code/go"
 
 # Make Java applications (such as IntelliJ) behave nicely.
 export _JAVA_AWT_WM_NONREPARENTING=1
