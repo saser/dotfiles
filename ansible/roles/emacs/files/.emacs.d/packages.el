@@ -292,6 +292,9 @@
 ;; Support for the Rust programming language.
 (use-package rust-mode)
 
+;; Support for Protocol Buffer syntax.
+(use-package protobuf-mode)
+
 ;; `company' is a completion framework for Emacs, and `company-lsp' is a backend
 ;; for `company' that integrates with `lsp-mode', allowing completions to be
 ;; sourced from the LSP server.
