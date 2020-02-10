@@ -6,11 +6,11 @@ env:
   TERM: alacritty-24bits
 
 font:
-  # Use the Source Code Pro family for fonts. Note that there is no need to
-  # separately specify the bold, italic, or bold-italic fonts; they will be
-  # derived from the normal font.
+  # Use the Iosevka family for fonts. Note that there is no need to separately
+  # specify the bold, italic, or bold-italic fonts; they will be derived from
+  # the normal font.
   normal:
-    family: Source Code Pro
+    family: Iosevka
 
   # It seems that Alacritty uses very large fonts be defaults (not sure why, I'm
   # gessing something relating to the DPI but I am not sure), so the specified
