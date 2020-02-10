@@ -238,7 +238,7 @@
 (use-package flycheck
   :hook
   ;; Enable `flycheck-mode' for specific major modes.
-  ((go-mode)
+  ((go-mode rust-mode)
    . flycheck-mode)
   )
 
@@ -289,6 +289,9 @@
   (setq godoc-at-point-function 'godoc-gogetdoc)
   )
 
+;; Support for the Rust programming language.
+(use-package rust-mode)
+
 ;; `company' is a completion framework for Emacs, and `company-lsp' is a backend
 ;; for `company' that integrates with `lsp-mode', allowing completions to be
 ;; sourced from the LSP server.
@@ -311,6 +314,7 @@
   ;; Go: requires `gopls'. It can be installed using
   ;;     go get -u golang.org/x/tools/cmd/gopls
   (add-hook 'go-mode-hook #'lsp)
+  (add-hook 'rust-mode-hook #'lsp)
   :config
   (leader-def
     :map 'lsp-mode-map
