@@ -24,5 +24,9 @@ wallpapers:
       name: "corall-reef.jpg",
       url: "https://unsplash.com/photos/hEB3n_fIXq4/download?force=true",
     }
-current_wallpaper_name: corall-reef.jpg
+  - {
+      name: "blue-lake.jpg",
+      url: "https://unsplash.com/photos/T_Qe4QlMIvQ/download?force=true",
+    }
+current_wallpaper_name: blue-lake.jpg
 current_wallpaper_link: "{{ config_dir }}/wallpaper"
