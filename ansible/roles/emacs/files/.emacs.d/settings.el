@@ -6,6 +6,9 @@
 (require 'mwheel)
 (mouse-wheel-mode 1)
 
+;; Make all prompts that takes yes/no questions use 'y' or 'n'.
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; Do vim-like scrolling, meaning that a single line is scrolled at a time.
 ;; Emacs' default scrolling scrolls about half a page each time the point moves
 ;; outside the window, which I find too "jumpy" and annoying.
