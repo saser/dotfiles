@@ -260,10 +260,16 @@
   (add-hook 'LaTeX-mode-hook
             (lambda ()
               (add-hook 'after-save-hook (lambda () (TeX-command "LatexMk" 'TeX-master-file)))))
+  ;; Add a hook that turns on RefTeX, which seems to be an amazing tool for
+  ;; working with references and citations interactively in Emacs.
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
   :config
   ;; This overrides all the default view programs, but since I only ever use
   ;; PDF, it is sufficient.
   (setq TeX-view-program-selection '((output-pdf "Zathura")))
+  ;; Plug RefTeX into AUCTeX, enabling very cool interactive functionality when
+  ;; e.g. using `C-c RET ref' to insert references.
+  (setq reftex-plug-into-AUCTeX t)
   )
 
 ;; Add integration to use `latexmk' in AUCTeX. Using `latexmk' is much nicer
