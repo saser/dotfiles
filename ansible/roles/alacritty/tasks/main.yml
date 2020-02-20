@@ -6,7 +6,6 @@
   pacman:
     name:
       - alacritty
-      - alacritty-terminfo
     state: present
 
 - name: Create config directory
