@@ -42,3 +42,11 @@
   (setq
    company-idle-delay 0
    company-minimum-prefix-length 1))
+
+;; `lsp-ui' provides some fancier interfaces for LSP functionality.
+(use-package lsp-ui
+  :commands (lsp-ui-mode))
+
+;; `flycheck' provides additional syntax checking and linting.
+(use-package flycheck
+  :init (global-flycheck-mode))
