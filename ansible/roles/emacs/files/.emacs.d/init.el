@@ -21,3 +21,16 @@
 
 ;; `go-mode' includes support for Go.
 (use-package go-mode)
+
+;; `lsp-mode' is a LSP client.
+(use-package lsp-mode
+  :commands (lsp-deferred)
+  ;; `lsp-mode' includes a client for `gopls'. Set up so that LSP is loaded when
+  ;; editing Go files.
+  :hook (go-mode . lsp-deferred))
+
+;; When saving Go files, automatically format and fix imports.
+(defun lsp-go-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-save-hooks)
