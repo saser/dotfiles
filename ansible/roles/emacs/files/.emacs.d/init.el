@@ -18,3 +18,6 @@
   :config
   ;; Enable `evil-mode' as soon as the package is loaded.
   (evil-mode 1))
+
+;; `go-mode' includes support for Go.
+(use-package go-mode)
