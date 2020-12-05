@@ -34,3 +34,11 @@
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-save-hooks)
+
+;; `company' is a completion package. It integrates with `lsp-mode' well.
+(use-package company
+  :config
+  ;; Enable as-you-type completion.
+  (setq
+   company-idle-delay 0
+   company-minimum-prefix-length 1))
