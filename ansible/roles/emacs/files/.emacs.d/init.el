@@ -9,3 +9,12 @@
 ;; Finally, set up `use-package' to always use `straight.el' for installing
 ;; packages.
 (setq straight-use-package-by-default t)
+
+;; === PACKAGE INSTALLATION AND CONFIGURATION ===
+;; The packages here are listed in no particular order.
+
+;; `evil' is Vim keybindings for Emacs.
+(use-package evil
+  :config
+  ;; Enable `evil-mode' as soon as the package is loaded.
+  (evil-mode 1))
