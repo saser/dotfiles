@@ -50,3 +50,7 @@
 ;; `flycheck' provides additional syntax checking and linting.
 (use-package flycheck
   :init (global-flycheck-mode))
+
+;; `base16-theme' provides Emacs versions of the base16 colorschemes.
+(use-package base16-theme
+  :config (load-theme 'base16-monokai t))
