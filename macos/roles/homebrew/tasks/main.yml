@@ -9,3 +9,8 @@
     dest: '{{ homebrew_install_path }}'
     version: master
     update: no
+
+- name: Ensure Homebrew binary directory exists
+  file:
+    path: '{{ homebrew_bin_path }}'
+    state: directory
