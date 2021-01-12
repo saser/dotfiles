@@ -3,23 +3,18 @@
     path: '{{ homebrew_prefix }}'
     state: directory
 
+- name: Ensure Homebrew directories exist
+  loop: '{{ homebrew_directories }}'
+  file:
+    path: '{{ homebrew_prefix }}/{{ item }}'
+    state: directory
+
 - name: Clone Homebrew
   git:
     repo: 'https://github.com/Homebrew/brew'
     dest: '{{ homebrew_install_path }}'
     version: master
     update: no
-
-- name: Ensure Homebrew binary directory exists
-  file:
-    path: '{{ homebrew_bin_path }}'
-    state: directory
-
-- name: Ensure Homebrew directories exist
-  loop: '{{ homebrew_directories }}'
-  file:
-    path: '{{ homebrew_prefix }}/{{ item }}'
-    state: directory
 
 - name: Symlink `brew` executable to binary directory
   file:
