@@ -1,0 +1,2 @@
+homebrew_prefix: '{{ ansible_env.HOME }}/.brew'
+homebrew_install_path: '{{ homebrew_prefix }}/Homebrew'

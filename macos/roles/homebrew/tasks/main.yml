@@ -1,9 +1,11 @@
----
-- name: Set Homebrew variables
-  set_fact:
-    homebrew_prefix: '{{ ansible_env.HOME }}/.brew'
-
 - name: Ensure Homebrew parent directory exists
   file:
     path: '{{ homebrew_prefix }}'
     state: directory
+
+- name: Clone Homebrew
+  git:
+    repo: 'https://github.com/Homebrew/brew'
+    dest: '{{ homebrew_install_path }}'
+    version: master
+    update: no
