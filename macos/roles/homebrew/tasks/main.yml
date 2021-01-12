@@ -14,3 +14,15 @@
   file:
     path: '{{ homebrew_bin_path }}'
     state: directory
+
+- name: Ensure Homebrew directories exist
+  loop: '{{ homebrew_directories }}'
+  file:
+    path: '{{ homebrew_prefix }}/{{ item }}'
+    state: directory
+
+- name: Symlink `brew` executable to binary directory
+  file:
+    src: '{{ homebrew_install_path }}/bin/brew'
+    dest: '{{ homebrew_bin_path }}/brew'
+    state: link
