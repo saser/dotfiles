@@ -1,0 +1,9 @@
+- name: Import platform tasks (macOS)
+  import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Symlink .emacs.d to $HOME
+  file:
+    src: '{{ role_path }}/files/.emacs.d'
+    dest: '{{ ansible_env.HOME }}/.emacs.d'
+    state: link

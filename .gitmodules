@@ -37,3 +37,6 @@
 [submodule "ansible/tools/prettier"]
 	path = ansible/tools/prettier
 	url = https://github.com/Saser/mk-prettier
+[submodule "macos/roles/emacs/files/.emacs.d/straight/repos/straight.el"]
+	path = macos/roles/emacs/files/.emacs.d/straight/repos/straight.el
+	url = https://github.com/raxod502/straight.el.git
