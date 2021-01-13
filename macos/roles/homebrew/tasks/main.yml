@@ -2,12 +2,16 @@
   file:
     path: '{{ homebrew_prefix }}'
     state: directory
+  become: true
 
 - name: Ensure Homebrew directories exist
   loop: '{{ homebrew_directories }}'
   file:
     path: '{{ homebrew_prefix }}/{{ item }}'
+    owner: '{{ ansible_user_id }}'
+    group: '{{ ansible_user_gid }}'
     state: directory
+  become: true
 
 - name: Clone Homebrew
   git:
@@ -15,6 +19,15 @@
     dest: '{{ homebrew_install_path }}'
     version: master
     update: no
+
+- name: Set permissions for Homebrew install directory
+  file:
+    path: '{{ homebrew_install_path }}'
+    owner: '{{ ansible_user_id }}'
+    group: '{{ ansible_user_gid }}'
+    state: directory
+    recurse: true
+  become: true
 
 - name: Symlink `brew` executable to binary directory
   file:
