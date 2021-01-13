@@ -2,3 +2,6 @@
   community.general.homebrew:
     name:
       - emacs
+
+- name: Enable the emacs service (macOS)
+  command: brew services start emacs
