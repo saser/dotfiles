@@ -1,0 +1,9 @@
+- name: Import platform tasks (macOS)
+  import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Symlink `.gitconfig` to $HOME
+  file:
+    src: '{{ role_path }}/files/.gitconfig'
+    dest: '{{ ansible_env.HOME }}/.gitconfig'
+    state: link
