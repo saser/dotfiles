@@ -68,3 +68,9 @@
 ;; `treemacs-evil' configures treemacs bindings suitable for `evil' users.
 (use-package treemacs-evil
   :after treemacs evil)
+
+;; === EMACS SETTINGS ===
+;; These are settings that affect how emacs operates as a whole.
+
+;; Make sure a newline is added to the end of every file.
+(setq require-final-newline t)
