@@ -74,3 +74,6 @@
 
 ;; Make sure a newline is added to the end of every file.
 (setq require-final-newline t)
+
+;; Set the backups directory to "~/.emacs.d/backups".
+(setq backup-directory-alist `(("." . ,(concat (file-name-as-directory user-emacs-directory) "backups"))))
