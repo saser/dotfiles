@@ -1,0 +1,19 @@
+- name: Install zsh and related programs (macOS)
+  community.general.homebrew:
+    name:
+      - zsh
+
+- name: Ensure /usr/local/bin/zsh is in /etc/shells (macOS)
+  lineinfile:
+    path: /etc/shells
+    line: /usr/local/bin/zsh
+  become: true
+
+- name: Get current login shell (macOS)
+  command: dscl . -read ~/ UserShell
+  register: get_login_shell
+  changed_when: false
+
+- name: Set login shell to /usr/local/bin/zsh (macOS)
+  command: chsh -s /usr/local/bin/zsh
+  when: "get_login_shell.stdout != 'UserShell: /usr/local/bin/zsh'"
