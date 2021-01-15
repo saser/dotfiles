@@ -1,3 +1,9 @@
 - name: Import platform tasks (macOS)
   import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
+
+- name: Ensure startup files are in place
+  file:
+    src: '{{ role_path }}/files/.zshrc'
+    dest: '{{ ansible_env.HOME }}/.zshrc'
+    state: link
