@@ -5,3 +5,5 @@
 
 - name: Enable the emacs service (macOS)
   command: brew services start emacs
+  register: result
+  changed_when: '"Successfully started" in result.stdout'
