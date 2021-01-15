@@ -1,0 +1,14 @@
+- name: Ensure pathensure directory exists
+  file:
+    path: '{{ pathensure_dir }}'
+    state: directory
+
+- name: Ensure pathensure script exists
+  file:
+    src: '{{ role_path }}/files/pathensure.sh'
+    dest: '{{ pathensure_script }}'
+    state: link
+
+- name: Import platform tasks (macOS)
+  import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'

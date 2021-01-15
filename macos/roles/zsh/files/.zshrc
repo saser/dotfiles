@@ -1,3 +1,3 @@
-JOINED_PATH="$("$HOME/.joinpaths/joinpaths.sh" "$HOME/.joinpaths/paths.txt")"
-echo 'Setting $PATH to '"${JOINED_PATH}"
-export PATH="${JOINED_PATH}"
+_PATH="$("$HOME/.pathensure/pathensure.sh" "$HOME/.pathensure/entries.txt")"
+echo 'Setting $PATH to '"${_PATH}"
+export PATH="${_PATH}"
