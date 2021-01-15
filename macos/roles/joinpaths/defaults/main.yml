@@ -1,0 +1,3 @@
+joinpaths_dir: '{{ ansible_env.HOME }}/.joinpaths'
+joinpaths_script: '{{ joinpaths_dir }}/joinpaths.sh'
+joinpaths_paths_file: '{{ joinpaths_dir }}/paths.txt'

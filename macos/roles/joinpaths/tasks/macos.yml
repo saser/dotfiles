@@ -1,0 +1,11 @@
+- name: Ensure joinpaths entries exist for default directories (macOS)
+  loop:
+    - '90 /usr/local/bin'
+    - '91 /usr/bin'
+    - '92 /bin'
+    - '93 /usr/sbin'
+    - '94 /sbin'
+  lineinfile:
+    path: '{{ joinpaths_paths_file }}'
+    line: '{{ item }}'
+    create: true
