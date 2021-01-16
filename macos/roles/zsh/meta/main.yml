@@ -1,4 +1,5 @@
 dependencies:
+  - role: envensure
   - role: homebrew
     when: ansible_distribution == 'MacOSX'
   - role: pathensure
