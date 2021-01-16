@@ -1,0 +1,4 @@
+- name: Ensure envensure directory exists
+  file:
+    path: '{{ envensure_dir }}'
+    state: directory

@@ -1,0 +1,3 @@
+envensure_dir: '{{ ansible_env.HOME }}/.envensure'
+envensure_script: '{{ envensure_dir }}/envensure.sh'
+envensure_entries: '{{ envensure_dir }}/entries.sh'
