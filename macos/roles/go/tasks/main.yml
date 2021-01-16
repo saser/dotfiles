@@ -1,0 +1,15 @@
+- name: Import platform tasks (macOS)
+  import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Ensure $GOPATH is set
+  lineinfile:
+    path: '{{ envensure_entries }}'
+    line: 'export GOPATH="{{ go_env.GOPATH }}"'
+    create: true
+
+- name: Ensure $GOPATH/bin is included in $PATH
+  lineinfile:
+    path: '{{ pathensure_entries }}'
+    line: '10 {{ go_env.GOPATH }}/bin'
+    create: true
