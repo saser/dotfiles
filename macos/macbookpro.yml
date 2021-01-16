@@ -3,5 +3,6 @@
   roles:
     - emacs
     - git
+    - go
     - ripgrep
     - zsh
