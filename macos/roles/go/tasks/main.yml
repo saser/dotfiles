@@ -14,3 +14,12 @@
     path: '{{ pathensure_entries }}'
     line: '10 {{ go_env.GOPATH }}/bin'
     create: true
+
+- name: Install Go tools using `go get`
+  loop:
+    - golang.org/x/tools/gopls
+    - mvdan.cc/gofumpt/gofumports
+  command:
+    cmd: 'go get {{ item }}'
+    creates: '{{ go_env.GOPATH }}/bin/{{ item.split("/")[-1] }}'
+  environment: '{{ go_env }}'
