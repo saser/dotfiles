@@ -29,6 +29,10 @@
   ;; editing Go files.
   :hook (go-mode . lsp-deferred))
 
+;; `yaml-mode' provides support for YAML.
+(use-package yaml-mode
+  :mode "\\.yml\\'")
+
 ;; When saving Go files, automatically format and fix imports.
 (defun lsp-go-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
