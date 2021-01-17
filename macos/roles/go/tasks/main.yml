@@ -2,10 +2,11 @@
   import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
 
-- name: Ensure $GOPATH is set
+- name: Ensure Go environment variables are set
+  loop: '{{ go_env | dict2items }}'
   lineinfile:
     path: '{{ envensure_entries }}'
-    line: 'export GOPATH="{{ go_env.GOPATH }}"'
+    line: 'export {{ item.key }}="{{ item.value }}"'
     create: true
 
 - name: Ensure $GOPATH/bin is included in $PATH
