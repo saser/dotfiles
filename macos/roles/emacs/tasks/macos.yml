@@ -14,3 +14,15 @@
     name: '{{ emacs_service_name }}'
     enabled: true
     state: started
+
+- name: Ensure $PATH contains directory with `emacsclient-gui.sh`
+  lineinfile:
+    path: '{{ pathensure_entries }}'
+    line: '20 {{ role_path }}/files/bin'
+    create: true
+
+- name: Set $EDITOR to `emacsclient-gui.sh`
+  lineinfile:
+    path: '{{ envensure_entries }}'
+    line: 'export EDITOR=emacsclient-gui.sh'
+    create: true
