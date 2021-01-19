@@ -1,9 +1,16 @@
 - name: Install emacs and related programs (macOS)
-  community.general.homebrew:
+  community.general.homebrew_cask:
     name:
       - emacs
 
+- name: Install the plist for the emacs service (macOS)
+  file:
+    src: '{{ role_path }}/files/{{ emacs_plist_filename }}'
+    dest: '{{ emacs_plist_path }}'
+    state: link
+
 - name: Enable the emacs service (macOS)
-  command: brew services start emacs
-  register: result
-  changed_when: '"Successfully started" in result.stdout'
+  community.general.launchd:
+    name: '{{ emacs_service_name }}'
+    enabled: true
+    state: started
