@@ -9,11 +9,8 @@
     line: /usr/local/bin/zsh
   become: true
 
-- name: Get current login shell (macOS)
-  command: dscl . -read ~/ UserShell
-  register: get_login_shell
-  changed_when: false
-
 - name: Set login shell to /usr/local/bin/zsh (macOS)
-  command: chsh -s /usr/local/bin/zsh
-  when: "get_login_shell.stdout != 'UserShell: /usr/local/bin/zsh'"
+  user:
+    name: '{{ ansible_env.USER }}'
+    shell: /usr/local/bin/zsh
+  become: true
