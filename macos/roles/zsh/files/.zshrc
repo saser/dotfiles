@@ -8,8 +8,15 @@ source "$HOME/.envensure/entries.sh"
 
 source "${ZPLUG_HOME}/init.zsh"
 
+# Syntax highlighting for the shell.
+zplug "${ZSHPLUGINS}/zsh-syntax-highlighting", \
+      from:local, \
+      defer:2
+
 # Load my own custom prompt.
 fpath=(${HOME}/.prompt ${fpath})
 autoload -Uz promptinit
 promptinit
 prompt saser
+
+zplug load --verbose

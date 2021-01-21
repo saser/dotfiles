@@ -14,6 +14,18 @@
     dest: '{{ zsh_zplug_home }}'
     state: link
 
+- name: Link plugins directory to its place
+  file:
+    src: '{{ role_path }}/files/zshplugins'
+    dest: '{{ zsh_zshplugins }}'
+    state: link
+
+- name: Set $ZSHPLUGINS environment variable
+  lineinfile:
+    path: '{{ envensure_entries }}'
+    line: 'export ZSHPLUGINS="{{ zsh_zshplugins }}"'
+    create: true
+
 - name: Ensure startup files are in place
   loop:
     - '.prompt'

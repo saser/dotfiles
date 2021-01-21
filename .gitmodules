@@ -46,3 +46,6 @@
 [submodule "macos/roles/zsh/files/zplug"]
 	path = macos/roles/zsh/files/zplug
 	url = https://github.com/zplug/zplug.git
+[submodule "macos/roles/zsh/files/zshplugins/zsh-syntax-highlighting"]
+	path = macos/roles/zsh/files/zshplugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
