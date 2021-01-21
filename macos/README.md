@@ -8,3 +8,6 @@ There are some things in my dotfiles that cannot be automatically installed. The
 
 ### iTerm2 color scheme
 Look at the [base16-iterm2 repository](https://github.com/martinlindhe/base16-iterm2) for instructions on how to install the color scheme. Do use the 256 variation.
+
+### iTerm2 font
+The font is installed by including the `iosevka` role, however it needs to be manually enabled. Go to "Preferences > Profiles > Text" and set the font, ideally size 16.
