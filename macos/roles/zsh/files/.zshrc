@@ -5,3 +5,9 @@ export PATH="${_PATH}"
 echo 'Setting the following environment variables:'
 cat "$HOME/.envensure/entries.sh"
 source "$HOME/.envensure/entries.sh"
+
+# Load my own custom prompt.
+fpath=(${HOME}/.prompt ${fpath})
+autoload -Uz promptinit
+promptinit
+prompt saser
