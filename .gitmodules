@@ -40,3 +40,6 @@
 [submodule "macos/roles/emacs/files/.emacs.d/straight/repos/straight.el"]
 	path = macos/roles/emacs/files/.emacs.d/straight/repos/straight.el
 	url = https://github.com/raxod502/straight.el.git
+[submodule "macos/roles/iterm/files/base16-iterm2"]
+	path = macos/roles/iterm/files/base16-iterm2
+	url = https://github.com/martinlindhe/base16-iterm2.git
