@@ -60,6 +60,10 @@
   :commands yas-minor-mode
   :hook (go-mode . yas-minor-mode))
 
+;; `base16-theme' provides Emacs versions of the base16 colorschemes.
+(use-package base16-theme
+  :config (load-theme 'base16-monokai t))
+
 ;; `treemacs' is a file tree explorer that supports a variety of things such as
 ;; git.
 (use-package treemacs
