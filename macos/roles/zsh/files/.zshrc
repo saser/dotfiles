@@ -6,6 +6,8 @@ echo 'Setting the following environment variables:'
 cat "$HOME/.envensure/entries.sh"
 source "$HOME/.envensure/entries.sh"
 
+source "${ZPLUG_HOME}/init.zsh"
+
 # Load my own custom prompt.
 fpath=(${HOME}/.prompt ${fpath})
 autoload -Uz promptinit

@@ -2,6 +2,18 @@
   import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
 
+- name: Set $ZPLUG_HOME environment variable
+  lineinfile:
+    path: '{{ envensure_entries }}'
+    line: 'export ZPLUG_HOME="{{ zsh_zplug_home }}"'
+    create: true
+
+- name: Link zplug directory to $ZPLUG_HOME
+  file:
+    src: '{{ role_path }}/files/zplug'
+    dest: '{{ zsh_zplug_home }}'
+    state: link
+
 - name: Ensure startup files are in place
   loop:
     - '.prompt'

@@ -43,3 +43,6 @@
 [submodule "macos/roles/iterm/files/base16-iterm2"]
 	path = macos/roles/iterm/files/base16-iterm2
 	url = https://github.com/martinlindhe/base16-iterm2.git
+[submodule "macos/roles/zsh/files/zplug"]
+	path = macos/roles/zsh/files/zplug
+	url = https://github.com/zplug/zplug.git
