@@ -29,6 +29,7 @@
 - name: Ensure startup files are in place
   loop:
     - '.prompt'
+    - '.zshenv'
     - '.zshrc'
   file:
     src: '{{ role_path }}/files/{{ item }}'
