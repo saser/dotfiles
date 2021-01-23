@@ -11,3 +11,6 @@ Look at the [base16-iterm2 repository](https://github.com/martinlindhe/base16-it
 
 ### iTerm2 font
 The font is installed by including the `iosevka` role, however it needs to be manually enabled. Go to "Preferences > Profiles > Text" and set the font, ideally size 16.
+
+### Adding SSH key passphrase to the `ssh-agent`
+Run `ssh-add -K ~/.ssh/id_rsa` (replacing the path to the private key as necessary). Verify that it is added by running `ssh-add -l`.
