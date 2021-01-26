@@ -1,3 +1,9 @@
 - name: Import platform tasks (macOS)
   import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
+
+- name: Ensure .tmux.conf is in place
+  file:
+    src: '{{ role_path }}/files/.tmux.conf'
+    dest: '{{ ansible_env.HOME }}/.tmux.conf'
+    state: link
