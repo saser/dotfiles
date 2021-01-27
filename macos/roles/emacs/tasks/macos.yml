@@ -3,24 +3,6 @@
     name:
       - emacs
 
-- name: Install the plist for the emacs service (macOS)
-  file:
-    src: '{{ role_path }}/files/{{ emacs_plist_filename }}'
-    dest: '{{ emacs_plist_path }}'
-    state: link
-
-- name: Enable the emacs service (macOS)
-  community.general.launchd:
-    name: '{{ emacs_service_name }}'
-    enabled: true
-    state: started
-
-- name: Ensure $PATH contains directory with `emacsclient-gui.sh`
-  lineinfile:
-    path: '{{ pathensure_entries }}'
-    line: '20 {{ role_path }}/files/bin'
-    create: true
-
 - name: Set $EDITOR to `emacsclient-gui.sh`
   lineinfile:
     path: '{{ envensure_entries }}'
