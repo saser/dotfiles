@@ -1,0 +1,4 @@
+#!/bin/sh
+
+bspc monitor \
+    --reset-desktops 1 2 3 4 5

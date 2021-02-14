@@ -1,0 +1,11 @@
+# Focus adjacent nodes.
+super + {h,j,k,l}
+    bspc node --focus {west,south,north,east}
+
+# Set the state of the current node.
+super + {t,f}
+    bspc node --state {tiled,fullscreen}
+
+# Quit bspwm.
+super + shift + q
+    bspc quit
