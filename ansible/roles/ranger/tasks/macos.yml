@@ -1,4 +1,4 @@
-- name: Install rg and related programs (macOS)
+- name: Install ranger and related programs (macOS)
   community.general.homebrew:
     name:
       - ranger
