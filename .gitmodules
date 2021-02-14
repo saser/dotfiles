@@ -38,17 +38,17 @@
 	path = ansible-old/tools/prettier
 	url = https://github.com/Saser/mk-prettier
 [submodule "macos/roles/emacs/files/.emacs.d/straight/repos/straight.el"]
-	path = macos/roles/emacs/files/.emacs.d/straight/repos/straight.el
+	path = ansible/roles/emacs/files/.emacs.d/straight/repos/straight.el
 	url = https://github.com/raxod502/straight.el.git
 [submodule "macos/roles/iterm/files/base16-iterm2"]
-	path = macos/roles/iterm/files/base16-iterm2
+	path = ansible/roles/iterm/files/base16-iterm2
 	url = https://github.com/martinlindhe/base16-iterm2.git
 [submodule "macos/roles/zsh/files/zplug"]
-	path = macos/roles/zsh/files/zplug
+	path = ansible/roles/zsh/files/zplug
 	url = https://github.com/zplug/zplug.git
 [submodule "macos/roles/zsh/files/zshplugins/zsh-syntax-highlighting"]
-	path = macos/roles/zsh/files/zshplugins/zsh-syntax-highlighting
+	path = ansible/roles/zsh/files/zshplugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "macos/roles/zsh/files/zshplugins/zsh-history-substring-search"]
-	path = macos/roles/zsh/files/zshplugins/zsh-history-substring-search
+	path = ansible/roles/zsh/files/zshplugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
