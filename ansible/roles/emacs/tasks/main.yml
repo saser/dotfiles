@@ -2,14 +2,12 @@
   import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
 
+- name: Import platform tasks (Arch Linux)
+  import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
 - name: Symlink .emacs.d to $HOME
   file:
     src: '{{ role_path }}/files/.emacs.d'
     dest: '{{ ansible_env.HOME }}/.emacs.d'
     state: link
-
-- name: Set $EDITOR to `emacs`
-  lineinfile:
-    path: '{{ envensure_entries }}'
-    line: 'export EDITOR=emacs'
-    create: true
