@@ -1,0 +1,13 @@
+- name: Ensure pathensure entries exist for default directories (Arch Linux)
+  loop:
+    - '90 /usr/local/sbin'
+    - '91 /usr/local/bin'
+    - '92 /usr/bin'
+    - '93 /usr/bin/site_perl'
+    - '94 /usr/bin/vendor_perl'
+    - '95 /usr/bin/core_perl'
+  lineinfile:
+    path: '{{ pathensure_entries }}'
+    line: '{{ item }}'
+    create: true
+
