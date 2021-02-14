@@ -2,4 +2,5 @@
   connection: local
   roles:
     - git
+    - go
     - tmux
