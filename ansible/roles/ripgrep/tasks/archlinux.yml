@@ -1,0 +1,5 @@
+- name: Install rg and related programs (macOS)
+  become: true
+  community.general.pacman:
+    name:
+      - ripgrep
