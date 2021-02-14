@@ -2,6 +2,10 @@
   import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
 
+- name: Import platform tasks (Arch Linux)
+  import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
 - name: Ensure .tmux.conf is in place
   file:
     src: '{{ role_path }}/files/.tmux.conf'
