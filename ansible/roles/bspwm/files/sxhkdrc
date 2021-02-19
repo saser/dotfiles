@@ -2,6 +2,10 @@
 super + Return
     alacritty
 
+# Start a web browser.
+super + w
+    firefox
+
 # Focus adjacent nodes.
 super + {h,j,k,l}
     bspc node --focus {west,south,north,east}
