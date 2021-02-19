@@ -1,3 +1,7 @@
+# Start a terminal.
+super + Return
+    alacritty
+
 # Focus adjacent nodes.
 super + {h,j,k,l}
     bspc node --focus {west,south,north,east}

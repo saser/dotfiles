@@ -1,0 +1,14 @@
+- name: Import platform tasks (Arch Linux)
+  import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Ensure $HOME/.config/alacritty exists
+  file:
+    path: '{{ ansible_env.HOME }}/.config/alacritty'
+    state: directory
+
+- name: Link config.yml into place
+  file:
+    src: '{{ role_path }}/files/config.yml'
+    dest: '{{ ansible_env.HOME }}/.config/alacritty/config.yml'
+    state: link
