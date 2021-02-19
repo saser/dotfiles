@@ -4,9 +4,11 @@
     - alacritty
     - bspwm
     - emacs
+    - firefox
     - git
     - go
     - ranger
     - ripgrep
     - tmux
+    - utils
     - zsh
