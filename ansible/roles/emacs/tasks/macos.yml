@@ -2,9 +2,3 @@
   community.general.homebrew_cask:
     name:
       - emacs
-
-- name: Set $EDITOR to `emacsclient-gui.sh`
-  lineinfile:
-    path: '{{ envensure_entries }}'
-    line: 'export EDITOR=emacsclient-gui.sh'
-    create: true

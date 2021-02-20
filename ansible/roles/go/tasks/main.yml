@@ -7,11 +7,9 @@
   when: ansible_distribution == 'Archlinux'
 
 - name: Ensure Go environment variables are set
-  loop: '{{ go_env | dict2items }}'
-  lineinfile:
-    path: '{{ envensure_entries }}'
-    line: 'export {{ item.key }}="{{ item.value }}"'
-    create: true
+  import_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
+  vars:
+    variables: '{{ go_env | dict2items(key_name="name", value_name="value") }}'
 
 - name: Ensure $GOPATH/bin is included in $PATH
   lineinfile:

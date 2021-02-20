@@ -6,29 +6,22 @@
   import_tasks: archlinux.yml
   when: ansible_distribution == 'Archlinux'
 
-- name: Set $ZPLUG_HOME environment variable
-  lineinfile:
-    path: '{{ envensure_entries }}'
-    line: 'export ZPLUG_HOME="{{ zsh_zplug_home }}"'
-    create: true
+- name: Ensure zsh environment variables are set
+  import_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
+  vars:
+    variables: '{{ zsh_env | dict2items(key_name="name", value_name="value") }}'
 
 - name: Link zplug directory to $ZPLUG_HOME
   file:
     src: '{{ role_path }}/files/zplug'
-    dest: '{{ zsh_zplug_home }}'
+    dest: '{{ zsh_env.ZPLUG_HOME }}'
     state: link
 
 - name: Link plugins directory to its place
   file:
     src: '{{ role_path }}/files/zshplugins'
-    dest: '{{ zsh_zshplugins }}'
+    dest: '{{ zsh_env.ZSHPLUGINS }}'
     state: link
-
-- name: Set $ZSHPLUGINS environment variable
-  lineinfile:
-    path: '{{ envensure_entries }}'
-    line: 'export ZSHPLUGINS="{{ zsh_zshplugins }}"'
-    create: true
 
 - name: Ensure startup files are in place
   loop:

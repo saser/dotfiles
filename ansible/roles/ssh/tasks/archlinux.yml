@@ -5,10 +5,11 @@
       - openssh
 
 - name: Ensure that the $SSH_AUTH_SOCK environment variable is set
-  lineinfile:
-    path: '{{ envensure_entries }}'
-    line: 'export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"'
-    create: true
+  import_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
+  vars:
+    variables:
+      - name: 'SSH_AUTH_SOCK'
+        value: '${XDG_RUNTIME_DIR}/ssh-agent.socket'
 
 - name: Ensure the user services directory exists
   file:

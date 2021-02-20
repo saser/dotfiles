@@ -1,2 +1,3 @@
-zsh_zplug_home: '{{ ansible_env.HOME }}/.zplug'
-zsh_zshplugins: '{{ ansible_env.HOME }}/.zshplugins'
+zsh_env:
+  ZPLUG_HOME: '{{ ansible_env.HOME }}/.zplug'
+  ZSHPLUGINS: '{{ ansible_env.HOME }}/.zshplugins'

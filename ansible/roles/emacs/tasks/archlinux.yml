@@ -10,9 +10,3 @@
     enabled: true
     scope: user
     state: started
-
-- name: Set $EDITOR to `emacsclient`
-  lineinfile:
-    path: '{{ envensure_entries }}'
-    line: 'export EDITOR=emacsclient'
-    create: true

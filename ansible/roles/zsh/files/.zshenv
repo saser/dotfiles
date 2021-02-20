@@ -4,6 +4,7 @@ _PATH="$("$HOME/.pathensure/pathensure.sh" "$HOME/.pathensure/entries.txt")"
 echo 'Setting $PATH to '"${_PATH}"
 export PATH="${_PATH}"
 
-echo 'Setting the following environment variables:'
-cat "$HOME/.envensure/entries.sh"
-source "$HOME/.envensure/entries.sh"
+for f in "${HOME}/.env.d/"*.sh; do
+    echo source "${f}"
+    source "${f}"
+done

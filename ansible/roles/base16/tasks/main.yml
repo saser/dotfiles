@@ -1,6 +1,4 @@
-- name: Set Base16-related environment variables
-  loop: '{{ base16_env | dict2items }}'
-  lineinfile:
-    path: '{{ envensure_entries }}'
-    line: 'export {{ item.key }}="{{ item.value }}"'
-    create: true
+- name: Ensure Base16 environment variables are set
+  import_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
+  vars:
+    variables: '{{ base16_env | dict2items(key_name="name", value_name="value") }}'

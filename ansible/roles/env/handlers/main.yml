@@ -1,0 +1,8 @@
+- name: Render shell template
+  loop: '{{ env_dict | dict2items }}'
+  vars:
+    variables: '{{ item.value }}'
+  template:
+    src: '{{ role_path }}/templates/shell.sh.j2'
+    dest: '{{ env_dotd_dir }}/{{ item.key }}.sh'
+  listen: 'env_set'

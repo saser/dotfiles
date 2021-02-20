@@ -1,0 +1,5 @@
+- name: Set entries in env_dict
+  set_fact:
+    env_dict: '{{ env_dict | default({}) | combine({role_name: variables}) }}'
+  notify: 'env_set'
+  changed_when: true # ugly hack, needed to trigger handlers

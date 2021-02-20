@@ -1,0 +1,5 @@
+#!/bin/sh
+
+{% for variable in variables %}
+export {{ variable.name }}="{{ variable.value }}"
+{% endfor %}

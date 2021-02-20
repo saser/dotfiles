@@ -1,0 +1,4 @@
+- name: Ensure .env.d exists
+  file:
+    path: '{{ env_dotd_dir }}'
+    state: directory
