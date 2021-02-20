@@ -1,0 +1,6 @@
+- name: Set Base16-related environment variables
+  loop: '{{ base16_env | dict2items }}'
+  lineinfile:
+    path: '{{ envensure_entries }}'
+    line: 'export {{ item.key }}="{{ item.value }}"'
+    create: true

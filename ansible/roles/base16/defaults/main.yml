@@ -1,0 +1,5 @@
+base16_colorscheme: monokai
+base16_256: true
+base16_env:
+  BASE16_COLORSCHEME: '{{ base16_colorscheme }}'
+  BASE16_256: 'true'
