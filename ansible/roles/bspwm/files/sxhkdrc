@@ -1,3 +1,39 @@
+#
+# Basic keybindings.
+#
+
+# Reload this configuration.
+super + r
+    pkill -USR1 -x sxhkd
+
+# Focus adjacent nodes.
+super + {h,j,k,l}
+    bspc node --focus {west,south,north,east}
+
+# Focus desktops on the focused monitor.
+super + {1-5}
+    bspc desktop --focus focused:^{1-5}
+
+# Set the state of the current node.
+super + {t,f}
+    bspc node --state {tiled,fullscreen}
+
+# Move the current node to another desktop on the focused monitor.
+super + m; {1-5}
+    bspc node --to-desktop focused:^{1-5} --follow
+
+# Close the focused node.
+super + q
+    bspc node focused --close
+
+# Quit bspwm.
+super + shift + q
+    bspc quit
+
+#
+# Application-related keybindings.
+#
+
 # Start a terminal.
 super + Return
     alacritty
@@ -5,15 +41,3 @@ super + Return
 # Start a web browser.
 super + w
     firefox
-
-# Focus adjacent nodes.
-super + {h,j,k,l}
-    bspc node --focus {west,south,north,east}
-
-# Set the state of the current node.
-super + {t,f}
-    bspc node --state {tiled,fullscreen}
-
-# Quit bspwm.
-super + shift + q
-    bspc quit
