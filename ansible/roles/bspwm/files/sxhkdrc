@@ -38,6 +38,10 @@ super + shift + q
 super + Return
     alacritty
 
+# Start an Emacs client in a new frame.
+super + e
+    emacsclient -c
+
 # Start a web browser.
 super + w
     firefox
