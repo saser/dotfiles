@@ -1,0 +1,23 @@
+- name: Install openssh and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - openssh
+
+- name: Ensure the user services directory exists
+  file:
+    path: '{{ ansible_env.HOME }}/.config/systemd/user'
+    state: directory
+
+- name: Link the ssh-agent systemd service into place
+  file:
+    src: '{{ role_path }}/files/ssh-agent.service'
+    dest: '{{ ansible_env.HOME }}/.config/systemd/user/ssh-agent.service'
+    state: link
+
+- name: Enable and start the ssh-agent systemd service
+  ansible.builtin.systemd:
+    name: ssh-agent.service
+    enabled: true
+    scope: user
+    state: started
