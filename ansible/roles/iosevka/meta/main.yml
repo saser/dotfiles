@@ -1,3 +1,7 @@
 dependencies:
   - role: homebrew
     when: ansible_distribution == 'MacOSX'
+  - role: kewlfft.aur
+    when: ansible_distribution == 'Archlinux'
+  - role: yay
+    when: ansible_distribution == 'Archlinux'
