@@ -7,8 +7,8 @@
     path: '{{ ansible_env.HOME }}/.config/alacritty'
     state: directory
 
-- name: Link config.yml into place
+- name: Link alacritty.yml into place
   file:
-    src: '{{ role_path }}/files/config.yml'
-    dest: '{{ ansible_env.HOME }}/.config/alacritty/config.yml'
+    src: '{{ role_path }}/files/alacritty.yml'
+    dest: '{{ ansible_env.HOME }}/.config/alacritty/alacritty.yml'
     state: link
