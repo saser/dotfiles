@@ -1,0 +1,5 @@
+- name: Install yay and related programs (Arch Linux)
+  aur:
+    name:
+      - yay
+    use: makepkg

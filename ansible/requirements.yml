@@ -1,2 +1,6 @@
+roles:
+  - name: kewlfft.aur
+    version: v0.42
 collections:
-- name: community.general
+  - name: community.general
+    version: 2.1.1
