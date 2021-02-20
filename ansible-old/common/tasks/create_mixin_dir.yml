@@ -1,6 +1,0 @@
-- name: Create mixin directory `{{ mixin }}`
-  tags:
-    - filesystem
-  file:
-    path: "{{ mixins_dir }}/{{ mixin }}"
-    state: directory

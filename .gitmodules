@@ -19,12 +19,6 @@
 [submodule "tmux-colors-solarized"]
 	path = user-config/tmux/.tmux/plugins/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
-[submodule "straight.el"]
-	path = ansible-old/roles/emacs/files/.emacs.d/straight/repos/straight.el
-	url = https://github.com/raxod502/straight.el
-[submodule "base16-alacritty"]
-	path = ansible-old/roles/alacritty/files/colors/base16
-	url = https://github.com/aaron-williamson/base16-alacritty
 [submodule "base16-fzf"]
 	path = user-config/shell/.zsh-extras/colors/base16-fzf
 	url = https://github.com/nicodebo/base16-fzf
@@ -34,9 +28,6 @@
 [submodule "base16-zathura"]
 	path = user-config/zathura/.config/zathura/base16-zathura
 	url = https://github.com/nicodebo/base16-zathura
-[submodule "ansible/tools/prettier"]
-	path = ansible-old/tools/prettier
-	url = https://github.com/Saser/mk-prettier
 [submodule "macos/roles/emacs/files/.emacs.d/straight/repos/straight.el"]
 	path = ansible/roles/emacs/files/.emacs.d/straight/repos/straight.el
 	url = https://github.com/raxod502/straight.el.git
