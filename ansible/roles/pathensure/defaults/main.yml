@@ -1,3 +1,0 @@
-pathensure_dir: '{{ ansible_env.HOME }}/.pathensure'
-pathensure_script: '{{ pathensure_dir }}/pathensure.sh'
-pathensure_entries: '{{ pathensure_dir }}/entries.txt'

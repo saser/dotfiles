@@ -1,0 +1,7 @@
+- name: Render shell script
+  vars:
+    roles: '{{ path_list | sort(attribute="priority") }}'
+  template:
+    src: '{{ role_path }}/templates/path.sh.j2'
+    dest: '{{ env_dotd_dir }}/path.sh'
+  listen: 'path_set'

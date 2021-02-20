@@ -1,0 +1,11 @@
+- name: Ensure path entries exist for default directories (Arch Linux)
+  import_tasks: '{{ playbook_dir }}/roles/path/tasks/set.yml'
+  vars:
+    priority: 90
+    entries:
+      - '/usr/local/sbin'
+      - '/usr/local/bin'
+      - '/usr/bin'
+      - '/usr/bin/site_perl'
+      - '/usr/bin/vendor_perl'
+      - '/usr/bin/core_perl'

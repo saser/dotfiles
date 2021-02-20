@@ -1,0 +1,5 @@
+- name: Set entries in path_list
+  set_fact:
+    path_list: '{{ (path_list | default([])) + [{"priority": priority, "name": role_name, "entries": entries}] }}'
+  notify: 'path_set'
+  changed_when: true # ugly hack, needed to trigger handlers

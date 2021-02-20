@@ -12,10 +12,11 @@
     variables: '{{ go_env | dict2items(key_name="name", value_name="value") }}'
 
 - name: Ensure $GOPATH/bin is included in $PATH
-  lineinfile:
-    path: '{{ pathensure_entries }}'
-    line: '10 {{ go_env.GOPATH }}/bin'
-    create: true
+  import_tasks: '{{ playbook_dir }}/roles/path/tasks/set.yml'
+  vars:
+    priority: 10
+    entries:
+      - '{{ go_env.GOPATH }}/bin'
 
 - name: Install Go tools using `go get`
   loop:
