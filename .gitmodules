@@ -52,3 +52,6 @@
 [submodule "macos/roles/zsh/files/zshplugins/zsh-history-substring-search"]
 	path = ansible/roles/zsh/files/zshplugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "ansible/roles/alacritty/files/base16-alacritty"]
+	path = ansible/roles/alacritty/files/base16-alacritty
+	url = https://github.com/aaron-williamson/base16-alacritty.git

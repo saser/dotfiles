@@ -1,0 +1,2 @@
+alacritty_config_dir: '{{ ansible_env.HOME }}/.config/alacritty'
+alacritty_fragments_dir: '{{ alacritty_config_dir }}/fragments'

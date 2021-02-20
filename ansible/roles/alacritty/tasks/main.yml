@@ -2,13 +2,26 @@
   import_tasks: archlinux.yml
   when: ansible_distribution == 'Archlinux'
 
-- name: Ensure $HOME/.config/alacritty exists
+- name: Ensure alacritty config dir exists
   file:
-    path: '{{ ansible_env.HOME }}/.config/alacritty'
+    path: '{{ alacritty_config_dir }}'
     state: directory
 
-- name: Link alacritty.yml into place
+- name: Ensure alacritty fragments dir exists
   file:
-    src: '{{ role_path }}/files/alacritty.yml'
-    dest: '{{ ansible_env.HOME }}/.config/alacritty/alacritty.yml'
+    path: '{{ alacritty_fragments_dir }}'
+    state: directory
+
+- name: Link files to fragments directory
+  loop:
+    - '{{ role_path }}/files/config.yml'
+    - '{{ role_path }}/files/base16-alacritty/colors/base16-{{ base16_colorscheme }}{{ "-256" if base16_256 else "" }}.yml'
+  file:
+    src: '{{ item }}'
+    dest: '{{ alacritty_fragments_dir }}/{{ item | basename }}'
     state: link
+
+- name: Concatenate config and colorscheme
+  assemble:
+    src: '{{ ansible_env.HOME }}/.config/alacritty/fragments'
+    dest: '{{ ansible_env.HOME }}/.config/alacritty/alacritty.yml'
