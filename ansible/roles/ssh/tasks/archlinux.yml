@@ -4,6 +4,12 @@
     name:
       - openssh
 
+- name: Ensure that the $SSH_AUTH_SOCK environment variable is set
+  lineinfile:
+    path: '{{ envensure_entries }}'
+    line: 'export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"'
+    create: true
+
 - name: Ensure the user services directory exists
   file:
     path: '{{ ansible_env.HOME }}/.config/systemd/user'
