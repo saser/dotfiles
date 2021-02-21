@@ -1,21 +1,21 @@
 [submodule "ansible/roles/emacs/files/.emacs.d/straight/repos/straight.el"]
-	path = ansible/roles/emacs/files/.emacs.d/straight/repos/straight.el
+	path = roles/emacs/files/.emacs.d/straight/repos/straight.el
 	url = https://github.com/raxod502/straight.el.git
 [submodule "ansible/roles/iterm/files/base16-iterm2"]
-	path = ansible/roles/iterm/files/base16-iterm2
+	path = roles/iterm/files/base16-iterm2
 	url = https://github.com/martinlindhe/base16-iterm2.git
 [submodule "ansible/roles/zsh/files/zplug"]
-	path = ansible/roles/zsh/files/zplug
+	path = roles/zsh/files/zplug
 	url = https://github.com/zplug/zplug.git
 [submodule "ansible/roles/zsh/files/zshplugins/zsh-syntax-highlighting"]
-	path = ansible/roles/zsh/files/zshplugins/zsh-syntax-highlighting
+	path = roles/zsh/files/zshplugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "ansible/roles/zsh/files/zshplugins/zsh-history-substring-search"]
-	path = ansible/roles/zsh/files/zshplugins/zsh-history-substring-search
+	path = roles/zsh/files/zshplugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
 [submodule "ansible/roles/alacritty/files/base16-alacritty"]
-	path = ansible/roles/alacritty/files/base16-alacritty
+	path = roles/alacritty/files/base16-alacritty
 	url = https://github.com/aaron-williamson/base16-alacritty.git
 [submodule "ansible/roles/fzf/files/base16-fzf"]
-	path = ansible/roles/fzf/files/base16-fzf
+	path = roles/fzf/files/base16-fzf
 	url = https://github.com/fnune/base16-fzf.git
