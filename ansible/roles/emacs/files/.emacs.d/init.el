@@ -81,3 +81,6 @@
 
 ;; Set the backups directory to "~/.emacs.d/backups".
 (setq backup-directory-alist `(("." . ,(concat (file-name-as-directory user-emacs-directory) "backups"))))
+
+;; Set the font.
+(setq default-frame-alist '((font . "Iosevka-11")))
