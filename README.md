@@ -1,3 +1,8 @@
+# NOTE: this README is out of date.
+Actually most of it is irrelevant. The relevant dotfiles are based on Ansibleand currently live in the `ansible/` directory. Go there instead if you are interested.
+
+---
+
 # Dotfiles
 These are my dotfiles and other settings files that I use for my daily use. They are intended to be used on Arch Linux, but should probably work on most Linux systems.
 
