@@ -2,3 +2,8 @@
   file:
     path: '{{ env_dotd_dir }}'
     state: directory
+
+- name: Ensure environment.d exists
+  file:
+    path: '{{ env_systemd_dir }}'
+    state: directory
