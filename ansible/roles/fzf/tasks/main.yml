@@ -1,0 +1,10 @@
+- name: Import platform tasks (Arch Linux)
+  import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Source keybindings in zsh
+  import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/extra.yml'
+  vars:
+    paths:
+      - '{{ role_path }}/files/keybindings.zsh'
+      - '{{ role_path }}/files/base16-fzf/bash/base16-{{ base16_colorscheme }}.config'

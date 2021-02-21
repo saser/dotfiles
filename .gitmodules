@@ -34,3 +34,6 @@
 [submodule "ansible/roles/alacritty/files/base16-alacritty"]
 	path = ansible/roles/alacritty/files/base16-alacritty
 	url = https://github.com/aaron-williamson/base16-alacritty.git
+[submodule "ansible/roles/fzf/files/base16-fzf"]
+	path = ansible/roles/fzf/files/base16-fzf
+	url = https://github.com/fnune/base16-fzf.git

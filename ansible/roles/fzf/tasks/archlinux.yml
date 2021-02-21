@@ -1,0 +1,5 @@
+- name: Install fzf and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - fzf
