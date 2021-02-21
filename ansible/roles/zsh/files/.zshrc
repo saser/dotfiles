@@ -69,3 +69,9 @@ for f in "${ZSHALIASES}"/*.zsh; do
     echo source "${f}"
     source "${f}"
 done
+
+# Load any extra scripts.
+for f in "${ZSHEXTRAS}"/*.zsh; do
+    echo source "${f}"
+    source "${f}"
+done

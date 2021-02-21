@@ -44,3 +44,8 @@
     aliases:
       'ls': 'ls -l --all --human-readable --classify --group-directories-first --color=auto'
       '..': 'cd ..'
+
+- name: Ensure extras directory exists
+  file:
+    path: '{{ zsh_env.ZSHEXTRAS }}'
+    state: directory
