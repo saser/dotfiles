@@ -12,13 +12,16 @@
     path: '{{ alacritty_fragments_dir }}'
     state: directory
 
-- name: Link files to fragments directory
-  loop:
-    - '{{ role_path }}/files/config.yml'
-    - '{{ role_path }}/files/base16-alacritty/colors/base16-{{ base16_colorscheme }}{{ "-256" if base16_256 else "" }}.yml'
+- name: Link configuration to fragments directory
   file:
-    src: '{{ item }}'
-    dest: '{{ alacritty_fragments_dir }}/{{ item | basename }}'
+    src: '{{ role_path }}/files/config.yml'
+    dest: '{{ alacritty_fragments_dir }}/config.yml'
+    state: link
+
+- name: Link colorscheme to fragments directory
+  file:
+    src: '{{ role_path }}/files/base16-alacritty/colors/base16-{{ base16_colorscheme }}{{ "-256" if base16_256 else "" }}.yml'
+    dest: '{{ alacritty_fragments_dir }}/colorscheme.yml'
     state: link
 
 - name: Concatenate config and colorscheme
