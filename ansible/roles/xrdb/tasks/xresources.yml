@@ -1,0 +1,5 @@
+- name: Link Xresources file into place
+  file:
+    src: '{{ xresources }}'
+    dest: '{{ xrdb_env.XRDB_DIR }}/{{ role_name }}.xresources'
+    state: link

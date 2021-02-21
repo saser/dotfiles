@@ -1,0 +1,3 @@
+xrdb_env:
+  XRDB_DIR: '{{ ansible_env.HOME }}/.xrdb'
+  XRDB_SCRIPT: '{{ ansible_env.HOME }}/.xrdb/merge.sh'

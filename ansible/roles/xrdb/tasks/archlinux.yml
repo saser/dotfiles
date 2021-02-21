@@ -1,0 +1,21 @@
+- name: Install xrdb and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - xorg-xrdb
+
+- name: Ensure xrdb environment variables are set
+  import_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
+  vars:
+    variables: '{{ xrdb_env | dict2items(key_name="name", value_name="value") }}'
+
+- name: Ensure xrdb directory exists
+  file:
+    path: '{{ xrdb_env.XRDB_DIR }}'
+    state: directory
+
+- name: Link merge.sh into place
+  file:
+    src: '{{ role_path }}/files/merge.sh'
+    dest: '{{ xrdb_env.XRDB_SCRIPT }}'
+    state: link
