@@ -1,7 +1,12 @@
-- name: Render shell script
-  vars:
-    roles: '{{ path_list | sort(attribute="priority") }}'
-  template:
-    src: '{{ role_path }}/templates/path.sh.j2'
-    dest: '{{ env_dotd_dir }}/path.sh'
+- name: Set env entry to joined PATH string
   listen: 'path_set'
+  # `include_tasks` is a little ugly, but it works in the way I want it to, while `import_tasks` does not.
+  # https://github.com/ansible/ansible/issues/59706 has some more information.
+  # I guess it is possible to work around it with `import_tasks` but for now I'm being lazy.
+  include_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
+  vars:
+    flattened: '{{ path_list | sort(attribute="priority") | map(attribute="entries") | flatten }}'
+    joined: '{{ ":".join(flattened) }}'
+    variables:
+      - name: 'PATH'
+        value: '{{ joined }}'
