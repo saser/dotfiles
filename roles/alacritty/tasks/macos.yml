@@ -1,0 +1,4 @@
+- name: Install alacritty and related programs (macOS)
+  community.general.homebrew_cask:
+    name:
+      - alacritty

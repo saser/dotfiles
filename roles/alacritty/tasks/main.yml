@@ -36,3 +36,4 @@
       - comment: 'Start an Alacritty terminal.'
         chord: 'super + Return'
         command: 'alacritty'
+  when: ansible_distribution == 'Archlinux'
