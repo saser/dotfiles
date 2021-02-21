@@ -27,3 +27,9 @@ bindkey -v
 # Define keybindings for zsh-history-substring-search.
 bindkey -M viins '^P' history-substring-search-up
 bindkey -M viins '^N' history-substring-search-down
+
+# Load aliases.
+for f in "${ZSHALIASES}"/*.zsh; do
+    echo source "${f}"
+    source "${f}"
+done
