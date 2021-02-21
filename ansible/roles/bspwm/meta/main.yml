@@ -1,4 +1,3 @@
 dependencies:
-  - role: alacritty
-  - role: firefox
+  - role: sxhkd
   - role: xorg

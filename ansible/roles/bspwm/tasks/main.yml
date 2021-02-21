@@ -18,14 +18,3 @@
     src: '{{ role_path }}/files/bspwmrc'
     dest: '{{ ansible_env.HOME }}/.config/bspwm/bspwmrc'
     state: link
-
-- name: Ensure $HOME/.config/sxhkd exists
-  file:
-    path: '{{ ansible_env.HOME }}/.config/sxhkd'
-    state: directory
-
-- name: Link sxhkdrc into place
-  file:
-    src: '{{ role_path }}/files/sxhkdrc'
-    dest: '{{ ansible_env.HOME }}/.config/sxhkd/sxhkdrc'
-    state: link
