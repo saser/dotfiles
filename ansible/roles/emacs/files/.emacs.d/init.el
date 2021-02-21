@@ -62,7 +62,7 @@
 
 ;; `base16-theme' provides Emacs versions of the base16 colorschemes.
 (use-package base16-theme
-  :config (load-theme 'base16-monokai t))
+  :config (load-theme (intern (concat "base16-" (getenv "BASE16_COLORSCHEME"))) t))
 
 ;; `treemacs' is a file tree explorer that supports a variety of things such as
 ;; git.
