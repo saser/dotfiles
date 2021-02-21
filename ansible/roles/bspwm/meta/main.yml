@@ -1,3 +1,4 @@
 dependencies:
   - role: sxhkd
   - role: xorg
+  - role: xrdb
