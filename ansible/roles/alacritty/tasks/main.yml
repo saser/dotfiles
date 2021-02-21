@@ -25,3 +25,11 @@
   assemble:
     src: '{{ ansible_env.HOME }}/.config/alacritty/fragments'
     dest: '{{ ansible_env.HOME }}/.config/alacritty/alacritty.yml'
+
+- name: Add alacritty keybindings
+  import_tasks: '{{ playbook_dir }}/roles/sxhkd/tasks/keybindings.yml'
+  vars:
+    keybindings:
+      - comment: 'Start an Alacritty terminal.'
+        chord: 'super + Return'
+        command: 'alacritty'

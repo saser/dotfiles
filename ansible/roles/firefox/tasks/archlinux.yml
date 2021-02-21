@@ -3,3 +3,11 @@
   community.general.pacman:
     name:
       - firefox
+
+- name: Add firefox keybindings
+  import_tasks: '{{ playbook_dir }}/roles/sxhkd/tasks/keybindings.yml'
+  vars:
+    keybindings:
+      - comment: 'Start a Firefox browser window.'
+        chord: 'super + w'
+        command: 'firefox'

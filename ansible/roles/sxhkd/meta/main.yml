@@ -1,4 +1,0 @@
-dependencies:
-  - role: alacritty
-  - role: firefox
-  - role: xorg

@@ -1,0 +1,7 @@
+# Begin: `{{ role_name }}`
+{% for keybinding in keybindings %}
+# {{ keybinding.comment }}
+{{ keybinding.chord }}
+    {{ keybinding.command }}
+{% endfor %}
+# End: `{{ role_name }}`

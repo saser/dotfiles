@@ -18,3 +18,31 @@
     src: '{{ role_path }}/files/bspwmrc'
     dest: '{{ ansible_env.HOME }}/.config/bspwm/bspwmrc'
     state: link
+
+- name: Add bspwm keybindings
+  import_tasks: '{{ playbook_dir }}/roles/sxhkd/tasks/keybindings.yml'
+  vars:
+    keybindings:
+      - comment: 'Focus adjacent nodes.'
+        chord: 'super + {h,j,k,l}'
+        command: 'bspc node --focus {west,south,north,east}'
+
+      - comment: 'Focus desktops on the focused monitor.'
+        chord: 'super + {1-5}'
+        command: 'bspc desktop --focus focused:^{1-5}'
+
+      - comment: 'Set the state of the current node.'
+        chord: 'super + {t,f}'
+        command: 'bspc node --state {tiled,fullscreen}'
+
+      - comment: 'Move the current node to another desktop on the focused monitor.'
+        chord: 'super + m; {1-5}'
+        command: 'bspc node --to-desktop focused:^{1-5} --follow'
+
+      - comment: 'Close the focused node.'
+        chord: 'super + q'
+        command: 'bspc node focused --close'
+
+      - comment: 'Quit bspwm.'
+        chord: 'super + shift + q'
+        command: 'bspc quit'

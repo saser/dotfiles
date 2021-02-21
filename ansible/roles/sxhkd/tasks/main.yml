@@ -1,10 +1,17 @@
-- name: Ensure $HOME/.config/sxhkd exists
+- name: Ensure sxhkd configuration dir exists
   file:
-    path: '{{ ansible_env.HOME }}/.config/sxhkd'
+    path: '{{ sxhkd_config_dir }}'
     state: directory
 
-- name: Link sxhkdrc into place
+- name: Ensure sxhkd fragments dir exists
   file:
-    src: '{{ role_path }}/files/sxhkdrc'
-    dest: '{{ ansible_env.HOME }}/.config/sxhkd/sxhkdrc'
-    state: link
+    path: '{{ sxhkd_fragments_dir }}'
+    state: directory
+
+- name: Set sxhkd keybindings
+  import_tasks: '{{ playbook_dir }}/roles/sxhkd/tasks/keybindings.yml'
+  vars:
+    keybindings:
+      - comment: 'Reload sxhkd configuration.'
+        chord: 'super + r'
+        command: 'pkill -USR1 -x sxhkd'

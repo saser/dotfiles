@@ -10,3 +10,11 @@
     enabled: true
     scope: user
     state: started
+
+- name: Add emacs keybindings
+  import_tasks: '{{ playbook_dir }}/roles/sxhkd/tasks/keybindings.yml'
+  vars:
+    keybindings:
+      - comment: 'Start an Emacs client in a new frame.'
+        chord: 'super + e'
+        command: 'emacsclient -c'
