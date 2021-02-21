@@ -3,6 +3,7 @@
   roles:
     - docker
     - emacs
+    - fzf
     - git
     - go
     - iosevka
