@@ -7,3 +7,4 @@
   file:
     path: '{{ env_systemd_dir }}'
     state: directory
+  when: ansible_distribution == 'Archlinux'
