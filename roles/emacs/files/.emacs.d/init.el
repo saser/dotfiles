@@ -92,6 +92,11 @@
 ;; `magit' is a _magical_ Git UI for Emacs.
 (use-package magit)
 
+;; `which-key' is an interface for discovering which keybindings are
+;; available after a prefix.
+(use-package which-key
+  :config (which-key-mode))
+
 ;; === EMACS SETTINGS ===
 ;; These are settings that affect how emacs operates as a whole.
 
