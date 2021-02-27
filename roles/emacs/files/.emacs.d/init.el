@@ -15,9 +15,19 @@
 
 ;; `evil' is Vim keybindings for Emacs.
 (use-package evil
+  :init
+  (setq evil-want-keybinding nil) ;; required by `evil-collection'
   :config
   ;; Enable `evil-mode' as soon as the package is loaded.
   (evil-mode 1))
+
+;; `evil-collection' is a set of evil-style keybindings for the parts of Emacs
+;; that evil itself does not modify. For example, keybindings for `magit' (see
+;; further down).
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
 
 ;; `go-mode' includes support for Go.
 (use-package go-mode)
@@ -78,6 +88,9 @@
 ;; `treemacs-evil' configures treemacs bindings suitable for `evil' users.
 (use-package treemacs-evil
   :after treemacs evil)
+
+;; `magit' is a _magical_ Git UI for Emacs.
+(use-package magit)
 
 ;; === EMACS SETTINGS ===
 ;; These are settings that affect how emacs operates as a whole.
