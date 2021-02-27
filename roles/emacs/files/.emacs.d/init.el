@@ -33,6 +33,12 @@
 (use-package yaml-mode
   :mode "\\.yml\\'")
 
+;; `protobuf-mode' provides support for protobuf.
+(use-package protobuf-mode)
+
+;; `bazel-mode' provides support for Bazel files (WORKSPACE, BUILD.bazel, etc).
+(use-package bazel-mode)
+
 ;; When saving Go files, automatically format and fix imports.
 (defun lsp-go-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
