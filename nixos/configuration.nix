@@ -6,8 +6,11 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # Include home-manager's NixOS module.
+      <home-manager/nixos>
     ];
 
   # Use the systemd-boot EFI boot loader.
