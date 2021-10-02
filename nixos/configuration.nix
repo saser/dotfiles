@@ -17,6 +17,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # This kernel module and the firmware are required for wifi.
   boot.extraModulePackages = [ config.boot.kernelPackages.rtw89 ];
   hardware.firmware = [ pkgs.rtw89-firmware ];
 
@@ -46,11 +47,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable GNOME and the display manager GDM.
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.enable = true;
-
-
-  
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -79,7 +78,6 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #   wget
     firefox
-    vscode
     git
   ];
 
