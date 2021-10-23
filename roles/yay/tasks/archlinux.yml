@@ -1,5 +1,5 @@
 - name: Install yay and related programs (Arch Linux)
-  aur:
+  kewlfft.aur.aur:
     name:
       - yay
     use: makepkg

@@ -1,6 +1,5 @@
-roles:
-  - name: kewlfft.aur
-    version: v0.42
 collections:
   - name: community.general
-    version: 2.1.1
+    version: 3.8.0
+  - name: kewlfft.aur
+    version: 0.9.1
