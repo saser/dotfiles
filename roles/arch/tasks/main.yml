@@ -1,0 +1,40 @@
+- name: Install commonly needed or forgotten packages
+  become: yes
+  community.general.pacman:
+    name:
+      - inetutils # required for ansible.builtin.hostname
+      - networkmanager
+      - sudo
+
+- name: Set timezone
+  become: yes
+  community.general.timezone:
+    hwclock: UTC
+    name: 'Europe/Dublin'
+
+- name: Set hostname
+  become: yes
+  ansible.builtin.hostname:
+    name: 'arch'
+    use: systemd
+
+- name: Enable en_US.UTF-8 locale
+  become: yes
+  community.general.locale_gen:
+    name: en_US.UTF-8
+    state: present
+
+- name: Set LANG=en_US.UTF-8 in /etc/locale.conf
+  become: yes
+  ansible.builtin.copy:
+    dest: /etc/locale.conf
+    content: |
+      LANG=en_US.UTF-8
+      LANGUAGE=en_US.UTF-8
+
+- name: Create user
+  become: yes
+  ansible.builtin.user:
+    name: saser
+    groups: wheel
+    append: true
