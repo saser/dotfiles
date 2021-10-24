@@ -65,3 +65,12 @@
     name: saser
     groups: wheel
     append: true
+
+- name: Make wheel members allowed to run sudo
+  become: yes
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^\# %wheel ALL=\(ALL\) ALL$'
+    line: '%wheel ALL=(ALL) ALL'
+    validate: 'visudo --check --file=%s'
