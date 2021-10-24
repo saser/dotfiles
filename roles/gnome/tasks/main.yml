@@ -1,0 +1,12 @@
+- name: Install GNOME and GDM
+  become: true
+  community.general.pacman:
+    name:
+      - gnome
+
+- name: Start and enable GDM
+  become: true
+  ansible.builtin.service:
+    name: gdm.service
+    state: started
+    enabled: true
