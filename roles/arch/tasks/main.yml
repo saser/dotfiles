@@ -62,7 +62,7 @@
 - name: Create user
   become: yes
   ansible.builtin.user:
-    name: saser
+    name: '{{ arch_user }}'
     groups: wheel
     append: true
 

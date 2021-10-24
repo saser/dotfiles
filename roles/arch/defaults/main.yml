@@ -1,0 +1,2 @@
+arch_user: saser
+arch_home: '/home/{{ arch_user }}'
