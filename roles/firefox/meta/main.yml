@@ -1,3 +1,0 @@
-dependencies:
-  - role: sxhkd
-    when: ansible_distribution == 'Archlinux'
