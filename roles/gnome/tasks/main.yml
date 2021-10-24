@@ -10,3 +10,14 @@
     name: gdm.service
     state: started
     enabled: true
+
+- name: Install python-psutil, needed for dconf modification
+  become: true
+  community.general.pacman:
+    name:
+      - python-psutil
+
+- name: Swap Caps Lock and Escape
+  community.general.dconf:
+    key: "/org/gnome/desktop/input-sources/xkb-options"
+    value: "['caps:swapescape']"
