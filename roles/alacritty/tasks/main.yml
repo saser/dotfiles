@@ -4,44 +4,37 @@
     name:
       - alacritty
 
-- name: Set facts for config and fragments dir
-  become: true
-  become_user: saser
-  ansible.builtin.set_fact:
-    alacritty_config_dir: '{{ ansible_env.HOME }}/.config/alacritty'
-    alacritty_fragments_dir: '{{ ansible_env.HOME }}/.config/alacritty/fragments'
-
 - name: Ensure alacritty config dir exists
   become: true
-  become_user: saser
+  become_user: '{{ arch_user }}'
   ansible.builtin.file:
     path: '{{ alacritty_config_dir }}'
     state: directory
 
 - name: Ensure alacritty fragments dir exists
   become: true
-  become_user: saser
+  become_user: '{{ arch_user }}'
   ansible.builtin.file:
     path: '{{ alacritty_fragments_dir }}'
     state: directory
 
 - name: Link configuration to fragments directory
   become: true
-  become_user: saser
+  become_user: '{{ arch_user }}'
   ansible.builtin.copy:
     src: '{{ role_path }}/files/config.yml'
     dest: '{{ alacritty_fragments_dir }}/config.yml'
 
 - name: Link colorscheme to fragments directory
   become: true
-  become_user: saser
+  become_user: '{{ arch_user }}'
   ansible.builtin.copy:
     src: '{{ role_path }}/files/base16-alacritty/colors/base16-{{ base16_colorscheme }}{{ "-256" if base16_256 else "" }}.yml'
     dest: '{{ alacritty_fragments_dir }}/colorscheme.yml'
 
 - name: Concatenate config and colorscheme
   become: true
-  become_user: saser
+  become_user: '{{ arch_user }}'
   ansible.builtin.assemble:
-    src: '{{ ansible_env.HOME }}/.config/alacritty/fragments'
-    dest: '{{ ansible_env.HOME }}/.config/alacritty/alacritty.yml'
+    src: '{{ alacritty_fragments_dir }}'
+    dest: '{{ alacritty_config_dir }}/alacritty.yml'
