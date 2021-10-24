@@ -1,39 +1,47 @@
-- name: Import platform tasks (Arch Linux)
-  import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
+- name: Install alacritty and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - alacritty
+
+- name: Set facts for config and fragments dir
+  become: true
+  become_user: saser
+  ansible.builtin.set_fact:
+    alacritty_config_dir: '{{ ansible_env.HOME }}/.config/alacritty'
+    alacritty_fragments_dir: '{{ ansible_env.HOME }}/.config/alacritty/fragments'
 
 - name: Ensure alacritty config dir exists
-  file:
+  become: true
+  become_user: saser
+  ansible.builtin.file:
     path: '{{ alacritty_config_dir }}'
     state: directory
 
 - name: Ensure alacritty fragments dir exists
-  file:
+  become: true
+  become_user: saser
+  ansible.builtin.file:
     path: '{{ alacritty_fragments_dir }}'
     state: directory
 
 - name: Link configuration to fragments directory
-  file:
+  become: true
+  become_user: saser
+  ansible.builtin.copy:
     src: '{{ role_path }}/files/config.yml'
     dest: '{{ alacritty_fragments_dir }}/config.yml'
-    state: link
 
 - name: Link colorscheme to fragments directory
-  file:
+  become: true
+  become_user: saser
+  ansible.builtin.copy:
     src: '{{ role_path }}/files/base16-alacritty/colors/base16-{{ base16_colorscheme }}{{ "-256" if base16_256 else "" }}.yml'
     dest: '{{ alacritty_fragments_dir }}/colorscheme.yml'
-    state: link
 
 - name: Concatenate config and colorscheme
-  assemble:
+  become: true
+  become_user: saser
+  ansible.builtin.assemble:
     src: '{{ ansible_env.HOME }}/.config/alacritty/fragments'
     dest: '{{ ansible_env.HOME }}/.config/alacritty/alacritty.yml'
-
-- name: Add alacritty keybindings
-  import_tasks: '{{ playbook_dir }}/roles/sxhkd/tasks/keybindings.yml'
-  vars:
-    keybindings:
-      - comment: 'Start an Alacritty terminal.'
-        chord: 'super + Return'
-        command: 'alacritty'
-  when: ansible_distribution == 'Archlinux'

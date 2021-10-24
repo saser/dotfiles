@@ -1,4 +1,2 @@
 dependencies:
   - role: base16
-  - role: iosevka
-  - role: sxhkd
