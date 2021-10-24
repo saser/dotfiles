@@ -1,4 +1,0 @@
-- name: Ensure Base16 environment variables are set
-  import_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
-  vars:
-    variables: '{{ base16_env | dict2items(key_name="name", value_name="value") }}'
