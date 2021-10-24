@@ -2,6 +2,7 @@
   become: yes
   community.general.pacman:
     name:
+      - man-db
       - inetutils # required for ansible.builtin.hostname
       - networkmanager
       - sudo
