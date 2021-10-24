@@ -1,3 +1,0 @@
-dependencies:
-  - role: homebrew
-    when: ansible_distribution == 'MacOSX'

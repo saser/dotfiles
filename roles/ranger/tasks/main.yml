@@ -1,7 +1,5 @@
-- name: Import platform tasks (macOS)
-  import_tasks: macos.yml
-  when: ansible_distribution == 'MacOSX'
-
-- name: Import platform tasks (Arch Linux)
-  import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
+- name: Install ranger and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - ranger

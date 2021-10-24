@@ -1,4 +1,0 @@
-- name: Install ranger and related programs (macOS)
-  community.general.homebrew:
-    name:
-      - ranger
