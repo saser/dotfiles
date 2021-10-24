@@ -2,6 +2,7 @@
   connection: local
   roles:
     - arch
+    - bluetooth
     - firefox
     - gnome
     - ranger
