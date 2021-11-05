@@ -5,6 +5,7 @@
     - arch
     - bluetooth
     - firefox
+    - fzf
     - gnome
     - go
     - ranger

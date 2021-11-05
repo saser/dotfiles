@@ -1,17 +1,14 @@
-- name: Import platform tasks (macOS)
-  import_tasks: macos.yml
-  when: ansible_distribution == 'MacOSX'
-
-- name: Import platform tasks (Arch Linux)
-  import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
+- name: Install fzf
+  become: true
+  community.general.pacman:
+    name:
+      - fzf
 
 - name: Source fzf files in zsh
-  import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/extra.yml'
-  vars:
-    keybindings_archlinux: '{{ role_path }}/files/keybindings_archlinux.zsh'
-    keybindings_macos: '{{ role_path }}/files/keybindings_macos.zsh'
-    keybindings: '{{ keybindings_archlinux if ansible_distribution == "Archlinux" else keybindings_macos }}'
-    paths:
-      - '{{ role_path }}/files/base16-fzf/bash/base16-{{ base16_colorscheme }}.config'
-      - '{{ keybindings }}'
+  ansible.builtin.file:
+    src: '{{ item.file }}'
+    dest: '{{ zsh_env.ZSHEXTRAS }}/{{ item.name }}'
+    state: link
+  loop:
+    - { file: '{{ role_path }}/files/keybindings.zsh', name: 'fzf-keybindings.zsh' }
+    - { file: '{{ role_path }}/files/base16-fzf/bash/base16-{{ base16_colorscheme }}.config', name: 'fzf-colorscheme.zsh' }
