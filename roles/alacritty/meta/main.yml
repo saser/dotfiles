@@ -1,3 +1,4 @@
 dependencies:
   - role: arch
   - role: base16
+  - role: iosevka
