@@ -1,6 +1,0 @@
-- name: Assemble fragments
-  listen: 'sxhkd_keybindings'
-  assemble:
-    src: '{{ sxhkd_fragments_dir }}'
-    dest: '{{ sxhkd_config_dir }}/sxhkdrc'
-    delimiter: '###############'

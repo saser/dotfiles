@@ -1,5 +1,0 @@
-- name: Render key bindings
-  notify: 'sxhkd_keybindings'
-  template:
-    src: '{{ playbook_dir }}/roles/sxhkd/templates/fragment.j2'
-    dest: '{{ sxhkd_fragments_dir }}/{{ role_name }}'

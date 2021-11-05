@@ -1,5 +1,0 @@
-- name: Install bspwm and related programs (Arch Linux)
-  become: true
-  community.general.pacman:
-    name:
-      - sxhkd

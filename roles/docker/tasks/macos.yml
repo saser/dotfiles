@@ -1,4 +1,0 @@
-- name: Install docker and related programs (macOS)
-  community.general.homebrew_cask:
-    name:
-      - docker

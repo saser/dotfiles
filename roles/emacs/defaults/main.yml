@@ -1,3 +1,0 @@
-emacs_service_name: 'saser.dotfiles.emacs'
-emacs_plist_filename: '{{ emacs_service_name }}.plist'
-emacs_plist_path: '{{ ansible_env.HOME }}/Library/LaunchAgents/{{ emacs_plist_filename }}'

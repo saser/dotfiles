@@ -1,2 +1,0 @@
-env_dotd_dir: '{{ ansible_env.HOME }}/.env.d'
-env_systemd_dir: '{{ ansible_env.HOME }}/.config/environment.d'

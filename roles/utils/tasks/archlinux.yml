@@ -1,5 +1,0 @@
-- name: Install various command line tools (Arch Linux)
-  become: true
-  community.general.pacman:
-    name:
-      - unzip

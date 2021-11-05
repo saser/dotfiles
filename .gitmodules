@@ -1,9 +1,3 @@
-[submodule "ansible/roles/emacs/files/.emacs.d/straight/repos/straight.el"]
-	path = roles/emacs/files/.emacs.d/straight/repos/straight.el
-	url = https://github.com/raxod502/straight.el.git
-[submodule "ansible/roles/iterm/files/base16-iterm2"]
-	path = roles/iterm/files/base16-iterm2
-	url = https://github.com/martinlindhe/base16-iterm2.git
 [submodule "ansible/roles/zsh/files/zplug"]
 	path = roles/zsh/files/zplug
 	url = https://github.com/zplug/zplug.git

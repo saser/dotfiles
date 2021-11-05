@@ -1,6 +1,0 @@
-- name: Install X-related programs (Arch Linux)
-  become: true
-  community.general.pacman:
-    name:
-      - xorg-server
-      - nvidia # hardware-dependent
