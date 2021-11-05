@@ -1,51 +1,35 @@
-- name: Import platform tasks (macOS)
-  import_tasks: macos.yml
-  when: ansible_distribution == 'MacOSX'
-
-- name: Import platform tasks (Arch Linux)
-  import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
-
-- name: Ensure zsh environment variables are set
-  import_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
-  vars:
-    variables: '{{ zsh_env | dict2items(key_name="name", value_name="value") }}'
+# No need to install package, it's installed in the `arch` role.
 
 - name: Link zplug directory to $ZPLUG_HOME
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/zplug'
     dest: '{{ zsh_env.ZPLUG_HOME }}'
     state: link
 
 - name: Link plugins directory to its place
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/zshplugins'
     dest: '{{ zsh_env.ZSHPLUGINS }}'
     state: link
+
+- name: Ensure zsh extension directories exist
+  ansible.builtin.file:
+    path: '{{ item }}'
+    state: directory
+  loop: '{{ zsh_dirs }}'
+
+- name: Render own environment variables file
+  ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
+  vars:
+    filename: 'zsh'
+    variables: '{{ zsh_env | dict2items(key_name="name", value_name="value") }}'
 
 - name: Ensure startup files are in place
   loop:
     - '.prompt'
     - '.zshenv'
     - '.zshrc'
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/{{ item }}'
-    dest: '{{ ansible_env.HOME }}/{{ item }}'
+    dest: '{{ arch_home }}/{{ item }}'
     state: link
-
-- name: Ensure aliases directory exists
-  file:
-    path: '{{ zsh_env.ZSHALIASES }}'
-    state: directory
-
-- name: Set aliases
-  import_tasks: '{{ playbook_dir}}/roles/zsh/tasks/alias.yml'
-  vars:
-    aliases:
-      'ls': 'ls -l --all --human-readable --classify --group-directories-first --color=auto'
-      '..': 'cd ..'
-
-- name: Ensure extras directory exists
-  file:
-    path: '{{ zsh_env.ZSHEXTRAS }}'
-    state: directory

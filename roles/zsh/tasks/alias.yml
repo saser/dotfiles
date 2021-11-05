@@ -1,6 +1,0 @@
-- name: Render aliases
-  vars:
-    _aliases: '{{ aliases | dict2items(key_name="name", value_name="value") }}'
-  template:
-    src: '{{ playbook_dir }}/roles/zsh/templates/alias.zsh.j2'
-    dest: '{{ zsh_env.ZSHALIASES }}/{{ role_name }}.zsh'

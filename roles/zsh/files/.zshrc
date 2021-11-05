@@ -65,13 +65,5 @@ setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY_TIME
 
 # Load aliases.
-for f in "${ZSHALIASES}"/*.zsh; do
-    echo source "${f}"
-    source "${f}"
-done
-
-# Load any extra scripts.
-for f in "${ZSHEXTRAS}"/*.zsh; do
-    echo source "${f}"
-    source "${f}"
-done
+alias ls='ls -l --all --human-readable --classify --group-directories-first --color=auto'
+alias ..='cd ..'

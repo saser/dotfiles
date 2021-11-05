@@ -1,4 +1,0 @@
-- name: Render extra shell template
-  template:
-    src: '{{ playbook_dir }}/roles/zsh/templates/extra.zsh.j2'
-    dest: '{{ zsh_env.ZSHEXTRAS }}/{{ role_name }}.zsh'

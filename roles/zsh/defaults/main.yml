@@ -1,5 +1,8 @@
 zsh_env:
-  ZPLUG_HOME: '{{ ansible_env.HOME }}/.zplug'
-  ZSHALIASES: '{{ ansible_env.HOME }}/.zsh-aliases'
-  ZSHEXTRAS: '{{ ansible_env.HOME }}/.zsh-extras'
-  ZSHPLUGINS: '{{ ansible_env.HOME }}/.zsh-plugins'
+  ZPLUG_HOME: '{{ arch_home }}/.zplug'
+  ZSHALIASES: '{{ arch_home }}/.zsh-aliases'
+  ZSHENVFILES: '{{ arch_home }}/.zsh-envfiles'
+  ZSHPLUGINS: '{{ arch_home }}/.zsh-plugins'
+zsh_dirs:
+  - '{{ zsh_env.ZSHALIASES }}'
+  - '{{ zsh_env.ZSHENVFILES }}'

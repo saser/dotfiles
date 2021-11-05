@@ -1,0 +1,6 @@
+- name: 'Render environment variables from role {{ role_name }} to file {{ zsh_env.ZSHENVFILES }}/{{ filename }}.zsh'
+  ansible.builtin.template:
+    src: '{{ playbook_dir }}/roles/zsh/templates/env.j2'
+    dest: '{{ zsh_env.ZSHENVFILES }}/{{ filename }}.zsh'
+  vars:
+    _variables: '{{ variables }}'
