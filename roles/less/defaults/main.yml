@@ -1,0 +1,9 @@
+less_env:
+  PAGER: 'less'
+  LESS: '--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --hilite-unread'
+  LESS_TERMCAP_us: '$(tput smul)'
+  LESS_TERMCAP_so: '$(tput setaf 6; tput smso)'
+  LESS_TERMCAP_md: '$(tput bold; tput setaf 1)'
+  LESS_TERMCAP_ue: '$(tput sgr0)'
+  LESS_TERMCAP_me: '$(tput sgr0)'
+  LESS_TERMCAP_se: '$(tput sgr0)'

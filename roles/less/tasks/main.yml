@@ -1,3 +1,11 @@
-- name: Import platform tasks (Arch Linux)
-  import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
+- name: Install less
+  become: true
+  community.general.pacman:
+    name:
+      - less
+
+- name: Render less-environment variables
+  ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
+  vars:
+    filename: 'less'
+    variables: '{{ less_env | dict2items(key_name="name", value_name="value") }}'
