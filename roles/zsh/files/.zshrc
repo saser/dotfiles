@@ -67,3 +67,9 @@ setopt INC_APPEND_HISTORY_TIME
 # Load aliases.
 alias ls='ls -l --all --human-readable --classify --group-directories-first --color=auto'
 alias ..='cd ..'
+
+# Load extra scripts.
+for f in "${ZSHEXTRAS}"/*.zsh; do
+    echo source "${f}"
+    source "${f}"
+done

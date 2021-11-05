@@ -2,7 +2,9 @@ zsh_env:
   ZPLUG_HOME: '{{ arch_home }}/.zplug'
   ZSHALIASES: '{{ arch_home }}/.zsh-aliases'
   ZSHENVFILES: '{{ arch_home }}/.zsh-envfiles'
+  ZSHEXTRAS: '{{ arch_home }}/.zsh-extras'
   ZSHPLUGINS: '{{ arch_home }}/.zsh-plugins'
 zsh_dirs:
   - '{{ zsh_env.ZSHALIASES }}'
   - '{{ zsh_env.ZSHENVFILES }}'
+  - '{{ zsh_env.ZSHEXTRAS }}'
