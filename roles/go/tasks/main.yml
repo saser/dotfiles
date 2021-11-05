@@ -1,28 +1,11 @@
-- name: Import platform tasks (macOS)
-  import_tasks: macos.yml
-  when: ansible_distribution == 'MacOSX'
+- name: Install Go
+  become: true
+  community.general.pacman:
+    name:
+      - go
 
-- name: Import platform tasks (Arch Linux)
-  import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
-
-- name: Ensure Go environment variables are set
-  import_tasks: '{{ playbook_dir }}/roles/env/tasks/set.yml'
+- name: Render Go environment variables
+  ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
   vars:
+    filename: 'go'
     variables: '{{ go_env | dict2items(key_name="name", value_name="value") }}'
-
-- name: Ensure $GOPATH/bin is included in $PATH
-  import_tasks: '{{ playbook_dir }}/roles/path/tasks/set.yml'
-  vars:
-    priority: 10
-    entries:
-      - '{{ go_env.GOPATH }}/bin'
-
-- name: Install Go tools using `go get`
-  loop:
-    - golang.org/x/tools/gopls
-    - mvdan.cc/gofumpt/gofumports
-  command:
-    cmd: 'go get {{ item }}'
-    creates: '{{ go_env.GOPATH }}/bin/{{ item.split("/")[-1] }}'
-  environment: '{{ go_env }}'

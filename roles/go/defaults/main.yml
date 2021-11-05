@@ -1,3 +1,2 @@
 go_env:
-  GOPATH: '{{ ansible_env.HOME }}/.go'
-  GO111MODULE: 'on'
+  GOPATH: '{{ arch_home }}/go'

@@ -1,5 +1,2 @@
 dependencies:
-  - role: env
-  - role: homebrew
-    when: ansible_distribution == 'MacOSX'
-  - role: path
+  - role: arch
