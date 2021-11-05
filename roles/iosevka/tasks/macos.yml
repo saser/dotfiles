@@ -1,9 +1,0 @@
-- name: Install the fonts Cask tap (macOS)
-  community.general.homebrew_tap:
-    name:
-      - homebrew/cask-fonts
-
-- name: Install the Iosevka font (macOS)
-  community.general.homebrew_cask:
-    name:
-      - font-iosevka

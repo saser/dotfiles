@@ -1,5 +1,0 @@
-dependencies:
-  - role: homebrew
-    when: ansible_distribution == 'MacOSX'
-  - role: yay
-    when: ansible_distribution == 'Archlinux'

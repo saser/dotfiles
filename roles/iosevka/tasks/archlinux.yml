@@ -1,5 +1,0 @@
-- name: Install the Iosevka font (Arch Linux)
-  kewlfft.aur.aur:
-    name:
-      - ttf-iosevka
-    use: yay
