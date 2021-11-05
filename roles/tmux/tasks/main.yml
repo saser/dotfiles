@@ -1,10 +1,8 @@
-- name: Import platform tasks (macOS)
-  import_tasks: macos.yml
-  when: ansible_distribution == 'MacOSX'
-
-- name: Import platform tasks (Arch Linux)
-  import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
+- name: Install tmux and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - tmux
 
 - name: Ensure .tmux.conf is in place
   file:
@@ -13,11 +11,7 @@
     state: link
 
 - name: Set up tmux aliases
-  import_tasks: '{{ playbook_dir}}/roles/zsh/tasks/alias.yml'
-  vars:
-    aliases:
-      't': 'tmux'
-      'tn': 't new -s'
-      'ta': 't attach'
-      'tat': 'ta -t' # attach to session name
-      'tl': 't list-sessions'
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/aliases.zsh'
+    dest: '{{ zsh_env.ZSHALIASES }}/tmux.zsh'
+    state: link

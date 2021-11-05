@@ -1,5 +1,3 @@
 dependencies:
   - role: alacritty
-  - role: homebrew
-    when: ansible_distribution == 'MacOSX'
   - role: zsh

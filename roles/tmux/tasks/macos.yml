@@ -1,4 +1,0 @@
-- name: Install tmux and related programs (macOS)
-  community.general.homebrew:
-    name:
-      - tmux

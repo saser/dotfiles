@@ -1,5 +1,0 @@
-- name: Install tmux and related programs (Arch Linux)
-  become: true
-  community.general.pacman:
-    name:
-      - tmux
