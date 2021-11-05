@@ -24,6 +24,12 @@
     filename: 'zsh'
     variables: '{{ zsh_env | dict2items(key_name="name", value_name="value") }}'
 
+- name: Link own aliases into place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/aliases.zsh'
+    dest: '{{ zsh_env.ZSHALIASES }}/zsh.zsh'
+    state: link
+
 - name: Ensure startup files are in place
   loop:
     - '.prompt'
