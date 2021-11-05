@@ -1,0 +1,21 @@
+- name: Install VS Code
+  become: true
+  community.general.pacman:
+    name:
+      - code
+
+- name: List VS Code extensions, with versions
+  become_user: '{{ arch_user }}'
+  become: true
+  ansible.builtin.command:
+    cmd: code --list-extensions --show-versions
+  register: code_list_extensions
+  changed_when: false
+
+- name: Install VS Code extensions from registry
+  ansible.builtin.command:
+    cmd: 'code --install-extension {{ item.name }}@{{ item.version }}'
+  when: '"{{ item.name }}@{{ item.version}}" not in code_list_extensions.stdout'
+  loop:
+    - { name: 'golang.go', version: '0.28.1' }
+    - { name: 'vscodevim.vim', version: '1.21.10' }
