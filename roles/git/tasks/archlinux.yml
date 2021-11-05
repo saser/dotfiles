@@ -1,6 +1,0 @@
-- name: Install git and related programs (Arch Linux)
-  become: true
-  community.general.pacman:
-    name:
-      - git
-      - diff-so-fancy

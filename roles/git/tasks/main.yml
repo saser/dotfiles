@@ -1,30 +1,18 @@
-- name: Import platform tasks (macOS)
-  import_tasks: macos.yml
-  when: ansible_distribution == 'MacOSX'
+- name: Install git and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - git
+      - diff-so-fancy
 
-- name: Import platform tasks (Arch Linux)
-  import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
-
-- name: Symlink `.gitconfig` to $HOME
+- name: Symlink .gitconfig
   file:
     src: '{{ role_path }}/files/.gitconfig'
     dest: '{{ ansible_env.HOME }}/.gitconfig'
     state: link
 
 - name: Set up git aliases
-  import_tasks: '{{ playbook_dir}}/roles/zsh/tasks/alias.yml'
-  vars:
-    aliases:
-      'g': 'git'
-      'ga': 'g add'
-      'gs': 'g s' # git status
-      'gl': 'g l' # one-line log
-      'gd': 'g d' # git diff
-      'gdc': 'g dc' # git diff --cached
-      'gc': 'g c' # git commit
-      'gcm': 'g cm' # git commit -m
-      'gco': 'g co' # git checkout
-      'gcob': 'g cob' # git checkout -b
-      'gane': 'g ane' # git commit --amend --no-edit
-      'gf': 'g f' # git fetch
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/aliases.zsh'
+    dest: '{{ zsh_env.ZSHALIASES }}/git.zsh'
+    state: link
