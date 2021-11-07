@@ -17,8 +17,10 @@
     cmd: 'code --install-extension {{ item.name }}@{{ item.version }}'
   when: '"{{ item.name }}@{{ item.version}}" not in code_list_extensions.stdout'
   loop:
+    - { name: 'bazelbuild.vscode-bazel', version: '0.4.1' }
     - { name: 'golang.go', version: '0.28.1' }
     - { name: 'vscodevim.vim', version: '1.21.10' }
+    - { name: 'zxh404.vscode-proto3', version: '0.5.5' }
 
 - name: Link settings.json into place
   ansible.builtin.file:
