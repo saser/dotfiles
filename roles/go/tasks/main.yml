@@ -9,3 +9,11 @@
   vars:
     filename: 'go'
     variables: '{{ go_env | dict2items(key_name="name", value_name="value") }}'
+
+- name: Make installed Go binaries available in $PATH
+  ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
+  vars:
+    filename: 'gobin'
+    variables:
+      - name: PATH
+        value: '{{ go_env.GOPATH }}/bin:${PATH}'
