@@ -1,4 +1,6 @@
 {
     "workbench.colorTheme": "Monokai",
-    "keyboard.dispatch": "keyCode"
+    "keyboard.dispatch": "keyCode",
+    "editor.fontFamily": "Iosevka, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 16
 }
