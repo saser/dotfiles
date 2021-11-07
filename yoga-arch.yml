@@ -12,6 +12,7 @@
     - less
     - ranger
     - ripgrep
+    - rust
     - tmux
     - vscode
     - yay
