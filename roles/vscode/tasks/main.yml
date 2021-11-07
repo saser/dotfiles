@@ -19,3 +19,9 @@
   loop:
     - { name: 'golang.go', version: '0.28.1' }
     - { name: 'vscodevim.vim', version: '1.21.10' }
+
+- name: Link settings.json into place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/settings.json'
+    dest: '{{ arch_home }}/.config/Code - OSS/User/settings.json'
+    state: link
