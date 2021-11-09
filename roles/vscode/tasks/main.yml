@@ -1,8 +1,10 @@
-- name: Install VS Code
+- name: Install Visual Studio Code (Microsoft product)
+  become_user: '{{ arch_user }}'
   become: true
-  community.general.pacman:
+  kewlfft.aur.aur:
     name:
-      - code
+      - visual-studio-code-bin
+    use: yay
 
 - name: List VS Code extensions, with versions
   become_user: '{{ arch_user }}'
@@ -26,5 +28,5 @@
 - name: Link settings.json into place
   ansible.builtin.file:
     src: '{{ role_path }}/files/settings.json'
-    dest: '{{ arch_home }}/.config/Code - OSS/User/settings.json'
+    dest: '{{ arch_home }}/.config/Code/User/settings.json'
     state: link
