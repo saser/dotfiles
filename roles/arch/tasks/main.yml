@@ -4,7 +4,6 @@
     name:
       - man-db
       - inetutils # required for ansible.builtin.hostname
-      - zsh # needed to set the user's shell, but configured in its own role
       - networkmanager
       - sudo
 
@@ -78,7 +77,6 @@
     name: '{{ arch_user }}'
     groups: wheel
     append: true
-    shell: /usr/bin/zsh
 
 - name: Make wheel members allowed to run sudo
   become: yes

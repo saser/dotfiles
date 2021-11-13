@@ -1,4 +1,14 @@
-# No need to install package, it's installed in the `arch` role.
+- name: Install zsh
+  become: true
+  community.general.pacman:
+    name:
+      - zsh
+
+- name: Set user shell to zsh
+  become: true
+  ansible.builtin.user:
+    name: '{{ arch_user }}'
+    shell: '/usr/bin/zsh'
 
 - name: Link zplug directory to $ZPLUG_HOME
   ansible.builtin.file:
