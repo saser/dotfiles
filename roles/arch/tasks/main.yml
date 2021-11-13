@@ -8,6 +8,18 @@
       - networkmanager
       - sudo
 
+- name: Set some options in pacman.conf
+  become: yes
+  ansible.builtin.lineinfile:
+    path: /etc/pacman.conf
+    state: present
+    regexp: '^{{ item.replace }}$'
+    line: '{{ item.line }}'
+    # validate: 'visudo --check --file=%s'
+  loop:
+    - { replace: '#Color', line: 'Color' }
+    - { replace: '#VerbosePkgLists', line: 'VerbosePkgLists' }
+
 ###############################################################################
 # Tasks to set time-related options.
 ###############################################################################
