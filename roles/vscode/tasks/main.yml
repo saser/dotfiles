@@ -6,20 +6,12 @@
       - visual-studio-code-bin
     use: yay
 
-- name: List VS Code extensions, with versions
-  become_user: '{{ arch_user }}'
-  become: true
-  ansible.builtin.command:
-    cmd: code --list-extensions --show-versions
-  register: code_list_extensions
-  changed_when: false
-
 - name: Install VS Code extensions from registry
   ansible.builtin.command:
     cmd: 'code --install-extension {{ item.name }}@{{ item.version }}'
-  when: '"{{ item.name }}@{{ item.version}}" not in code_list_extensions.stdout'
+    creates: '{{ arch_home }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
   loop:
-    - { name: 'BazelBuild.vscode-bazel', version: '0.5.0' }
+    - { name: 'bazelbuild.vscode-bazel', version: '0.5.0' }
     - { name: 'golang.go', version: '0.29.0' }
     - { name: 'matklad.rust-analyzer', version: '0.2.809' }
     - { name: 'vscodevim.vim', version: '1.21.10' }
