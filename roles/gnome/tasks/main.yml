@@ -4,11 +4,10 @@
     name:
       - gnome
 
-- name: Start and enable GDM
+- name: Enable GDM
   become: true
   ansible.builtin.service:
     name: gdm.service
-    state: started
     enabled: true
 
 - name: Install python-psutil, needed for dconf modification
