@@ -1,4 +1,4 @@
-- name: Install Go
+- name: Install rustup
   become: true
   community.general.pacman:
     name:
