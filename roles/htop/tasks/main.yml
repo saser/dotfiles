@@ -1,0 +1,5 @@
+- name: Install htop
+  become: true
+  community.general.pacman:
+    name:
+      - htop
