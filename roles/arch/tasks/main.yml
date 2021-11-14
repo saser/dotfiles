@@ -54,7 +54,7 @@
 - name: Set hostname
   become: yes
   ansible.builtin.hostname:
-    name: 'arch'
+    name: 'yoga'
     use: systemd
 
 - name: Enable en_US.UTF-8 locale
