@@ -1,0 +1,11 @@
+- name: Install Bazel
+  become: true
+  community.general.pacman:
+    name:
+      - bazel
+
+- name: Ensure .bazelrc is in place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/.bazelrc'
+    dest: '{{ arch_home }}/.bazelrc'
+    state: link

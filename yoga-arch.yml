@@ -3,6 +3,7 @@
   roles:
     - alacritty
     - arch
+    - bazel
     - bluetooth
     - docker
     - firefox
