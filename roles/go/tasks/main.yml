@@ -1,8 +1,9 @@
-- name: Install Go
+- name: Install Go and related programs
   become: true
   community.general.pacman:
     name:
       - go
+      - graphviz # needed for the very useful `go tool pprof -http`
 
 - name: Render Go environment variables
   ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
