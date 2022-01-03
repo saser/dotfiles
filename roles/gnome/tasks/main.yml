@@ -21,4 +21,4 @@
   become_user: '{{ arch_user }}'
   community.general.dconf:
     key: "/org/gnome/desktop/input-sources/xkb-options"
-    value: "['caps:swapescape']"
+    value: "['caps:escape']"
