@@ -1,15 +1,21 @@
-- name: Install git and related programs (Arch Linux)
-  become: true
-  community.general.pacman:
-    name:
-      - git
-      - diff-so-fancy
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
 
-- name: Symlink .gitconfig
-  file:
-    src: '{{ role_path }}/files/.gitconfig'
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Create fallback company.gitconfig file, if it doesn't already exist
+  ansible.builtin.copy:
+    src: '{{ role_path }}/files/gitconfig-fragments/github.gitconfig'
+    dest: '{{ role_path }}/files/gitconfig-fragments/company.gitconfig'
+    force: false
+
+- name: Render .gitconfig from fragments
+  ansible.builtin.assemble:
+    src: '{{ role_path }}/files/gitconfig-fragments'
     dest: '{{ ansible_env.HOME }}/.gitconfig'
-    state: link
 
 - name: Set up git aliases
   ansible.builtin.file:

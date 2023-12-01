@@ -1,0 +1,5 @@
+- name: Install git and related programs (macOS)
+  community.general.homebrew:
+    name:
+      - git
+      - diff-so-fancy
