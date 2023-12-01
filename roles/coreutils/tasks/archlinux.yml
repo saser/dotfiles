@@ -1,0 +1,5 @@
+- name: Install coreutils and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - coreutils

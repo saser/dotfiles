@@ -1,9 +1,11 @@
-# TODO: install coreutils and use `gls` instead of `ls` here. This makes macOS
-# and Linux experiences similar.
+#!/usr/bin/env zsh
+
+_LS_BINARY="ls"
+
 if [[ "$(uname -s)" = "Darwin" ]]; then
-    alias ls='ls -lahFG'
-else
-    alias ls='ls -l --all --human-readable --classify --group-directories-first --color=auto'
+    _LS_BINARY="gls"
 fi
+
+alias ls="${_LS_BINARY} -l --all --human-readable --classify --group-directories-first --color=auto"
 
 alias ..='cd ..'
