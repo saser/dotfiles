@@ -45,6 +45,12 @@
       'color.diff.whitespace': 'red reverse'
       'color.ui': 'true'
 
+- name: Link public, GitHub-flavored Git config file to ~/.gitconfig-github
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/.gitconfig-github'
+    dest: '{{ ansible_env.HOME }}/.gitconfig-github'
+    state: link
+
 - name: Set up git aliases
   ansible.builtin.file:
     src: '{{ role_path }}/files/aliases.zsh'
