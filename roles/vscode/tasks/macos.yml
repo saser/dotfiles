@@ -13,3 +13,11 @@
     src: '{{ role_path }}/files/settings.json'
     dest: '{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json'
     state: link
+
+- name: Enable key repeats (macOS)
+  community.general.osx_defaults:
+    domain: com.microsoft.VSCode
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+    state: present

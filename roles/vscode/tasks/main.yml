@@ -12,14 +12,3 @@
     creates: '{{ ansible_env.HOME }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
   loop:
     - { name: 'vscodevim.vim', version: '1.22.2' }
-
-- name: Ensure VSCode config directory exists (Arch Linux)
-  ansible.builtin.file:
-    path: '{{ ansible_env.HOME }}/.config/Code/User'
-    state: directory
-
-- name: Link settings.json into place (Arch Linux)
-  ansible.builtin.file:
-    src: '{{ role_path }}/files/settings.json'
-    dest: '{{ ansible_env.HOME }}/.config/Code/User/settings.json'
-    state: link
