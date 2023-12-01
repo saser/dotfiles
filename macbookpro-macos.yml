@@ -3,6 +3,7 @@
   roles:
     - fzf
     - git
+    - htop
     - iosevka
     - iterm
     - ranger
