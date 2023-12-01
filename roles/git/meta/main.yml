@@ -1,2 +1,3 @@
 dependencies:
+  - role: vscode  # For setting the editor to `code --wait`.
   - role: zsh
