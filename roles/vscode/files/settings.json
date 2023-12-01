@@ -6,5 +6,6 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "editor.formatOnSave": true,
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "vim.easymotion": true
 }
