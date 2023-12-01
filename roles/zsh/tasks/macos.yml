@@ -1,0 +1,16 @@
+- name: Install zsh (macOS)
+  community.general.homebrew:
+    name:
+      - zsh
+
+- name: Set user shell to zsh (macOS)
+  become: true
+  ansible.builtin.user:
+    name: '{{ ansible_env.USER }}'
+    shell: '/opt/homebrew/bin/zsh'
+
+- name: Make Homebrew binaries available in PATH (macOS)
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/homebrew-env.zsh'
+    dest: '{{ zsh_env.ZSHENVFILES }}/homebrew.zsh'
+    state: link

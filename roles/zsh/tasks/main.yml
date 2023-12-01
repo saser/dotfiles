@@ -1,14 +1,10 @@
-- name: Install zsh
-  become: true
-  community.general.pacman:
-    name:
-      - zsh
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
 
-- name: Set user shell to zsh
-  become: true
-  ansible.builtin.user:
-    name: '{{ arch_user }}'
-    shell: '/usr/bin/zsh'
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
 
 - name: Link zplug directory to $ZPLUG_HOME
   ansible.builtin.file:
@@ -40,6 +36,12 @@
     dest: '{{ zsh_env.ZSHALIASES }}/zsh.zsh'
     state: link
 
+- name: Link empty zsh extra file into place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/emptyextra.zsh'
+    dest: '{{ zsh_env.ZSHEXTRAS }}/emptyextra.zsh'
+    state: link
+
 - name: Ensure startup files are in place
   loop:
     - '.prompt'
@@ -47,5 +49,5 @@
     - '.zshrc'
   ansible.builtin.file:
     src: '{{ role_path }}/files/{{ item }}'
-    dest: '{{ arch_home }}/{{ item }}'
+    dest: '{{ ansible_env.HOME }}/{{ item }}'
     state: link
