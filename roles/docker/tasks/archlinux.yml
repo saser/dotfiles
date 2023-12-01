@@ -1,0 +1,19 @@
+- name: Install Docker and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - docker
+
+- name: Enable the Docker service
+  become: true
+  ansible.builtin.service:
+    name: docker.service
+    enabled: true
+
+- name: Add user to docker group
+  become: yes
+  ansible.builtin.user:
+    name: '{{ ansible_env.USER }}'
+    groups: 
+      - docker
+    append: true

@@ -1,19 +1,7 @@
-- name: Install Docker
-  become: true
-  community.general.pacman:
-    name:
-      - docker
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
 
-- name: Enable the Docker service
-  become: true
-  ansible.builtin.service:
-    name: docker.service
-    enabled: true
-
-- name: Add user to docker group
-  become: yes
-  ansible.builtin.user:
-    name: '{{ arch_user }}'
-    groups: 
-      - docker
-    append: true
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
