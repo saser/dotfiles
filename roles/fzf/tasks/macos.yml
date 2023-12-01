@@ -1,0 +1,4 @@
+- name: Install fzf and related programs (macOS)
+  community.general.homebrew:
+    name:
+      - fzf
