@@ -1,23 +1,25 @@
-- name: Install Visual Studio Code (Microsoft product)
-  become_user: '{{ arch_user }}'
-  become: true
-  kewlfft.aur.aur:
-    name:
-      - visual-studio-code-bin
-    use: yay
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
 
 - name: Install VS Code extensions from registry
   ansible.builtin.command:
     cmd: 'code --install-extension {{ item.name }}@{{ item.version }}'
-    creates: '{{ arch_home }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
+    creates: '{{ ansible_env.HOME }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
   loop:
-    - { name: 'bazelbuild.vscode-bazel', version: '0.5.0' }
-    - { name: 'golang.go', version: '0.32.0' }
     - { name: 'vscodevim.vim', version: '1.22.2' }
-    - { name: 'zxh404.vscode-proto3', version: '0.5.5' }
 
-- name: Link settings.json into place
+- name: Ensure VSCode config directory exists (Arch Linux)
+  ansible.builtin.file:
+    path: '{{ ansible_env.HOME }}/.config/Code/User'
+    state: directory
+
+- name: Link settings.json into place (Arch Linux)
   ansible.builtin.file:
     src: '{{ role_path }}/files/settings.json'
-    dest: '{{ arch_home }}/.config/Code/User/settings.json'
+    dest: '{{ ansible_env.HOME }}/.config/Code/User/settings.json'
     state: link

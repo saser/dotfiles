@@ -1,0 +1,18 @@
+- name: Install Visual Studio Code (Microsoft product) (Arch Linux)
+  become_user: '{{ arch_user }}'
+  become: true
+  kewlfft.aur.aur:
+    name:
+      - visual-studio-code-bin
+    use: yay
+
+- name: Ensure VSCode config directory exists (Arch Linux)
+  ansible.builtin.file:
+    path: '{{ ansible_env.HOME }}/.config/Code/User'
+    state: directory
+
+- name: Link settings.json into place (Arch Linux)
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/settings.json'
+    dest: '{{ ansible_env.HOME }}/.config/Code/User/settings.json'
+    state: link

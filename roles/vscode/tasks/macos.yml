@@ -1,0 +1,15 @@
+- name: Install Visual Studio Code (Microsoft product) (macOS)
+  community.general.homebrew_cask:
+    name:
+      - visual-studio-code
+
+- name: Ensure VSCode config directory exists (macOS)
+  ansible.builtin.file:
+    path: '{{ ansible_env.HOME }}/Library/Application Support/Code/User'
+    state: directory
+
+- name: Link settings.json into place (macOS)
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/settings.json'
+    dest: '{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json'
+    state: link
