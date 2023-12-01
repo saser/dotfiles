@@ -31,3 +31,6 @@ to "Preferences > Profiles > Text" and set the font, ideally size 16.
 ### Adding SSH key passphrase to the `ssh-agent` (macOS only)
 Run `ssh-add --apple-use-keychain ~/.ssh/id_rsa` (replacing the path to the private key as necessary). Verify that it
 is added by running `ssh-add -l`.
+
+### Setting the monospace font in Chrome
+Go to chrome://settings/fonts and set "Fixed Width Font" to whatever font desired.

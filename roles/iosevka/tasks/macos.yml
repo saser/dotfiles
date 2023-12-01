@@ -6,3 +6,4 @@
   community.general.homebrew_cask:
     name:
       - font-iosevka
+      - font-iosevka-slab
