@@ -1,12 +1,8 @@
 - hosts: localhost
   connection: local
   roles:
-    # - alacritty
-    # - docker
-    # - emacs
     - fzf
     - git
-    # - go
     - iosevka
     - iterm
     # - ranger
