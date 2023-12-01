@@ -7,12 +7,12 @@ each role takes care of doing OS-specific configuration, and one simply creates 
 
 ## Installation
 
+1. (macOS only) Install Homebrew Ansible, and Git first.
+    - Homebrew: https://brew.sh/Installation
+    - Ansible: `brew install ansible`
+    - Git: `brew install git`
 1. Clone the repository recursively: `git clone --recursive https://github.com/Saser/dotfiles`.
     * Alternatively, if already cloned, do `git submodule init && git submodule update`.
-1. Install Ansible in some appropriate way. For macOS, follow the instructions at
-   https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html. If installing
-   with `pip`, make sure to use Python 3, which is done by using `python3` instead of `python` at
-   the time of writing.
 1. Install the Ansible external dependencies: `ansible-galaxy collection install -r requirements.yml`
 1. Run the appropriate playbook: `ansible-playbook -K <playbook file>`
 
