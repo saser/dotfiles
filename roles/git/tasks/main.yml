@@ -6,18 +6,44 @@
   ansible.builtin.import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
 
-- name: Create fallback company.gitconfig file, if it doesn't already exist
-  ansible.builtin.copy:
-    src: '{{ role_path }}/files/gitconfig-fragments/github.gitconfig.template'
-    dest: '{{ role_path }}/files/gitconfig-fragments/company.gitconfig'
-    force: false
-
-- name: Render .gitconfig from fragments
-  ansible.builtin.assemble:
-    src: '{{ role_path }}/files/gitconfig-fragments'
-    dest: '{{ ansible_env.HOME }}/.gitconfig'
-    regexp: '\.gitconfig$'
-    validate: "git config --file='%s' --list"
+- name: Set global git configuration values
+  community.general.git_config:
+    name: '{{ item.key }}'
+    value: '{{ item.value }}'
+    scope: global
+  loop: '{{ git_config | dict2items }}'
+  vars:
+    git_config:
+      # Some core settings.
+      'core.pager': 'diff-so-fancy | less --tabs=4 -RFX'
+      'core.editor': 'code --wait'
+      # Aliases.
+      'alias.amend': 'commit --amend'
+      'alias.ane': 'commit --amend --no-edit'
+      'alias.c': 'commit'
+      'alias.cm': 'commit -m'
+      'alias.co': 'checkout'
+      'alias.cob': 'checkout -b'
+      'alias.d': 'diff'
+      'alias.dc': 'diff --cached'
+      'alias.f': 'fetch'
+      'alias.l': 'log --oneline --decorate --graph --all'
+      'alias.push-new': '!git push -u origin $(git symbolic-ref --short HEAD)'
+      'alias.remove-pruned': "!git fetch --prune && git branch -vv | awk '/: gone/{print $1}' | xargs git branch -d"
+      'alias.reword': 'commit --amend --edit'
+      'alias.s': 'status'
+      # Colors. Settings suggested by `diff-so-fancy`.
+      'color.diff-highlight.newHighlight': 'green bold 52'
+      'color.diff-highlight.newNormal': 'green bold'
+      'color.diff-highlight.oldHighlight': 'red bold 52'
+      'color.diff-highlight.oldNormal': 'red bold'
+      'color.diff.commit': 'yellow bold'
+      'color.diff.frag': 'magenta bold'
+      'color.diff.meta': 'yellow'
+      'color.diff.new': 'green bold'
+      'color.diff.old': 'red bold'
+      'color.diff.whitespace': 'red reverse'
+      'color.ui': 'true'
 
 - name: Set up git aliases
   ansible.builtin.file:
