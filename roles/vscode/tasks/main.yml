@@ -11,4 +11,5 @@
     cmd: 'code --install-extension {{ item.name }}@{{ item.version }}'
     creates: '{{ ansible_env.HOME }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
   loop:
-    - { name: 'vscodevim.vim', version: '1.22.2' }
+    - { name: 'vscodevim.vim', version: '1.27.0' }
+    - { name: 'golan.go', version: '0.40.0' }
