@@ -5,7 +5,7 @@
     - git
     - iosevka
     - iterm
-    # - ranger
-    # - ripgrep
+    - ranger
+    - ripgrep
     - tmux
     - zsh
