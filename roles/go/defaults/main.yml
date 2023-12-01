@@ -1,2 +1,2 @@
 go_env:
-  GOPATH: '{{ arch_home }}/go'
+  GOPATH: '{{ ansible_env.HOME }}/go'

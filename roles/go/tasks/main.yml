@@ -1,9 +1,10 @@
-- name: Install Go and related programs
-  become: true
-  community.general.pacman:
-    name:
-      - go
-      - graphviz # needed for the very useful `go tool pprof -http`
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
 
 - name: Render Go environment variables
   ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
