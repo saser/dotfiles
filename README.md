@@ -29,5 +29,5 @@ The font is installed by including the `iosevka` role, however it needs to be ma
 to "Preferences > Profiles > Text" and set the font, ideally size 16.
 
 ### Adding SSH key passphrase to the `ssh-agent` (macOS only)
-Run `ssh-add -K ~/.ssh/id_rsa` (replacing the path to the private key as necessary). Verify that it
+Run `ssh-add --apple-use-keychain ~/.ssh/id_rsa` (replacing the path to the private key as necessary). Verify that it
 is added by running `ssh-add -l`.
