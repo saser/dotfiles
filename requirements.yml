@@ -1,5 +1,5 @@
 collections:
   - name: community.general
-    version: 3.8.0
+    version: 7.5.1
   - name: kewlfft.aur
     version: 0.9.1
