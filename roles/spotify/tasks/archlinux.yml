@@ -1,0 +1,7 @@
+- name: Install Spotify (Arch Linux)
+  become_user: '{{ arch_user }}'
+  become: true
+  kewlfft.aur.aur:
+    name:
+      - spotify
+    use: yay

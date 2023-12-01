@@ -1,7 +1,7 @@
-- name: Install Spotify
-  become_user: '{{ arch_user }}'
-  become: true
-  kewlfft.aur.aur:
-    name:
-      - spotify
-    use: yay
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'

@@ -1,3 +1,5 @@
 dependencies:
   - role: arch
+    when: ansible_distribution == 'Archlinux'
   - role: yay
+    when: ansible_distribution == 'Archlinux'
