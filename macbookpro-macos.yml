@@ -7,7 +7,7 @@
     - fzf
     - git
     # - go
-    # - iosevka
+    - iosevka
     - iterm
     # - ranger
     # - ripgrep

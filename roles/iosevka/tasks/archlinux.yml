@@ -1,0 +1,5 @@
+- name: Install Iosevka (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - ttc-iosevka
