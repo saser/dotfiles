@@ -1,0 +1,5 @@
+- name: Install less and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - less

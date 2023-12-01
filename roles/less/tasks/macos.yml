@@ -1,0 +1,4 @@
+- name: Install less and related programs (macOS)
+  community.general.homebrew:
+    name:
+      - less
