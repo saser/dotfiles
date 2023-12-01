@@ -11,5 +11,5 @@
     - iterm
     # - ranger
     # - ripgrep
-    # - tmux
+    - tmux
     - zsh
