@@ -13,3 +13,6 @@
 [submodule "ansible/roles/fzf/files/base16-fzf"]
 	path = roles/fzf/files/base16-fzf
 	url = https://github.com/fnune/base16-fzf.git
+[submodule "roles/iterm/files/base16-iterm2"]
+	path = roles/iterm/files/base16-iterm2
+	url = https://github.com/martinlindhe/base16-iterm2.git

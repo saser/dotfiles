@@ -1,15 +1,15 @@
 - hosts: localhost
   connection: local
   roles:
-    - alacritty
-    - docker
-    - emacs
-    - fzf
-    - git
-    - go
-    - iosevka
+    # - alacritty
+    # - docker
+    # - emacs
+    # - fzf
+    # - git
+    # - go
+    # - iosevka
     - iterm
-    - ranger
-    - ripgrep
-    - tmux
-    - zsh
+    # - ranger
+    # - ripgrep
+    # - tmux
+    # - zsh
