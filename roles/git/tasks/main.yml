@@ -14,6 +14,10 @@
   loop: '{{ git_config | dict2items }}'
   vars:
     git_config:
+      # User settings. To override these in a work context, modify config values
+      # in ~/work/.gitconfig and store all work repositories under ~/work.
+      'user.name': 'Christian Persson'
+      'user.email': 'saser@users.noreply.github.com'
       # Some core settings.
       'core.pager': 'diff-so-fancy | less --tabs=4 -RFX'
       'core.editor': 'code --wait'
@@ -45,11 +49,28 @@
       'color.diff.whitespace': 'red reverse'
       'color.ui': 'true'
 
-- name: Link public, GitHub-flavored Git config file to ~/.gitconfig-github
+- name: Ensure that directory exists to hold work-flavored Git config file
   ansible.builtin.file:
-    src: '{{ role_path }}/files/.gitconfig-github'
-    dest: '{{ ansible_env.HOME }}/.gitconfig-github'
-    state: link
+    path: '{{ git_work_repo_dir }}'
+    state: directory
+
+- name: Ensure that a work-flavored Git config file exists at ~/work/.gitconfig
+  ansible.builtin.lineinfile:
+    path: '{{ git_work_config_file }}'
+    line: '# This line is a workaround for letting Ansible create this file.'
+    state: present
+    insertbefore: BOF
+
+# This is a separate task because the loop variant above doesn't seem to support
+# Jinja2 templates (the "{{ ... }}" stuff) in the dict keys.
+- name: Conditionally include work-flavored configuration for repositories under ~/work
+  community.general.git_config:
+    # The trailing slash is important, as it expands to `/**` and therefore
+    # matches everything under the directory. Without the slash, it would only
+    # match a git repository located at exactly `~/work/.git`.
+    name: 'includeIf.gitdir:{{ git_work_repo_dir }}/.path'
+    value: '{{ git_work_config_file }}'
+    scope: global
 
 - name: Set up git aliases
   ansible.builtin.file:

@@ -1,0 +1,3 @@
+git_work_repo_dir: "{{ ansible_env.HOME }}/work"
+git_work_config_file: "{{ git_work_repo_dir }}/.gitconfig"
+  
