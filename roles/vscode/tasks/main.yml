@@ -13,3 +13,4 @@
   loop:
     - { name: 'vscodevim.vim', version: '1.27.2' }
     - { name: 'golang.go', version: '0.40.1' }
+    - { name: 'zxh404.vscode-proto3', version: '0.5.5' }
