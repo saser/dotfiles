@@ -48,6 +48,14 @@
       'color.diff.old': 'red bold'
       'color.diff.whitespace': 'red reverse'
       'color.ui': 'true'
+      # Enables `--update-refs` by default for any `rebase` commands. A truly
+      # magical flag that makes working with stacked branches _much_ easier.
+      # Thanks to this article, where I learned about it:
+      # https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+      'rebase.updateRefs': 'true'
+      # Similarly, I almost always want autosquash because I do use --fixup
+      # from time to time when creating commits.
+      'rebase.autosquash': 'true'
 
 - name: Ensure that directory exists to hold work-flavored Git config file
   ansible.builtin.file:
