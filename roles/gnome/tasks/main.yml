@@ -63,3 +63,17 @@
   community.general.dconf:
     key: "/org/gnome/settings-daemon/plugins/power/ambient-enabled"
     value: "false"
+
+- name: Set keyboard input sources
+  become: true
+  become_user: '{{ arch_user }}'
+  community.general.dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "[('xkb', 'us'), ('xkb', 'se')]"
+
+- name: Let keyboard inputs be window specific
+  become: true
+  become_user: '{{ arch_user }}'
+  community.general.dconf:
+    key: "/org/gnome/desktop/input-sources/per-window"
+    value: "true"
