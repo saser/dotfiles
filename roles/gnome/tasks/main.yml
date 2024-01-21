@@ -56,3 +56,10 @@
   community.general.dconf:
     key: "/org/gnome/desktop/wm/keybindings/maximize"
     value: "['<Super>Return']"
+
+- name: Disable automatic adjustment of brightness based on ambient lightj
+  become: true
+  become_user: '{{ arch_user }}'
+  community.general.dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/ambient-enabled"
+    value: "false"
