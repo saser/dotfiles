@@ -1,0 +1,7 @@
+- name: Install Google Chrome
+  become_user: '{{ arch_user }}'
+  become: true
+  kewlfft.aur.aur:
+    name:
+      - google-chrome
+    use: yay

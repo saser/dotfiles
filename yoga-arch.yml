@@ -5,6 +5,7 @@
     - arch
     - bazel
     - bluetooth
+    - chrome
     - docker
     - fzf
     - git
