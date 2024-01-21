@@ -1,0 +1,14 @@
+- name: Install OpenSSH (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - openssh
+
+- name: Enable ssh-agent systemd service
+  become: true
+  become_user: '{{ arch_user }}'
+  ansible.builtin.systemd_service:
+    name: ssh-agent.service
+    scope: 'user'
+    enabled: true
+    state: 'started'
