@@ -1,0 +1,7 @@
+- name: Install 1Password
+  become_user: '{{ arch_user }}'
+  become: true
+  kewlfft.aur.aur:
+    name:
+      - 1password
+    use: yay

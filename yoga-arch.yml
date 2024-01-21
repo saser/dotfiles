@@ -1,6 +1,7 @@
 - hosts: localhost
   connection: local
   roles:
+    - 1password
     - alacritty
     - arch
     - bazel
