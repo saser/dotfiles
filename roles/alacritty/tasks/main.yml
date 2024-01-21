@@ -22,19 +22,19 @@
   become: true
   become_user: '{{ arch_user }}'
   ansible.builtin.copy:
-    src: '{{ role_path }}/files/config.yml'
-    dest: '{{ alacritty_fragments_dir }}/config.yml'
+    src: '{{ role_path }}/files/config.toml'
+    dest: '{{ alacritty_fragments_dir }}/config.toml'
 
 - name: Link colorscheme to fragments directory
   become: true
   become_user: '{{ arch_user }}'
   ansible.builtin.copy:
-    src: '{{ role_path }}/files/base16-alacritty/colors/base16-{{ base16_colorscheme }}{{ "-256" if base16_256 else "" }}.yml'
-    dest: '{{ alacritty_fragments_dir }}/colorscheme.yml'
+    src: '{{ role_path }}/files/base16-alacritty/colors/base16-{{ base16_colorscheme }}{{ "-256" if base16_256 else "" }}.toml'
+    dest: '{{ alacritty_fragments_dir }}/colorscheme.toml'
 
 - name: Concatenate config and colorscheme
   become: true
   become_user: '{{ arch_user }}'
   ansible.builtin.assemble:
     src: '{{ alacritty_fragments_dir }}'
-    dest: '{{ alacritty_config_dir }}/alacritty.yml'
+    dest: '{{ alacritty_config_dir }}/alacritty.toml'
