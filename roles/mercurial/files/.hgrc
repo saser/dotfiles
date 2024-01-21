@@ -1,0 +1,31 @@
+# Mercurial config, based on the defaults that Mercurial was shipped with.
+[ui]
+# name and email, e.g.
+# username = Jane Doe <jdoe@example.com>
+username = Christian Persson <saser@users.noreply.github.com>
+
+# We recommend enabling tweakdefaults to get slight improvements to
+# the UI over time. Make sure to set HGPLAIN in the environment when
+# writing scripts!
+tweakdefaults = True
+
+# Use VSCode as the editor. The -w flag makes it wait before returning.
+editor = code -w
+
+[pager]
+pager = diff-so-fancy | less --tabs=4 -RFX # The same as used for Git.
+
+[color]
+# The 'graphlog' part of this name has no meaning -- it's only used to group
+# some colors together so that I can use them for my `hg xl` alias below.
+graphlog.rev = yellow
+
+[alias]
+xl = log --graph --template '{label("graphlog.rev", node|short)} {desc|firstline}'
+
+[extensions]
+# These extensions are distributed together with Mercurial.
+histedit =
+rebase =
+# These extensions need to be installed separately.
+evolve =

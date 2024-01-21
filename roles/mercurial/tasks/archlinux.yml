@@ -1,0 +1,19 @@
+- name: Install the core Mercurial distribution (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - mercurial
+
+- name: Install Mercurial extensions (Arch Linux)
+  become: true
+  become_user: '{{ arch_user }}'
+  kewlfft.aur.aur:
+    name:
+      - hg-evolve
+    use: yay
+
+- name: Link .hgrc into place (Arch Linux)
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/.hgrc'
+    dest: '{{ ansible_env.HOME }}/.hgrc'
+    state: link
