@@ -6,7 +6,6 @@
     - bazel
     - bluetooth
     - docker
-    - firefox
     - fzf
     - git
     - gnome
@@ -18,7 +17,6 @@
     - rust
     - spotify
     - tmux
-    - todotxt
     - vscode
     - yay
     - zsh

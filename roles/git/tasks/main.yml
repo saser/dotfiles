@@ -63,11 +63,10 @@
     state: directory
 
 - name: Ensure that a work-flavored Git config file exists at ~/work/.gitconfig
-  ansible.builtin.lineinfile:
-    path: '{{ git_work_config_file }}'
-    line: '# This line is a workaround for letting Ansible create this file.'
-    state: present
-    insertbefore: BOF
+  ansible.builtin.copy:
+    dest: '{{ git_work_config_file }}'
+    content: '# This line is a workaround for letting Ansible create this file.'
+    force: false
 
 # This is a separate task because the loop variant above doesn't seem to support
 # Jinja2 templates (the "{{ ... }}" stuff) in the dict keys.

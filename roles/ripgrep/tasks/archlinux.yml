@@ -2,4 +2,4 @@
   become: true
   community.general.pacman:
     name:
-      - rg
+      - ripgrep

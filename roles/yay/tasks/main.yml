@@ -1,3 +1,9 @@
+- name: Install tools required to install yay
+  become: true
+  community.general.pacman:
+    name:
+      - base-devel # Which is a group, but should have most things required.
+
 - name: Install yay
   kewlfft.aur.aur:
     name:
