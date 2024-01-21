@@ -28,3 +28,31 @@
   community.general.dconf:
     key: "/org/gnome/desktop/input-sources/xkb-options"
     value: "['caps:escape']"
+
+- name: Enble battery percentage
+  become: true
+  become_user: '{{ arch_user }}'
+  community.general.dconf:
+    key: "/org/gnome/desktop/interface/show-battery-percentage"
+    value: "true"
+
+- name: Enable automatic time zone
+  become: true
+  become_user: '{{ arch_user }}'
+  community.general.dconf:
+    key: "/org/gnome/desktop/datetime/automatic-timezone"
+    value: "true"
+
+- name: Disable natural scrolling
+  become: true
+  become_user: '{{ arch_user }}'
+  community.general.dconf:
+    key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll"
+    value: "false"
+
+- name: Super+Enter to maximize windows
+  become: true
+  become_user: '{{ arch_user }}'
+  community.general.dconf:
+    key: "/org/gnome/desktop/wm/keybindings/maximize"
+    value: "['<Super>Return']"
