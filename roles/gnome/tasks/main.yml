@@ -10,6 +10,12 @@
     name: gdm.service
     enabled: true
 
+- name: Enable NetworkManager (used by GNOME for networks)
+  become: true
+  ansible.builtin.service:
+    name: NetworkManager.service
+    enabled: true
+
 - name: Install python-psutil, needed for dconf modification
   become: true
   community.general.pacman:
