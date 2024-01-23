@@ -75,3 +75,23 @@ for f in "${ZSHEXTRAS}"/*.zsh; do
     echo source "${f}"
     source "${f}"
 done
+
+# The below is a hack to make $PATH modifications work as I want them to.
+#
+# On recent macOS versions, there's a binary called `path_helper` which does a
+# lot of good stuff, but it does something annoying too: it reorders the
+# entries in the $PATH variable so that system entries come first. This happens
+# **after** .zshenv has been sourced. Because of that, and because I like to
+# put $PATH modifications in my $ZSHENVFILES directory, this little snippet
+# should ensure that my changes to $PATH takes precedence.
+#
+# Huge props to @Linerre on GitHub for this writeup, which explains everything
+# in good detail and showed me the solution:
+# https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2
+UNAME="$(uname -s)"
+if [[ "${UNAME}" = "Darwin" ]]; then
+    for f in "${ZSHENVFILES}"/*.zsh; do
+        echo source "${f}"
+        source "${f}"
+    done
+fi
