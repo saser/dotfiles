@@ -11,9 +11,3 @@
     name:
       - hg-evolve
     use: yay
-
-- name: Link .hgrc into place (Arch Linux)
-  ansible.builtin.file:
-    src: '{{ role_path }}/files/.hgrc'
-    dest: '{{ ansible_env.HOME }}/.hgrc'
-    state: link

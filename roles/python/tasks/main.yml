@@ -6,8 +6,8 @@
   ansible.builtin.import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
 
-- name: Link .hgrc into place
+- name: Place a file to source the user virtualenv on shell startup
   ansible.builtin.file:
-    src: '{{ role_path }}/files/.hgrc'
-    dest: '{{ ansible_env.HOME }}/.hgrc'
+    src: '{{ role_path }}/files/activate-virtualenv.zsh'
+    dest: '{{ zsh_env.ZSHEXTRAS }}/python-activate-virtualenv.zsh'
     state: link

@@ -1,0 +1,9 @@
+- name: Install python3 using Homebrew (macOS)
+  community.general.homebrew:
+    name:
+      - python3
+
+- name: Create a virtualenv for my user that all Python-based applications will be installed into (macOS)
+  ansible.builtin.command:
+    cmd: '/opt/homebrew/bin/virtualenv {{ python_virtualenv_dir }}'
+    creates: '{{ python_virtualenv_dir }}'

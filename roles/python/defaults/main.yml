@@ -1,0 +1,1 @@
+python_virtualenv_dir: '{{ ansible_env.HOME }}/.python-virtualenv'
