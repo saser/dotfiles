@@ -2,4 +2,5 @@
   community.general.homebrew:
     name:
       - git
+      - git-branchless # https://github.com/arxanas/git-branchless
       - diff-so-fancy

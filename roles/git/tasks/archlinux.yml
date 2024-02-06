@@ -3,4 +3,5 @@
   community.general.pacman:
     name:
       - git
+      - git-branchless # https://github.com/arxanas/git-branchless
       - diff-so-fancy

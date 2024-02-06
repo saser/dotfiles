@@ -22,7 +22,8 @@
       'core.pager': 'diff-so-fancy | less --tabs=4 -RFX'
       'core.editor': 'code --wait'
       # Aliases.
-      'alias.amend': 'commit --amend'
+      # amend: disabled due to `git-branchless` providing its own variant.
+      # 'alias.amend': 'commit --amend'
       'alias.ane': 'commit --amend --no-edit'
       'alias.c': 'commit'
       'alias.cm': 'commit -m'
@@ -34,7 +35,8 @@
       'alias.l': 'log --oneline --decorate --graph --all'
       'alias.push-new': '!git push -u origin $(git symbolic-ref --short HEAD)'
       'alias.remove-pruned': "!git fetch --prune && git branch -vv | awk '/: gone/{print $1}' | xargs git branch -d"
-      'alias.reword': 'commit --amend --edit'
+      # reword: disabled due to `git-branchless` providing its own variant.
+      # 'alias.reword': 'commit --amend --edit'
       'alias.s': 'status'
       # Colors. Settings suggested by `diff-so-fancy`.
       'color.diff-highlight.newHighlight': 'green bold 52'
