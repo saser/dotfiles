@@ -11,3 +11,9 @@
     src: '{{ role_path }}/files/activate-virtualenv.zsh'
     dest: '{{ zsh_env.ZSHEXTRAS }}/python-activate-virtualenv.zsh'
     state: link
+
+- name: Place a file to include virtualenv-provided Zsh completions on shell startup
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/zsh-completions.zsh'
+    dest: '{{ zsh_env.ZSHEXTRAS }}/python-zsh-completions.zsh'
+    state: link
