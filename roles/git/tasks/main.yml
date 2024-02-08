@@ -32,7 +32,17 @@
       'alias.d': 'diff'
       'alias.dc': 'diff --cached'
       'alias.f': 'fetch'
-      'alias.l': 'log --oneline --decorate --graph --all'
+      # The `--exclude=refs/branchless/*` part is to make the graphlog more
+      # useful when using git-branchless
+      # (https://github.com/arxanas/git-branchless/). Without this flag, the
+      # graphlog shows a ton of apparently orphaned commits (probably because
+      # git-branchless keeps track of them for `git undo` purposes) which makes
+      # the log very difficult to parse.
+      #
+      # The --exclude flag needs to come before the --all flag, because the
+      # behavior of --exclude is to affect future --all/--glob/etc flags. This
+      # is documented in `man git-log`.
+      'alias.l': 'log --oneline --decorate --graph --exclude=refs/branchless/* --all'
       'alias.push-new': '!git push -u origin $(git symbolic-ref --short HEAD)'
       'alias.remove-pruned': "!git fetch --prune && git branch -vv | awk '/: gone/{print $1}' | xargs git branch -d"
       # reword: disabled due to `git-branchless` providing its own variant.
