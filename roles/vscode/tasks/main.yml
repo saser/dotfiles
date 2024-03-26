@@ -12,6 +12,6 @@
     creates: '{{ ansible_env.HOME }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
   loop:
     - { name: 'vscodevim.vim', version: '1.27.2' }
-    - { name: 'golang.go', version: '0.40.3' }
+    - { name: 'golang.go', version: '0.41.2' }
     - { name: 'zxh404.vscode-proto3', version: '0.5.5' }
     - { name: 'xaver.clang-format', version: '1.9.0' }
