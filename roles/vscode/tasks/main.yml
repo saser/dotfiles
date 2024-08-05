@@ -15,3 +15,5 @@
     - { name: 'golang.go', version: '0.41.2' }
     - { name: 'zxh404.vscode-proto3', version: '0.5.5' }
     - { name: 'xaver.clang-format', version: '1.9.0' }
+    - { name: 'Lencerf.beancount', version: '0.10.0' }
+    - { name: 'dongfg.vscode-beancount-formatter', version: '1.4.2' }
