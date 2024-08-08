@@ -21,6 +21,7 @@
       # Some core settings.
       'core.pager': 'diff-so-fancy | less --tabs=4 -RFX'
       'core.editor': 'code --wait'
+      'init.defaultBranch': 'main'
       # Aliases.
       # amend: disabled due to `git-branchless` providing its own variant.
       # 'alias.amend': 'commit --amend'
