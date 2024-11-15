@@ -1,0 +1,10 @@
+- name: Install snip with `go install`
+  ansible.builtin.command:
+    cmd: 'go install github.com/saser/snip@latest'
+    creates: '{{ go_env.GOPATH }}/bin/snip'
+
+- name: Set up snip aliases
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/aliases.zsh'
+    dest: '{{ zsh_env.ZSHALIASES }}/snip.zsh'
+    state: link

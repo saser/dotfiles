@@ -1,0 +1,3 @@
+dependencies:
+  - role: go  # To run `go install` of the binary.
+  - role: zsh  # To set up the aliases.
