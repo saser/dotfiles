@@ -17,3 +17,4 @@
     - { name: 'xaver.clang-format', version: '1.9.0' }
     - { name: 'Lencerf.beancount', version: '0.12.0' }
     - { name: 'dongfg.vscode-beancount-formatter', version: '1.4.2' }
+    - { name: 'bierner.github-markdown-preview', version: '0.3.0' }
