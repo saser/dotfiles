@@ -17,7 +17,7 @@
       # User settings. To override these in a work context, modify config values
       # in ~/work/.gitconfig and store all work repositories under ~/work.
       'user.name': 'Christian Persson'
-      'user.email': 'saser@users.noreply.github.com'
+      'user.email': '582273+saser@users.noreply.github.com'
       # Some core settings.
       'core.pager': 'diff-so-fancy | less --tabs=4 -RFX'
       'core.editor': 'code --wait'
