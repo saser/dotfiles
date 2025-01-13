@@ -20,3 +20,8 @@ sie () {
 sig () {
     cat ~/.snip/*.txt | grep -F '#inbox' | sort
 }
+
+# "snip inbox clear"
+sic () {
+    gsed -E -i 's/#inbox/#done/g' ~/.snip/*.txt
+}
