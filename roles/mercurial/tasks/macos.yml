@@ -1,7 +1,0 @@
-- name: Install Mercurial and a few extensions using a Python virtualenv (macOS)
-  ansible.builtin.pip:
-    virtualenv: '{{ python_virtualenv_dir }}'
-    name:
-      - hg-evolve
-      - hg-git
-      - mercurial

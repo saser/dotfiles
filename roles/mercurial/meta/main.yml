@@ -1,3 +1,0 @@
-dependencies:
-  - role: python
-  - role: vscode # Since it's used as the editor for hg.
