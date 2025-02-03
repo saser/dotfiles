@@ -1,3 +1,5 @@
 #!/usr/bin/env zsh
 
-source ~/.python-virtualenv/bin/activate
+if [[ ! -z "${ACTIVATE_VIRTUALENV:-}" ]]; then
+	source ~/.python-virtualenv/bin/activate
+fi

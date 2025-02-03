@@ -1,5 +1,11 @@
-# Nothing here yet!
-#
-# TODO:
-# - install python3
-# - create a virtualenv pointing at {{ python_virtualenv_dir }}
+- name: Install python and related programs (Arch Linux)
+  become: true
+  community.general.pacman:
+    name:
+      - python
+      - python-virtualenv
+
+- name: Create a virtualenv for my user that all Python-based applications will be installed into (Arch Linux)
+  ansible.builtin.command:
+    cmd: 'virtualenv {{ python_virtualenv_dir }}'
+    creates: '{{ python_virtualenv_dir }}'

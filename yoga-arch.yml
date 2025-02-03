@@ -15,6 +15,7 @@
     - go
     - htop
     - less
+    - python
     - ranger
     - ripgrep
     - rust
