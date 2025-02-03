@@ -11,10 +11,11 @@
     cmd: 'code --install-extension {{ item.name }}@{{ item.version }}'
     creates: '{{ ansible_env.HOME }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
   loop:
-    - { name: 'Lencerf.beancount', version: '0.12.0' }
+    - { name: 'Lencerf.beancount', version: '0.13.0' }
     - { name: 'bierner.github-markdown-preview', version: '0.3.0' }
     - { name: 'dongfg.vscode-beancount-formatter', version: '1.4.2' }
-    - { name: 'golang.go', version: '0.42.1' }
-    - { name: 'vscodevim.vim', version: '1.28.1' }
+    - { name: 'golang.go', version: '0.44.0' }
+    - { name: 'mechatroner.rainbow-csv', version: '3.16.0' }
+    - { name: 'vscodevim.vim', version: '1.29.0' }
     - { name: 'xaver.clang-format', version: '1.9.0' }
     - { name: 'zxh404.vscode-proto3', version: '0.5.5' }
