@@ -1,0 +1,7 @@
+- name: Install todo.sh (Arch Linux)
+  become_user: '{{ arch_user }}'
+  become: true
+  kewlfft.aur.aur:
+    name:
+      - todotxt
+    use: yay

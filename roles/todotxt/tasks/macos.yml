@@ -1,0 +1,4 @@
+- name: Install todo.txt (macOS)
+  community.general.homebrew:
+    name:
+      - todo-txt

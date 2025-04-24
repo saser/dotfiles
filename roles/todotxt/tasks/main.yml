@@ -1,10 +1,16 @@
-- name: Install todo.sh
-  become_user: '{{ arch_user }}'
-  become: true
-  kewlfft.aur.aur:
-    name:
-      - todotxt
-    use: yay
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Ensure .todo.cfg is in place
+  file:
+    src: '{{ role_path }}/files/.todo.cfg'
+    dest: '{{ ansible_env.HOME }}/.todo.cfg'
+    state: link
 
 - name: Set up todo.sh aliases
   ansible.builtin.file:
