@@ -1,7 +1,3 @@
-- name: Import platform tasks (Arch Linux)
-  ansible.builtin.import_tasks: archlinux.yml
-  when: ansible_distribution == 'Archlinux'
-
 - name: Import platform tasks (macOS)
   ansible.builtin.import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
