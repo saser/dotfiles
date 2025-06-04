@@ -3,13 +3,14 @@
   roles:
     - docker
     - fzf
+    - ghostty
     - git
     - go
     - htop
     - iosevka
-    - ghostty
     - less
     - ranger
+    - rectangle
     - ripgrep
     - snip
     - spotify
