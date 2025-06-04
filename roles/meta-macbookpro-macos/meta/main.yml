@@ -15,4 +15,5 @@ dependencies:
   - role: tmux
   - role: todotxt
   - role: vscode
+  - role: watch
   - role: zsh
