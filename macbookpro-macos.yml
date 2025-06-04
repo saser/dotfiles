@@ -7,7 +7,7 @@
     - go
     - htop
     - iosevka
-    - iterm
+    - ghostty
     - less
     - ranger
     - ripgrep

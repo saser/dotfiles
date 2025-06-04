@@ -1,0 +1,4 @@
+- name: Install Ghostty and related programs (macOS)
+  community.general.homebrew_cask:
+    name:
+      - ghostty
