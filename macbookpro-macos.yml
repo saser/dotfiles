@@ -1,20 +1,4 @@
 - hosts: localhost
   connection: local
   roles:
-    - docker
-    - fzf
-    - ghostty
-    - git
-    - go
-    - htop
-    - iosevka
-    - less
-    - ranger
-    - rectangle
-    - ripgrep
-    - snip
-    - spotify
-    - tmux
-    - todotxt
-    - vscode
-    - zsh
+    - meta-macbookpro-macos

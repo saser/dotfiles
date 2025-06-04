@@ -1,27 +1,4 @@
 - hosts: localhost
   connection: local
   roles:
-    - 1password
-    - alacritty
-    - arch
-    - bazel
-    - bluetooth
-    - chrome
-    - coreutils
-    - docker
-    - fzf
-    - git
-    - gnome
-    - go
-    - htop
-    - less
-    - python
-    - ranger
-    - ripgrep
-    - rust
-    - spotify
-    - ssh
-    - tmux
-    - vscode
-    - yay
-    - zsh
+    - meta-yoga-arch
