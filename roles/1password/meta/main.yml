@@ -1,3 +1,6 @@
 dependencies:
   - role: arch
+    when: ansible_distribution == 'Archlinux'
+  - role: ssh  # So that the SSH config fragments directory has been created.
   - role: yay
+    when: ansible_distribution == 'Archlinux'

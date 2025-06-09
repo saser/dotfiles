@@ -1,0 +1,20 @@
+- name: Install 1Password and related programs (macOS)
+  community.general.homebrew_cask:
+    name:
+      - 1password
+
+- name: Create ~/.1password directory (macOS)
+  ansible.builtin.file:
+    path: '{{ ansible_env.HOME }}/.1password'
+    state: directory
+
+- name: Create symlink for 1Password SSH agent socket (macOS)
+  ansible.builtin.file:
+    # The path is taken from
+    # https://developer.1password.com/docs/ssh/get-started/#step-4-configure-your-ssh-or-git-client.
+    # Note that the socket may not exist just yet -- it starts existing when
+    # the agent starts running. However, we can create the symlink anyway, and
+    # it will start working when the agent is running.
+    src: '{{ ansible_env.HOME }}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock' 
+    dest: '{{ ansible_env.HOME }}/.1password/agent.sock'
+    state: link

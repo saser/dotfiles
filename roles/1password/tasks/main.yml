@@ -1,7 +1,13 @@
-- name: Install 1Password
-  become_user: '{{ arch_user }}'
-  become: true
-  kewlfft.aur.aur:
-    name:
-      - 1password
-    use: yay
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Install SSH config fragment for 1Password SSH agent
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/99-1password-ssh-agent'
+    dest: '{{ ssh_fragments_dir }}/99-1password-ssh-agent'
+    state: link

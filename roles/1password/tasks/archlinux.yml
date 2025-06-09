@@ -1,0 +1,7 @@
+- name: Install 1Password and related programs (Arch Linux)
+  become_user: '{{ arch_user }}'
+  become: true
+  kewlfft.aur.aur:
+    name:
+      - 1password
+    use: yay
