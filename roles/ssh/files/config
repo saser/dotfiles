@@ -1,0 +1,7 @@
+# Application- or work-specific configuration should be put in this directory,
+# which is relative to where this file is located (usually ~/.ssh/config).
+#
+# I think that this statement will process the files in lexicographical
+# ordering, so it's advisable to use 00-, 01, 02-, etc prefixes to enforce a
+# certain ordering. Not perfect, but works for simple use cases.
+Include config.d/*

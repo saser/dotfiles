@@ -1,3 +1,19 @@
 - name: Import platform tasks (Arch Linux)
   ansible.builtin.import_tasks: archlinux.yml
   when: ansible_distribution == 'Archlinux'
+
+- name: Ensure SSH config directory exists
+  ansible.builtin.file:
+    path: '{{ ssh_config_dir }}'
+    state: directory
+
+- name: Ensure SSH config fragment directory exists
+  ansible.builtin.file:
+    path: '{{ ssh_fragments_dir }}'
+    state: directory
+
+- name: Link generic SSH configuration into place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/config'
+    dest: '{{ ssh_config_dir }}/config'
+    state: link
