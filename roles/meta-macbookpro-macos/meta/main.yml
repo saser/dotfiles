@@ -1,4 +1,5 @@
 dependencies:
+  - role: 1password
   - role: docker
   - role: fzf
   - role: ghostty
@@ -12,6 +13,7 @@ dependencies:
   - role: ripgrep
   - role: snip
   - role: spotify
+  - role: ssh
   - role: tmux
   - role: todotxt
   - role: vscode
