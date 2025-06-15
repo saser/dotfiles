@@ -1,19 +1,19 @@
 #!/usr/bin/env zsh
 
-alias s='snip'
-alias sm='snip -m'
-alias sme='snip -edit -m'
+alias s='snip -format="15:04"'
+alias sm='s -m'
+alias sme='s -edit -m'
 alias st='cat ~/.snip/$(date -I).txt'
 alias ste='vim ~/.snip/$(date -I).txt'
 
 # "snip inbox"
 si () {
-    snip -m "$(printf "#inbox %s" "${1}")"
+    s -m "$(printf "#inbox %s" "${1}")"
 }
 
 # "snip inbox edit"
 sie () {
-    snip -edit -m "$(printf "#inbox %s" "${1}")"
+    s -edit -m "$(printf "#inbox %s" "${1}")"
 }
 
 # "snip inbox get"
