@@ -1,7 +1,7 @@
 - name: Install Docker Desktop (macOS)
   community.general.homebrew_cask:
     name:
-      - docker
+      - docker-desktop
 
 - name: Install Docker CLI and related programs (macOS)
   community.general.homebrew:
