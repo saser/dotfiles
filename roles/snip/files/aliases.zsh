@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-alias s='snip -format="15:04"'
+alias s='snip'
 alias sm='s -m'
 alias sme='s -edit -m'
 alias st='cat ~/.snip/$(date -I).txt'
