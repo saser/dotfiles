@@ -16,3 +16,6 @@
 [submodule "roles/iterm/files/base16-iterm2"]
 	path = roles/iterm/files/base16-iterm2
 	url = https://github.com/martinlindhe/base16-iterm2.git
+[submodule "roles/fzf/files/fzf-git.sh"]
+	path = roles/fzf/files/fzf-git.sh
+	url = https://github.com/junegunn/fzf-git.sh.git

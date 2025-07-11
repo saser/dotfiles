@@ -14,3 +14,4 @@
   loop:
     - { file: '{{ role_path }}/files/keybindings.zsh', name: 'fzf-keybindings.zsh' }
     - { file: '{{ role_path }}/files/base16-fzf/bash/base16-{{ base16_colorscheme }}.config', name: 'fzf-colorscheme.zsh' }
+    - { file: '{{ role_path }}/files/fzf-git.sh/fzf-git.sh', name: 'fzf-git.zsh' }
