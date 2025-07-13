@@ -12,3 +12,5 @@ alias gco='g co' # git checkout
 alias gcob='g cob' # git checkout -b
 alias gane='g ane' # git commit --amend --no-edit
 alias gf='g f' # git fetch
+alias gi='g i' # git record -I
+alias gim='g im' # git record -Im
