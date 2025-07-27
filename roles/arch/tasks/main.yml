@@ -33,7 +33,7 @@
 - name: Set timezone
   become: true
   community.general.timezone:
-    name: 'Europe/Dublin'
+    name: 'Europe/Stockholm'
 
 - name: Run timedatectl
   ansible.builtin.command:
