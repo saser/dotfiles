@@ -1,0 +1,24 @@
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Ensure Jujutsu config directory exists
+  ansible.builtin.file:
+    path: '{{ ansible_env.HOME }}/.config/jj'
+    state: directory
+
+- name: Link config file into place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/config.toml'
+    dest: '{{ ansible_env.HOME }}/.config/jj/config.toml'
+    state: link
+
+- name: Place file to source jujutsu zsh integration and completion
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/jujutsu.zsh'
+    dest: '{{ zsh_env.ZSHEXTRAS }}/jujutsu.zsh'
+    state: link
