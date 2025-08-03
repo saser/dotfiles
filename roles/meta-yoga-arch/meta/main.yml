@@ -13,6 +13,7 @@ dependencies:
   - role: go
   - role: htop
   - role: less
+  - role: ocaml
   - role: python
   - role: ranger
   - role: ripgrep

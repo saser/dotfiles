@@ -1,0 +1,13 @@
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Place file to source opam zsh integration and completion
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/opam.zsh'
+    dest: '{{ zsh_env.ZSHEXTRAS }}/opam.zsh'
+    state: link
