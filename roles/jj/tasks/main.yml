@@ -8,13 +8,13 @@
 
 - name: Ensure Jujutsu config directory exists
   ansible.builtin.file:
-    path: '{{ ansible_env.HOME }}/.config/jj'
+    path: '{{ ansible_env.HOME }}/.config/jj/conf.d'
     state: directory
 
-- name: Link config file into place
+- name: Link base config file into place
   ansible.builtin.file:
-    src: '{{ role_path }}/files/config.toml'
-    dest: '{{ ansible_env.HOME }}/.config/jj/config.toml'
+    src: '{{ role_path }}/files/00-base.toml'
+    dest: '{{ ansible_env.HOME }}/.config/jj/conf.d/00-base.toml'
     state: link
 
 - name: Place file to source jj zsh integration and completion

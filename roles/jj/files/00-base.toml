@@ -1,0 +1,15 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+# This is a base configuration file that should apply in all setups. It is
+# named `00-base.toml` so that it is loaded before all other files in
+# `<PLATFORM_SPECIFIC>/jj/conf.d`; other configuration files can be placed in
+# the same folder with a lexicographically larger name (e.g. `10-work.toml`) to
+# override the settings here.
+#
+# See these for reference:
+# https://jj-vcs.github.io/jj/latest/config/#ways-to-specify-jj-config-details
+# https://jj-vcs.github.io/jj/latest/config/#using-multiple-files
+
+[user]
+name = "Christian Persson"
+email = "582273+saser@users.noreply.github.com"
