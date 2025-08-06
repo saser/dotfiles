@@ -1,4 +1,4 @@
-- name: Install jujutsu and related programs (Arch Linux)
+- name: Install jj and related programs (Arch Linux)
   become: true
   community.general.pacman:
     name:

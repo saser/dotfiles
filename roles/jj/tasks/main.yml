@@ -17,8 +17,8 @@
     dest: '{{ ansible_env.HOME }}/.config/jj/config.toml'
     state: link
 
-- name: Place file to source jujutsu zsh integration and completion
+- name: Place file to source jj zsh integration and completion
   ansible.builtin.file:
-    src: '{{ role_path }}/files/jujutsu.zsh'
-    dest: '{{ zsh_env.ZSHEXTRAS }}/jujutsu.zsh'
+    src: '{{ role_path }}/files/jj.zsh'
+    dest: '{{ zsh_env.ZSHEXTRAS }}/jj.zsh'
     state: link

@@ -12,7 +12,7 @@ dependencies:
   - role: gnome
   - role: go
   - role: htop
-  - role: jujutsu
+  - role: jj
   - role: less
   - role: ocaml
   - role: python
