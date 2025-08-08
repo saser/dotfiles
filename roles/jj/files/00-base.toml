@@ -13,3 +13,19 @@
 [user]
 name = "Christian Persson"
 email = "582273+saser@users.noreply.github.com"
+
+[ui]
+editor = "vim"
+
+[aliases]
+# Source: https://danverbraganza.com/writings/most-frequent-jj-commands which
+# further points to
+# https://github.com/jj-vcs/jj/discussions/2425#discussioncomment-11425112.
+#
+# Most common use case is to move a bookmark to the current change just before
+# running `jj git push`.
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
+# This is like `jj tug` but moves the bookmark to the parent of the current
+# change, in case I'm working on something that's WIP but the parent is done
+# and should be pushed.
+tug- = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
