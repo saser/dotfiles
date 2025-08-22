@@ -16,6 +16,10 @@ email = "582273+saser@users.noreply.github.com"
 
 [ui]
 editor = "vim"
+# This makes `$ jj` equivalent to `$ jj log`, which is the default behavior but
+# it prints an annoying message unless you explicitly request the default
+# behavior.
+default-command = "log"
 
 [aliases]
 # Source: https://danverbraganza.com/writings/most-frequent-jj-commands which
