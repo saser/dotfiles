@@ -33,3 +33,10 @@ tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
 # change, in case I'm working on something that's WIP but the parent is done
 # and should be pushed.
 tug- = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+
+# Print the description of a revset. Useful for e.g. piping to `pbcopy`.
+printdesc = ["log", "--no-graph", "-T", "description"]
+# Shorthand for `printdesc`.
+pd = ["printdesc"]
+# Shorthand for `printdesc -r @`.
+"pd@" = ["printdesc", "-r", "@"] 
