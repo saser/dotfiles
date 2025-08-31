@@ -3,3 +3,9 @@
   community.general.pacman:
     name:
       - jujutsu
+
+- name: Install jj and related programs (from AUR) (Arch Linux)
+  kewlfft.aur.aur:
+    name:
+      - jjui
+    use: yay
