@@ -19,3 +19,6 @@
 [submodule "roles/fzf/files/fzf-git.sh"]
 	path = roles/fzf/files/fzf-git.sh
 	url = https://github.com/junegunn/fzf-git.sh.git
+[submodule "roles/spacemacs/files/spacemacs"]
+	path = roles/spacemacs/files/spacemacs
+	url = https://github.com/syl20bnr/spacemacs.git

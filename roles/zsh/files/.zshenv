@@ -3,6 +3,6 @@
 export ZSHENVFILES="${HOME}/.zsh-envfiles"
 
 for f in "${ZSHENVFILES}"/*.zsh; do
-    echo source "${f}"
+    # echo source "${f}"
     source "${f}"
 done

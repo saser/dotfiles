@@ -1,0 +1,25 @@
+- name: Import platform tasks (Arch Linux)
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_distribution == 'Archlinux'
+
+- name: Import platform tasks (macOS)
+  ansible.builtin.import_tasks: macos.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Link the Spacemacs repo (expected to be a submodule) to ~/.emacs.d
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/spacemacs'
+    dest: '{{ ansible_env.HOME }}/.emacs.d'
+    state: link
+
+- name: Link my personal .spacemacs file into place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/dotspacemacs'
+    dest: '{{ ansible_env.HOME }}/.spacemacs'
+    state: link
+
+- name: Link .spacemacs.env into place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/.spacemacs.env'
+    dest: '{{ ansible_env.HOME }}/.spacemacs.env'
+    state: link

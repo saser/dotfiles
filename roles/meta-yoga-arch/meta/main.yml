@@ -19,6 +19,7 @@ dependencies:
   - role: ranger
   - role: ripgrep
   - role: rust
+  - role: spacemacs
   - role: spotify
   - role: ssh
   - role: tmux
