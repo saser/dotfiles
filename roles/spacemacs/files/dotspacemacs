@@ -605,6 +605,10 @@ before packages are loaded."
            :empty-lines 0
            :jump-to-captured t)
           ))
+
+  ;; Prevent Emacs from asking if I want to open Git-controlled files behind
+  ;; symlinks -- that's almost always what I want to do.
+  (setq-default vc-follow-symlinks t)
   )
 
 
