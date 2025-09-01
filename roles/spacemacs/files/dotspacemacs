@@ -43,7 +43,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      ;; git
      helm
-     ;; lsp
+     lsp
      ;; markdown
      multiple-cursors
      org
@@ -51,10 +51,15 @@ This function should only modify configuration layer settings."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      (ocaml :variables
             ocaml-format-on-save t)
+     (go :variables
+         go-backend 'lsp
+         go-format-before-save t
+         gofmt-command "goimports"
+         go-use-test-args "-count=1")
      treemacs)
 
 
@@ -615,37 +620,46 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(package-selected-packages
-     '(ace-link aggressive-indent alert all-the-icons auto-compile
-                auto-highlight-symbol auto-yasnippet avy-jump-helm-line caml
-                centered-cursor-mode clean-aindent-mode column-enforce-mode
-                company define-word devdocs diminish dired-quick-sort
-                disable-mouse dotenv-mode drag-stuff dumb-jump dune elisp-def
-                elisp-demos elisp-slime-nav emr eval-sexp-fu evil-anzu evil-args
+     '(ace-link add-node-modules-path aggressive-indent alert all-the-icons
+                auto-compile auto-highlight-symbol auto-yasnippet
+                avy-jump-helm-line bui caml centered-cursor-mode
+                clean-aindent-mode column-enforce-mode company dap-mode
+                define-word devdocs diminish dired-quick-sort disable-mouse
+                dotenv-mode drag-stuff dumb-jump dune elisp-def elisp-demos
+                elisp-slime-nav emr eval-sexp-fu evil-anzu evil-args
                 evil-cleverparens evil-collection evil-easymotion evil-escape
                 evil-evilified-state evil-exchange evil-goggles evil-iedit-state
                 evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
                 evil-nerd-commenter evil-numbers evil-org evil-surround
                 evil-textobj-line evil-tutor evil-unimpaired evil-visual-mark-mode
-                evil-visualstar expand-region eyebrowse fancy-battery gntp gnuplot
-                golden-ratio google-translate helm-ag helm-c-yasnippet helm-comint
-                helm-company helm-descbinds helm-make helm-mode-manager helm-org
-                helm-org-rifle helm-projectile helm-purpose helm-swoop helm-themes
-                helm-xref hide-comnt highlight-indentation highlight-numbers
-                highlight-parentheses hl-todo holy-mode htmlize hungry-delete
-                hybrid-mode indent-guide info+ inspector link-hint log4e
-                lorem-ipsum macrostep merlin merlin-company merlin-eldoc
-                merlin-iedit multi-line nameless ocamlformat ocp-indent
-                open-junk-file org-category-capture org-cliplink org-contrib
-                org-download org-mime org-pomodoro org-present org-project-capture
-                org-projectile org-rich-yank org-superstar overseer
-                page-break-lines paradox password-generator pcre2el popwin
-                quickrun rainbow-delimiters restart-emacs space-doc spaceline
+                evil-visualstar expand-region eyebrowse fancy-battery flycheck
+                flycheck-elsa flycheck-ocaml flycheck-package flycheck-pos-tip
+                ggtags gntp gnuplot go-eldoc go-fill-struct go-gen-test go-guru
+                go-impl go-mode go-rename go-tag godoctor golden-ratio
+                google-translate grizzl helm-ag helm-c-yasnippet helm-comint
+                helm-company helm-descbinds helm-lsp helm-make helm-mode-manager
+                helm-org helm-org-rifle helm-projectile helm-purpose helm-swoop
+                helm-themes helm-xref hide-comnt highlight-indentation
+                highlight-numbers highlight-parentheses hl-todo holy-mode htmlize
+                hungry-delete hybrid-mode impatient-mode import-js indent-guide
+                info+ inspector js-doc js2-mode js2-refactor link-hint livid-mode
+                log4e lorem-ipsum lsp-docker lsp-mode lsp-origami lsp-treemacs
+                lsp-ui macrostep markdown-mode merlin merlin-company merlin-eldoc
+                merlin-iedit multi-line multiple-cursors nameless nodejs-repl
+                npm-mode ocamlformat ocp-indent open-junk-file
+                org-category-capture org-cliplink org-contrib org-download
+                org-mime org-pomodoro org-present org-project-capture
+                org-projectile org-rich-yank org-superstar origami overseer
+                package-lint page-break-lines paradox password-generator pcre2el
+                popwin pos-tip prettier-js quickrun rainbow-delimiters
+                restart-emacs simple-httpd skewer-mode space-doc spaceline
                 spacemacs-purpose-popwin spacemacs-whitespace-cleanup
                 string-edit-at-point string-inflection symbol-overlay symon
-                term-cursor toc-org treemacs-evil treemacs-icons-dired
+                term-cursor tern toc-org treemacs-evil treemacs-icons-dired
                 treemacs-persp treemacs-projectile tuareg undo-fu undo-fu-session
-                utop uuidgen vi-tilde-fringe volatile-highlights vundo wgrep winum
-                writeroom-mode ws-butler yasnippet yasnippet-snippets)))
+                utop uuidgen vi-tilde-fringe volatile-highlights vundo
+                web-beautify wgrep winum writeroom-mode ws-butler yaml yasnippet
+                yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
