@@ -37,11 +37,11 @@ bindkey -M viins '^N' history-substring-search-down
 #
 
 # Number of events to keep in internal history (current session).
-HISTSIZE=15000
+HISTSIZE=1000000
 # File in which to store history.
 HISTFILE="${HOME}/.zhistory"
 # The number of events to store in the HISTFILE.
-SAVEHIST=10000
+SAVEHIST=1000000
 
 # For each event, also record its starting time and executing time.
 setopt EXTENDED_HISTORY
@@ -62,11 +62,11 @@ setopt HIST_SAVE_NO_DUPS
 # not directly execute `sudo <previous command>`, but rather enters it on the
 # command line to be executed.
 setopt HIST_VERIFY
-# Incrementally write to the history file, instead of writing when the shell
-# exits. Note that the manpages for zsh says that this option and the
-# INC_APPEND_HISTORY and SHARE_HISTORY options are considered mutually
-# exclusive.
-setopt INC_APPEND_HISTORY_TIME
+# Write to the history file after each command, and also read the history file
+# incrementally. Essentially, this allows to share history among different
+# shells, which is something I've wanted to do for a while but have been too
+# lazy to look up.
+setopt SHARE_HISTORY
 
 # Load aliases.
 for f in "${ZSHALIASES}"/*.zsh; do
