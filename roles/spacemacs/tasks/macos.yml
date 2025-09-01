@@ -1,16 +1,24 @@
-# No installation configured yet since I'm not running in on macOS yet, but
-# probably it'll look something like this, based on the current (2025-08-29)
-# README of Spacemacs:
-#
-# - name: Add Homebrew tap for Emacs Plus (macOS)
-#   community.general.homebrew_tap:
-#     name:
-#       - d12frosted/emacs-plus
-#
-# - name: Install Emacs Plus (macOS)
-#   community.general.homebrew_tap:
-#     name:
-#       - emacs-plus
-#     install_options:
-#       - with-spacemacs-icon
-#       - with-native-comp
+- name: Add Homebrew tap for Emacs Plus (macOS)
+  community.general.homebrew_tap:
+    name:
+      - d12frosted/emacs-plus
+
+- name: Install Emacs Plus (macOS)
+  community.general.homebrew:
+    name:
+      - emacs-plus@30
+    install_options:
+      - with-spacemacs-icon
+
+- name: Enable and start the Emacs background service (macOS)
+  community.general.homebrew_services:
+    name: emacs-plus@30
+    state: present
+
+- name: Put an Emacs.app alias file into /Applications (macOS)
+  ansible.builtin.command:
+    argv:
+      - 'osascript'
+      - '-e'
+      - 'tell application "Finder" to make alias file to posix file "/opt/homebrew/opt/emacs-plus@30/Emacs.app" at posix file "/Applications" with properties {name:"Emacs.app"}'
+    creates: '/Applications/Emacs.app'

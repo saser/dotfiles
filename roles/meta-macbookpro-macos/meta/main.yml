@@ -13,6 +13,7 @@ dependencies:
   - role: rectangle
   - role: ripgrep
   - role: snip
+  - role: spacemacs
   - role: spotify
   - role: ssh
   - role: tmux
