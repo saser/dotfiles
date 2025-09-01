@@ -20,7 +20,7 @@
       'user.email': '582273+saser@users.noreply.github.com'
       # Some core settings.
       'core.pager': 'diff-so-fancy | less --tabs=4 -RFX'
-      'core.editor': 'code --wait'
+      'core.editor': 'emacsclient --alternate-editor= --reuse-frame'
       'init.defaultBranch': 'main'
       # Aliases.
       # amend: disabled due to `git-branchless` providing its own variant.
