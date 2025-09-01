@@ -1,0 +1,15 @@
+- name: Set low delay until first key repeat (macOS)
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: InitialKeyRepeat
+    type: float
+    value: 15
+    state: present
+
+- name: Make key repeats fast (macOS)
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: KeyRepeat
+    type: float
+    value: 2
+    state: present

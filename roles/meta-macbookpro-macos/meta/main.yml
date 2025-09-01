@@ -9,6 +9,7 @@ dependencies:
   - role: iosevka
   - role: jj
   - role: less
+  - role: macos
   - role: ranger
   - role: rectangle
   - role: ripgrep
