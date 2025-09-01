@@ -17,9 +17,3 @@
     src: '{{ role_path }}/files/dotspacemacs'
     dest: '{{ ansible_env.HOME }}/.spacemacs'
     state: link
-
-- name: Link .spacemacs.env into place
-  ansible.builtin.file:
-    src: '{{ role_path }}/files/.spacemacs.env'
-    dest: '{{ ansible_env.HOME }}/.spacemacs.env'
-    state: link
