@@ -19,7 +19,11 @@ promptinit
 prompt saser
 
 # Load plugins.
-zplug load --verbose
+if [ ! -z "${ZSHDEBUG}" ]; then
+    zplug load --verbose
+else
+    zplug load
+fi
 
 # Use vi-style keybindings.
 bindkey -v
@@ -66,13 +70,17 @@ setopt INC_APPEND_HISTORY_TIME
 
 # Load aliases.
 for f in "${ZSHALIASES}"/*.zsh; do
-    echo source "${f}"
+    if [ ! -z "${ZSHDEBUG}" ]; then
+        echo source "${f}"
+    fi
     source "${f}"
 done
 
 # Load extra scripts.
 for f in "${ZSHEXTRAS}"/*.zsh; do
-    echo source "${f}"
+    if [ ! -z "${ZSHDEBUG}" ]; then
+        echo source "${f}"
+    fi
     source "${f}"
 done
 
@@ -91,7 +99,9 @@ done
 UNAME="$(uname -s)"
 if [[ "${UNAME}" = "Darwin" ]]; then
     for f in "${ZSHENVFILES}"/*.zsh; do
-        echo source "${f}"
+        if [ ! -z "${ZSHDEBUG}" ]; then
+            echo source "${f}"
+        fi
         source "${f}"
     done
 fi
