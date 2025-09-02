@@ -39,4 +39,4 @@ printdesc = ["log", "--no-graph", "-T", "description"]
 # Shorthand for `printdesc`.
 pd = ["printdesc"]
 # Shorthand for `printdesc -r @`.
-"pd@" = ["printdesc", "-r", "@"] 
+"pd@" = ["printdesc", "-r", "@"]
