@@ -579,6 +579,10 @@ before packages are loaded."
    require-final-newline t)
 
   ;; Set up Org mode stuff.
+  (spacemacs/declare-prefix "o" "Open Org files")
+  (spacemacs/set-leader-keys "ol" (lambda () (interactive) (find-file-existing "~/org/work-log.org")))
+  (spacemacs/set-leader-keys "on" (lambda () (interactive) (find-file-existing "~/org/notes.org")))
+  (spacemacs/set-leader-keys "ot" (lambda () (interactive) (find-file-existing "~/org/todos.org")))
   (setq org-capture-templates
         ;; Note: in the `entry' forms here, leaving an empty file after e.g.
         ;; `file+olp+datetree' means to use the value of
