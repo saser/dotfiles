@@ -69,7 +69,9 @@ This function should only modify configuration layer settings."
              python-sort-imports-on-save t
              python-test-runner 'pytest)
      themes-megapack
-     treemacs)
+     treemacs
+     yaml
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -713,12 +715,13 @@ This function is called at the very end of Spacemacs initialization."
                 twilight-anti-bright-theme twilight-bright-theme twilight-theme
                 ujelly-theme underwater-theme undo-fu undo-fu-session utop uuidgen
                 vi-tilde-fringe volatile-highlights vundo web-beautify wgrep
-                white-sand-theme winum writeroom-mode ws-butler yaml yasnippet
-                yasnippet-snippets zen-and-art-theme zenburn-theme zonokai-emacs)))
+                white-sand-theme winum writeroom-mode ws-butler yaml yaml-mode
+                yasnippet yasnippet-snippets zen-and-art-theme zenburn-theme
+                zonokai-emacs)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
-   )
+   '(default ((t (:background nil)))))
   )
