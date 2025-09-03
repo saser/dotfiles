@@ -5,6 +5,8 @@
       - jujutsu
 
 - name: Install jj and related programs (from AUR) (Arch Linux)
+  become: true
+  become_user: '{{ arch_user }}'
   kewlfft.aur.aur:
     name:
       - jjui
