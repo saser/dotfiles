@@ -581,41 +581,50 @@ before packages are loaded."
    require-final-newline t)
 
   ;; Set up Org mode stuff.
-  (spacemacs/declare-prefix "o" "Open Org files")
-  (spacemacs/set-leader-keys "ol" (lambda () (interactive) (find-file-existing "~/org/work-log.org")))
-  (spacemacs/set-leader-keys "on" (lambda () (interactive) (find-file-existing "~/org/notes.org")))
-  (spacemacs/set-leader-keys "ot" (lambda () (interactive) (find-file-existing "~/org/todos.org")))
-  (setq org-capture-templates
-        ;; Note: in the `entry' forms here, leaving an empty file after e.g.
-        ;; `file+olp+datetree' means to use the value of
-        ;; `org-default-notes-file'.
-        '(
-          ("j" "Work log entry"
-           entry (file+olp+datetree "~/org/work-log.org")
-           "* %(format-time-string \"%H:%M -\") %?"
-           :empty-lines 0)
+  ;; Overall structure:
+  ;; 'SPC o' is for my Org mode workday notes.
+  (spacemacs/declare-prefix "o" "Open Org notes")
+  ;; I have three files (which arguably should be one, but oh well, here we
+  ;; are, I couldn't be arsed to figure out how to put things in the right
+  ;; places in one giant notes file):
+  (let ((work-log-file "~/org/work-log.org") ;; For timestamped, short messages of what I do during the day.
+        (notes-file "~/org/notes.org")       ;; For random notes of things I want to remember: writing to think through a problem; shell commands to remember; or just general dumping ground.
+        (todos-file "~/org/todos.org"))      ;; For tracking what I want to accomplish during a day.
+    ;; For all of these files, there are a few things:
+    ;; Org capture templates for adding something to the file:
+    (setq org-capture-templates
+          ;; Note: in the `entry' forms here, leaving an empty file after e.g.
+          ;; `file+olp+datetree' means to use the value of
+          ;; `org-default-notes-file'.
+          `(
+            ("l" "Work log entry"
+             entry (file+olp+datetree ,work-log-file)
+             "* %(format-time-string \"%H:%M -\") %?"
+             :empty-lines 0)
 
-          ("t" "Add TODO entry"
-           entry (file+olp+datetree "~/org/todos.org")
-           "* TODO %?"
-           :empty-lines 0)
+            ("n" "Add random note entry"
+             entry (file+olp+datetree ,notes-file)
+             "* %?"
+             :empty-lines 0)
 
-          ("n" "Add random note entry"
-           entry (file+olp+datetree "~/org/notes.org")
-           "* %?"
-           :empty-lines 0)
-
-          ("N" "Add random note entry and jump to it"
-           entry (file+olp+datetree "~/org/notes.org")
-           "* %?"
-           :empty-lines 0
-           :jump-to-captured t)
-          ))
+            ("t" "Add TODO entry"
+             entry (file+olp+datetree ,todos-file)
+             "* TODO %?"
+             :empty-lines 0)))
+    ;; Key bindings to immediately (non-interactively) invoke one of the templates:
+    (spacemacs/set-leader-keys
+      "ol" (lambda () (interactive) (org-capture nil "l"))                ;; Capture a work log entry
+      "oL" (lambda () (interactive) (find-file-existing `,work-log-file)) ;; Open the work log file
+      "on" (lambda () (interactive) (org-capture nil "n"))                ;; Capture a random note
+      "oN" (lambda () (interactive) (find-file-existing `,notes-file))    ;; Open the notes file
+      "ot" (lambda () (interactive) (org-capture nil "t"))                ;; Capture a TODO
+      "oT" (lambda () (interactive) (find-file-existing `,todos-file))    ;; Open the TODOs file
+      )
+    )
 
   ;; Prevent Emacs from asking if I want to open Git-controlled files behind
   ;; symlinks -- that's almost always what I want to do.
-  (setq-default vc-follow-symlinks t)
-  )
+  (setq-default vc-follow-symlinks t))
 
 
 ;; Do not write anything past this comment. This is where Emacs will
