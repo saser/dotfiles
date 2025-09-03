@@ -17,3 +17,9 @@
     src: '{{ role_path }}/files/dotspacemacs'
     dest: '{{ ansible_env.HOME }}/.spacemacs'
     state: link
+
+- name: Link Emacs aliases into place
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/aliases.zsh'
+    dest: '{{ zsh_env.ZSHALIASES }}/spacemacs.zsh'
+    state: link
