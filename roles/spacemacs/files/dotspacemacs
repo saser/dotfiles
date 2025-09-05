@@ -593,42 +593,41 @@ before packages are loaded."
   ;; Overall structure:
   ;; 'SPC o' is for my Org mode workday notes.
   (spacemacs/declare-prefix "o" "Open Org notes")
-  ;; I have three files (which arguably should be one, but oh well, here we
-  ;; are, I couldn't be arsed to figure out how to put things in the right
-  ;; places in one giant notes file):
-  (let ((work-log-file "~/org/work-log.org") ;; For timestamped, short messages of what I do during the day.
-        (notes-file "~/org/notes.org")       ;; For random notes of things I want to remember: writing to think through a problem; shell commands to remember; or just general dumping ground.
-        (todos-file "~/org/todos.org"))      ;; For tracking what I want to accomplish during a day.
-    ;; For all of these files, there are a few things:
-    ;; Org capture templates for adding something to the file:
-    (setq org-capture-templates
-          ;; Note: in the `entry' forms here, leaving an empty file after e.g.
-          ;; `file+olp+datetree' means to use the value of
-          ;; `org-default-notes-file'.
-          `(
-            ("l" "Work log entry"
-             entry (file+olp+datetree ,work-log-file)
-             "* %(format-time-string \"%H:%M -\") %?"
-             :empty-lines 0)
+  (defun my/daily-org-file ()
+    "Return today's org file path. For example: '~/org/2025-09-05.org'."
+    (expand-file-name (format-time-string "%Y-%m-%d.org") "~/org"))
+  (defun my/ensure-daily-org-file ()
+    "Ensures that today's org file exists (see `my/daily-org-file') and has a
+pre-defined structure, and returns the path to the file."
+    (let ((file (my/daily-org-file)))
+      (unless (file-exists-p file)
+        (with-temp-buffer
+          (insert (concat "#+TITLE: " (format-time-string "%A, %B %e, %Y") "\n\n")) ;; i.e. "Friday, September 5, 2025"
+          (insert "* TODOs\n\n")
+          (insert "* Notes\n\n")
+          (insert "* Work log\n\n")
+          (write-file file)))
+      file))
 
-            ("n" "Add random note entry"
-             entry (file+olp+datetree ,notes-file)
-             "* %?"
-             :empty-lines 0)
-
-            ("t" "Add TODO entry"
-             entry (file+olp+datetree ,todos-file)
-             "* TODO %?"
-             :empty-lines 0)))
-    ;; Key bindings to immediately (non-interactively) invoke one of the templates:
-    (spacemacs/set-leader-keys
-      "ol" (lambda () (interactive) (org-capture nil "l"))                ;; Capture a work log entry
-      "oL" (lambda () (interactive) (find-file-existing `,work-log-file)) ;; Open the work log file
-      "on" (lambda () (interactive) (org-capture nil "n"))                ;; Capture a random note
-      "oN" (lambda () (interactive) (find-file-existing `,notes-file))    ;; Open the notes file
-      "ot" (lambda () (interactive) (org-capture nil "t"))                ;; Capture a TODO
-      "oT" (lambda () (interactive) (find-file-existing `,todos-file))    ;; Open the TODOs file
-      )
+  (setq org-capture-templates
+        '(
+          ("t" "Add TODO entry"
+           entry (file+headline my/ensure-daily-org-file "TODOs")
+           "* TODO %?"
+           :empty-lines 0)
+          ("n" "Add random note entry"
+           entry (file+headline my/ensure-daily-org-file "Notes")
+           "* %?"
+           :empty-lines 0)
+          ("l" "Work log entry"
+           entry (file+headline my/ensure-daily-org-file "Work log")
+           "* %(format-time-string \"%H:%M -\") %?"
+           :empty-lines 0)))
+  (spacemacs/set-leader-keys
+    "ot" (lambda () (interactive) (org-capture nil "t"))            ;; Capture a TODO
+    "on" (lambda () (interactive) (org-capture nil "n"))            ;; Capture a random note
+    "ol" (lambda () (interactive) (org-capture nil "l"))            ;; Capture a work log entry
+    "oo" (lambda () (interactive) (find-file (my/daily-org-file))) ;; Open today's file
     )
 
   ;; Prevent Emacs from asking if I want to open Git-controlled files behind
