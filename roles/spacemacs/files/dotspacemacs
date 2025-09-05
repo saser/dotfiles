@@ -633,8 +633,25 @@ before packages are loaded."
 
   ;; Prevent Emacs from asking if I want to open Git-controlled files behind
   ;; symlinks -- that's almost always what I want to do.
-  (setq-default vc-follow-symlinks t))
+  (setq-default vc-follow-symlinks t)
 
+  ;; Redefine the default `evil-easymotion' motions to not be limited to the 'line
+  ;; scope. I opened a PR for this against the plugin a long while ago
+  ;; (https://github.com/PythonNut/evil-easymotion/pull/56), proposing to use
+  ;; the 'page scope instead (I can't remember how I found out about that scope
+  ;; though -- the documentation doesn't seem to mention it). The author didn't
+  ;; accept it but proposed just not setting a scope at all. So that's what I'm
+  ;; doing here, and it seems to work.
+  (evilem-make-motion evilem-motion-forward-word-begin #'evil-forward-word-begin)
+  (evilem-make-motion evilem-motion-forward-WORD-begin #'evil-forward-WORD-begin)
+  (evilem-make-motion evilem-motion-forward-WORD-begin #'evil-forward-WORD-begin)
+  (evilem-make-motion evilem-motion-forward-word-end #'evil-forward-word-end)
+  (evilem-make-motion evilem-motion-forward-WORD-end #'evil-forward-WORD-end)
+  (evilem-make-motion evilem-motion-backward-word-begin #'evil-backward-word-begin)
+  (evilem-make-motion evilem-motion-backward-WORD-begin #'evil-backward-WORD-begin)
+  (evilem-make-motion evilem-motion-backward-word-end #'evil-backward-word-end)
+  (evilem-make-motion evilem-motion-backward-WORD-end #'evil-backward-WORD-end)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
