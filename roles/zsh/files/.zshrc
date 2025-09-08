@@ -33,6 +33,18 @@ bindkey -M viins '^P' history-substring-search-up
 bindkey -M viins '^N' history-substring-search-down
 
 #
+# Various bells and whistles that Zsh provides.
+#
+
+# Enable extended globbing, which provides nifty features such as:
+# - negation (`ls ^foo.log`, `ls ^http-*.log`)
+# - alternation (`ls (foo|bar).log`)
+# - qualifiers (`ls *(/)` -> match directories only due to `(/)`)
+# More documentation can be found via `man 1 zshexpn`. There are also some
+# useful examples here: https://grml.org/zsh/zsh-lovers.html.
+setopt EXTENDED_GLOB
+
+#
 # Settings for shell command history.
 #
 
