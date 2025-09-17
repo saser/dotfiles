@@ -616,8 +616,8 @@ pre-defined structure, and returns the path to the file."
            "* TODO %?"
            :empty-lines 0)
           ("n" "Add random note entry"
-           entry (file+headline my/ensure-daily-org-file "Notes")
-           "* %?"
+           plain (file+headline my/ensure-daily-org-file "Notes")
+           "%?"
            :empty-lines 0)
           ("l" "Work log entry"
            entry (file+headline my/ensure-daily-org-file "Work log")
@@ -627,7 +627,7 @@ pre-defined structure, and returns the path to the file."
     "ot" (lambda () (interactive) (org-capture nil "t"))            ;; Capture a TODO
     "on" (lambda () (interactive) (org-capture nil "n"))            ;; Capture a random note
     "ol" (lambda () (interactive) (org-capture nil "l"))            ;; Capture a work log entry
-    "oo" (lambda () (interactive) (find-file (my/daily-org-file))) ;; Open today's file
+    "oo" (lambda () (interactive) (find-file (my/ensure-daily-org-file))) ;; Open today's file
     )
 
   ;; Prevent Emacs from asking if I want to open Git-controlled files behind
