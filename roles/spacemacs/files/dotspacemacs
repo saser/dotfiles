@@ -611,6 +611,19 @@ pre-defined structure, and returns the path to the file."
           (write-file file)))
       file))
 
+  (defun my/daily-journal-file ()
+    "Return today's journal file path. For example: '~/journal/2025-09-05.org'."
+    (expand-file-name (format-time-string "%Y-%m-%d.org") "~/journal"))
+  (defun my/ensure-daily-journal-file ()
+    "Ensures that today's journal file exists (see `my/daily-journal-file') and
+has a pre-defined structure, and returns the path to the file."
+    (let ((file (my/daily-journal-file)))
+      (unless (file-exists-p file)
+        (with-temp-buffer
+          (insert (concat "#+TITLE: " (format-time-string "%A, %B %e, %Y") "\n\n")) ;; i.e. "Friday, September 5, 2025"
+          (write-file file)))
+      file))
+
   (setq org-capture-templates
         '(
           ("t" "Add TODO entry"
@@ -624,12 +637,20 @@ pre-defined structure, and returns the path to the file."
           ("l" "Work log entry"
            entry (file+headline my/ensure-daily-org-file "Work log")
            "* %(format-time-string \"%H:%M -\") %?"
-           :empty-lines 0)))
+           :empty-lines 0)
+
+          ("j" "Journal entry"
+           entry (file my/ensure-daily-journal-file)
+           "* %(format-time-string \"%H:%M\")\n%?"
+           :empty-lines 0)
+          ))
   (spacemacs/set-leader-keys
-    "ot" (lambda () (interactive) (org-capture nil "t"))            ;; Capture a TODO
-    "on" (lambda () (interactive) (org-capture nil "n"))            ;; Capture a random note
-    "ol" (lambda () (interactive) (org-capture nil "l"))            ;; Capture a work log entry
-    "oo" (lambda () (interactive) (find-file (my/ensure-daily-org-file))) ;; Open today's file
+    "ot" (lambda () (interactive) (org-capture nil "t"))                      ;; Capture a TODO.
+    "on" (lambda () (interactive) (org-capture nil "n"))                      ;; Capture a random note.
+    "ol" (lambda () (interactive) (org-capture nil "l"))                      ;; Capture a work log entry.
+    "oo" (lambda () (interactive) (find-file (my/ensure-daily-org-file)))     ;; Open today's file.
+    "oj" (lambda () (interactive) (org-capture nil "j"))                      ;; Capture today's journal at the current time.
+    "oJ" (lambda () (interactive) (find-file (my/ensure-daily-journal-file))) ;; Open today's journal file.
     )
 
   ;; Prevent Emacs from asking if I want to open Git-controlled files behind
