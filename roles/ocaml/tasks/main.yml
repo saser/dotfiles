@@ -11,3 +11,22 @@
     src: '{{ role_path }}/files/opam.zsh'
     dest: '{{ zsh_env.ZSHEXTRAS }}/opam.zsh'
     state: link
+
+- name: Ensure OCaml directory exists
+  ansible.builtin.file:
+    path: '{{ ocaml_env.OCAMLPATH }}'
+    state: directory
+
+- name: Render OCaml environment variables
+  ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
+  vars:
+    filename: 'ocaml'
+    variables: '{{ ocaml_env | dict2items(key_name="name", value_name="value") }}'
+
+- name: Make installed Dune binaries available in $PATH
+  ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
+  vars:
+    filename: 'ocamlbin'
+    variables:
+      - name: PATH
+        value: '{{ ocaml_env.OCAMLPATH }}/bin:${PATH}'
