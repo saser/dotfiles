@@ -1,3 +1,3 @@
 ocaml_env:
   OCAMLPATH: "{{ ansible_env.HOME }}/ocaml"
-  DUNE_INSTALL_PREFIX: "{{ ocaml_env.OCAMLPATH }}"
+  DUNE_INSTALL_PREFIX: "{{ ansible_env.HOME }}/ocaml"
