@@ -1,1 +1,4 @@
-# Nothing here yet, haven't played around with this on macOS yet.
+- name: Install opam and related programs (macOS)
+  community.general.homebrew:
+    name:
+      - opam

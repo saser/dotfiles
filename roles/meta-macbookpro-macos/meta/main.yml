@@ -10,6 +10,7 @@ dependencies:
   - role: jj
   - role: less
   - role: macos
+  - role: ocaml
   - role: ranger
   - role: rectangle
   - role: ripgrep
