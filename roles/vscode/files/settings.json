@@ -21,4 +21,5 @@
     "go.testFlags": [
         "-count=1"
     ],
+    "workbench.editor.enablePreview": false
 }
