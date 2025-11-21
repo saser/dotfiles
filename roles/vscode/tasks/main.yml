@@ -9,7 +9,7 @@
 - name: Install VS Code extensions from registry
   ansible.builtin.command:
     cmd: 'code --install-extension {{ item.name }}@{{ item.version }}'
-    creates: '{{ ansible_env.HOME }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
+    creates: '{{ ansible_facts["env"].HOME }}/.vscode/extensions/{{ item.name + "-" + item.version }}'
   loop:
     - { name: 'Lencerf.beancount', version: '0.13.0' }
     - { name: 'bierner.github-markdown-preview', version: '0.3.0' }

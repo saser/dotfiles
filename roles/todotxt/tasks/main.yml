@@ -9,7 +9,7 @@
 - name: Ensure .todo.cfg is in place
   file:
     src: '{{ role_path }}/files/.todo.cfg'
-    dest: '{{ ansible_env.HOME }}/.todo.cfg'
+    dest: '{{ ansible_facts["env"].HOME }}/.todo.cfg'
     state: link
 
 - name: Set up todo.sh aliases

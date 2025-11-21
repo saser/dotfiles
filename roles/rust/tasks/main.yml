@@ -12,4 +12,4 @@
     filename: 'rustbin'
     variables:
       - name: PATH
-        value: '{{ ansible_env.HOME }}/.cargo/bin:${PATH}'
+        value: '{{ ansible_facts["env"].HOME }}/.cargo/bin:${PATH}'

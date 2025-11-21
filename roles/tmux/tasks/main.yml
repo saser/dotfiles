@@ -9,7 +9,7 @@
 - name: Ensure .tmux.conf is in place
   file:
     src: '{{ role_path }}/files/.tmux.conf'
-    dest: '{{ ansible_env.HOME }}/.tmux.conf'
+    dest: '{{ ansible_facts["env"].HOME }}/.tmux.conf'
     state: link
 
 - name: Set up tmux aliases

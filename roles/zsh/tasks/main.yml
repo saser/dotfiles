@@ -49,5 +49,5 @@
     - '.zshrc'
   ansible.builtin.file:
     src: '{{ role_path }}/files/{{ item }}'
-    dest: '{{ ansible_env.HOME }}/{{ item }}'
+    dest: '{{ ansible_facts["env"].HOME }}/{{ item }}'
     state: link

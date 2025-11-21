@@ -10,13 +10,13 @@
 
 - name: Ensure VSCode config directory exists (macOS)
   ansible.builtin.file:
-    path: '{{ ansible_env.HOME }}/Library/Application Support/Code/User'
+    path: '{{ ansible_facts["env"].HOME }}/Library/Application Support/Code/User'
     state: directory
 
 - name: Link settings.json into place (macOS)
   ansible.builtin.file:
     src: '{{ role_path }}/files/settings.json'
-    dest: '{{ ansible_env.HOME }}/Library/Application Support/Code/User/settings.json'
+    dest: '{{ ansible_facts["env"].HOME }}/Library/Application Support/Code/User/settings.json'
     state: link
 
 - name: Enable key repeats (macOS)
