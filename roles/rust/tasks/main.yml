@@ -5,3 +5,11 @@
 - name: Import platform tasks (macOS)
   ansible.builtin.import_tasks: macos.yml
   when: ansible_distribution == 'MacOSX'
+
+- name: Make installed Cargo binaries available in $PATH
+  ansible.builtin.import_tasks: '{{ playbook_dir }}/roles/zsh/tasks/render_env.yml'
+  vars:
+    filename: 'rustbin'
+    variables:
+      - name: PATH
+        value: '{{ ansible_env.HOME }}/.cargo/bin:${PATH}'
