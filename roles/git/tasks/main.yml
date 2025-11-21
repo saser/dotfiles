@@ -1,9 +1,9 @@
 - name: Import platform tasks (Arch Linux)
-  ansible.builtin.import_tasks: archlinux.yml
+  ansible.builtin.import_tasks: '{{ role_path }}/tasks/archlinux.yml'
   when: ansible_distribution == 'Archlinux'
 
 - name: Import platform tasks (macOS)
-  ansible.builtin.import_tasks: macos.yml
+  ansible.builtin.import_tasks: '{{ role_path }}/tasks/macos.yml'
   when: ansible_distribution == 'MacOSX'
 
 - name: Set global git configuration values
