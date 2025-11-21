@@ -33,7 +33,6 @@
       'alias.d': 'diff'
       'alias.dc': 'diff --cached'
       'alias.f': 'fetch'
-      'alias.f': 'fetch'
       'alias.i': 'record -I'  # requires git-branchless
       'alias.im': 'record -Im'  # requires git-branchless
       # The `--exclude=refs/branchless/*` part is to make the graphlog more
