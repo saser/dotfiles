@@ -14,6 +14,7 @@ dependencies:
   - role: ranger
   - role: rectangle
   - role: ripgrep
+  - role: rust
   - role: snip
   - role: spacemacs
   - role: spotify

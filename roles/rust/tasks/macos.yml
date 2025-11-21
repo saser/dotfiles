@@ -1,0 +1,5 @@
+- name: Install rustup and related programs (macOS)
+  community.general.homebrew:
+    name:
+      - rustup  # For managing multiple toolchains, in case it's necessary.
+      - rust  # Default Rust installation. Primarily to install programs with `cargo install`.
