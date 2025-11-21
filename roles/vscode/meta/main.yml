@@ -1,6 +1,6 @@
 dependencies:
   - role: arch
-    when: ansible_distribution == 'Archlinux'
+    when: ansible_facts["distribution"] == 'Archlinux'
   - role: iosevka
   - role: yay
-    when: ansible_distribution == 'Archlinux'
+    when: ansible_facts["distribution"] == 'Archlinux'
