@@ -25,12 +25,20 @@ else
     zplug load
 fi
 
+# Load zshcontrib plugins (or whatever they're called in the zsh world).
+autoload edit-command-line; zle -N edit-command-line # https://unix.stackexchange.com/a/6622
+
 # Use vi-style keybindings.
 bindkey -v
 
 # Define keybindings for zsh-history-substring-search.
 bindkey -M viins '^P' history-substring-search-up
 bindkey -M viins '^N' history-substring-search-down
+
+# alt-e to edit the current command in an editor.
+# Seems to default to vim. I can probably change this but vim is good enough.
+bindkey -M vicmd '^[e' edit-command-line
+bindkey -M viins '^[e' edit-command-line
 
 #
 # Various bells and whistles that Zsh provides.
