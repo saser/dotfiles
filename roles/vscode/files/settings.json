@@ -21,5 +21,9 @@
     "go.testFlags": [
         "-count=1"
     ],
-    "workbench.editor.enablePreview": false
+    "search.useIgnoreFiles": false,
+    "workbench.editor.enablePreview": false,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.nextEditSuggestions.fixes": false,
+    "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false
 }
