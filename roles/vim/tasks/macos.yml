@@ -1,0 +1,4 @@
+- name: Install vim and related programs (macOS)
+  community.general.homebrew:
+    name:
+      - vim
