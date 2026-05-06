@@ -25,5 +25,6 @@
     "workbench.editor.enablePreview": false,
     "github.copilot.nextEditSuggestions.enabled": false,
     "github.copilot.nextEditSuggestions.fixes": false,
-    "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false
+    "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
+    "git.blame.ignoreWhitespace": true
 }
